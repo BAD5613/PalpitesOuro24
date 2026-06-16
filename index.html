@@ -36,7 +36,8 @@
         .liga { display: flex; justify-content: space-between; font-size: 11px; color: #888; margin-bottom: 10px; }
         .times { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-weight: bold; }
         .vs { background: #FFD700; color: #000; padding: 3px 8px; border-radius: 5px; font-size: 12px; }
-        .palpite { background: #2A2A3E; border-radius: 8px; padding: 10px; text-align: center; color: #FFD700; font-size: 14px; }
+        .palpite { background: #2A2A3E; border-radius: 8px; padding: 10px; text-align: center; color: #FFD700; font-size: 14px; margin-bottom: 8px; }
+        .palpite:last-child { margin-bottom: 0; }
         .box-vip { background:#1A1A2E; border-radius:15px; padding:25px; text-align:center; margin-top:40px; }
         .input-codigo {
             width:100%; padding:15px; border-radius:10px; border:1px solid #2A2A3E;
@@ -52,10 +53,14 @@
             background: #1A1A2E; border: 1px solid #FFA500; border-radius: 10px;
             padding: 12px; font-size: 11px; color: #FFA500; text-align: center; margin-top: 20px;
         }
+        .tag-vip {
+            background: linear-gradient(135deg, #FFD700, #FF8C00); color: #000; 
+            font-size: 10px; padding: 3px 8px; border-radius: 5px; font-weight: bold; margin-left: 10px;
+        }
     </style>
 </head>
 <body>
-    <!-- TELA 1: MENU PRINCIPAL -->
+    <!-- TELA 1: MENU PRINCIPAL - SÓ 5 CARDS -->
     <div id="tela-menu" class="tela ativa">
         <div class="header">
             <div class="logo-emoji">👑</div>
@@ -91,13 +96,7 @@
             <div class="card" onclick="abrirTela('tela-redes')">
                 <div class="card-icon">🔗</div>
                 <h3>REDES SOCIAIS</h3>
-                <p>Siga-nos</p>
-            </div>
-            
-            <div class="card" onclick="abrirTela('tela-suporte')">
-                <div class="card-icon">🎧</div>
-                <h3>SUPORTE</h3>
-                <p>Fale connosco</p>
+                <p>Siga-nos e fale connosco</p>
             </div>
         </div>
         
@@ -114,21 +113,12 @@
         </div>
 
         <div class="jogo">
-            <div class="liga"><span>LIGA PORTUGAL</span><span>19/06/2025</span></div>
-            <div class="times"><span>FC Porto</span><span class="vs">VS</span><span>Benfica</span></div>
-            <div class="palpite">🏆 1X (Porto ou Empate)</div>
-        </div>
-
-        <div class="jogo">
-            <div class="liga"><span>LA LIGA</span><span>20/06/2025</span></div>
-            <div class="times"><span>Real Madrid</span><span class="vs">VS</span><span>Barcelona</span></div>
-            <div class="palpite">🏆 Mais de 2.5 gols</div>
-        </div>
-
-        <div class="jogo">
-            <div class="liga"><span>PREMIER LEAGUE</span><span>21/06/2025</span></div>
-            <div class="times"><span>Manchester City</span><span class="vs">VS</span><span>Liverpool</span></div>
-            <div class="palpite">🏆 Ambas Marcam - Sim</div>
+            <div class="liga"><span>ISLÂNDIA • PRIMEIRA DIVISÃO</span><span>16/06/2026</span></div>
+            <div class="times"><span>IA Akranes</span><span class="vs">VS</span><span>Valur Reykjavik</span></div>
+            <div class="palpite">🏆 Ambas Marcam: Sim</div>
+            <div class="palpite">🏆 Dupla Chance: 12</div>
+            <div class="palpite">🏆 Total de Golos: Mais de 3.5</div>
+            <div class="palpite">🏆 Golos 1ª Parte: Mais de 1.5</div>
         </div>
     </div>
 
@@ -150,12 +140,32 @@
             <button onclick="verificarCodigo()" class="btn-desbloquear">DESBLOQUEAR</button>
             
             <p style="color:#888; font-size:12px; margin-top:20px;">
-                Não tem código? <span style="color:#FFD700; text-decoration:underline;" onclick="abrirTela('tela-suporte')">Fale com o Suporte</span>
+                Não tem código? <span style="color:#FFD700; text-decoration:underline;" onclick="abrirTela('tela-redes')">Fale com o Suporte</span>
             </p>
         </div>
     </div>
 
-    <!-- TELA 4: VIP ODD ALTA -->
+    <!-- TELA 4: JOGOS VIP ODD BAIXA -->
+    <div id="tela-jogos-vip-baixa" class="tela">
+        <div class="topo">
+            <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
+            <h1>VIP ODD BAIXA <span class="tag-vip">VIP</span></h1>
+        </div>
+
+        <div class="jogo">
+            <div class="liga"><span>BUNDESLIGA</span><span>22/06/2025</span></div>
+            <div class="times"><span>Bayern Munich</span><span class="vs">VS</span><span>Dortmund</span></div>
+            <div class="palpite">👑 Vitória Bayern - Odd 1.45</div>
+        </div>
+
+        <div class="jogo">
+            <div class="liga"><span>SERIE A</span><span>22/06/2025</span></div>
+            <div class="times"><span>Juventus</span><span class="vs">VS</span><span>Milan</span></div>
+            <div class="palpite">👑 Menos de 3.5 gols - Odd 1.38</div>
+        </div>
+    </div>
+
+    <!-- TELA 5: ACESSO VIP ODD ALTA -->
     <div id="tela-vip-alta" class="tela">
         <div class="topo">
             <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
@@ -174,31 +184,27 @@
         </div>
     </div>
 
-    <!-- TELA 5: SUPORTE -->
-    <div id="tela-suporte" class="tela">
+    <!-- TELA 6: JOGOS VIP ODD ALTA -->
+    <div id="tela-jogos-vip-alta" class="tela">
         <div class="topo">
             <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
-            <h1>SUPORTE</h1>
+            <h1>VIP ODD ALTA <span class="tag-vip">VIP</span></h1>
         </div>
-        
-        <div class="box-vip">
-            <div style="font-size:50px; margin-bottom:15px;">🎧</div>
-            <h2 style="color:#FFD700; margin-bottom:10px;">FALE CONNOSCO</h2>
-            <p style="color:#888; font-size:14px; margin-bottom:25px;">
-                Precisa de ajuda? Entre em contacto
-            </p>
-            
-            <a href="https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d" target="_blank" class="btn-desbloquear">
-                CANAL WHATSAPP
-            </a>
-            
-            <a href="https://t.me/seutelegram" target="_blank" class="btn-desbloquear btn-secundario">
-                TELEGRAM
-            </a>
+
+        <div class="jogo">
+            <div class="liga"><span>CHAMPIONS LEAGUE</span><span>24/06/2025</span></div>
+            <div class="times"><span>Ajax</span><span class="vs">VS</span><span>Benfica</span></div>
+            <div class="palpite">💎 Placar Exato 2-1 - Odd 8.50</div>
+        </div>
+
+        <div class="jogo">
+            <div class="liga"><span>EUROPA LEAGUE</span><span>25/06/2025</span></div>
+            <div class="times"><span>Roma</span><span class="vs">VS</span><span>Sevilla</span></div>
+            <div class="palpite">💎 Empate HT/FT - Odd 12.00</div>
         </div>
     </div>
 
-    <!-- TELA 6: REDES SOCIAIS -->
+    <!-- TELA 7: REDES SOCIAIS - SÓ WHATSAPP E FACEBOOK -->
     <div id="tela-redes" class="tela">
         <div class="topo">
             <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
@@ -207,23 +213,22 @@
         
         <div class="box-vip">
             <div style="font-size:50px; margin-bottom:15px;">🔗</div>
-            <h2 style="color:#FFD700; margin-bottom:10px;">SIGA-NOS</h2>
+            <h2 style="color:#FFD700; margin-bottom:10px;">SIGA-NOS E FALE CONNOSCO</h2>
+            <p style="color:#888; font-size:14px; margin-bottom:25px;">
+                Redes sociais e suporte num só lugar
+            </p>
             
             <a href="https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d" target="_blank" class="btn-desbloquear">
                 WHATSAPP CANAL
             </a>
             
             <a href="https://www.facebook.com/share/1KYt8erXZp/" target="_blank" class="btn-desbloquear btn-secundario">
-                FACEBOOK
-            </a>
-            
-            <a href="https://instagram.com/seuinstagram" target="_blank" class="btn-desbloquear btn-secundario">
-                INSTAGRAM
+                FACEBOOK SUPORTE
             </a>
         </div>
     </div>
 
-    <!-- TELA 7: INFORMAÇÕES -->
+    <!-- TELA 8: INFORMAÇÕES -->
     <div id="tela-info" class="tela">
         <div class="topo">
             <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
@@ -254,7 +259,7 @@
         function verificarCodigo() {
             var codigo = document.getElementById('codigoVip').value;
             if(codigo === 'OURO123') {
-                alert('Código correto! ✅\n\nPalpites VIP desbloqueados');
+                abrirTela('tela-jogos-vip-baixa');
             } else {
                 alert('Código inválido! ❌\n\nTeste com: OURO123');
             }
@@ -263,11 +268,11 @@
         function verificarCodigoAlta() {
             var codigo = document.getElementById('codigoVipAlta').value;
             if(codigo === 'OURO456') {
-                alert('Código correto! ✅\n\nOdds altas desbloqueadas');
+                abrirTela('tela-jogos-vip-alta');
             } else {
                 alert('Código inválido! ❌\n\nTeste com: OURO456');
             }
         }
     </script>
 </body>
-</html>
+                </html>
