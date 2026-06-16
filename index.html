@@ -49,6 +49,7 @@
             font-weight:bold; font-size:16px; cursor:pointer; margin-bottom:15px; text-decoration:none; display:block;
         }
         .btn-secundario { background:#2A2A3E; color:#FFD700; }
+        .btn-vip { background:linear-gradient(135deg, #FFD700, #FF8C00); color:#000; }
         .aviso {
             background: #1A1A2E; border: 1px solid #FFA500; border-radius: 10px;
             padding: 12px; font-size: 11px; color: #FFA500; text-align: center; margin-top: 20px;
@@ -204,7 +205,7 @@
         </div>
     </div>
 
-    <!-- TELA 7: REDES SOCIAIS - LINKS CORRIGIDOS -->
+    <!-- TELA 7: REDES SOCIAIS - AGORA COM VIP WHATSAPP -->
     <div id="tela-redes" class="tela">
         <div class="topo">
             <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
@@ -218,13 +219,17 @@
                 Redes sociais e suporte num só lugar
             </p>
             
-            <a href="https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d" target="_blank" class="btn-desbloquear">
+            <button onclick="abrirWhatsAppCanal()" class="btn-desbloquear">
                 WHATSAPP CANAL
-            </a>
+            </button>
             
-            <a href="https://www.facebook.com/share/1KYt8erXZp/" target="_blank" class="btn-desbloquear btn-secundario">
+            <button onclick="abrirWhatsAppVip()" class="btn-desbloquear btn-vip">
+                👑 VIP WHATSAPP - FALAR COM ROSS
+            </button>
+            
+            <button onclick="abrirFacebook()" class="btn-desbloquear btn-secundario">
                 FACEBOOK SUPORTE
-            </a>
+            </button>
         </div>
     </div>
 
@@ -272,6 +277,19 @@
             } else {
                 alert('Código inválido! ❌\n\nTeste com: OURO456');
             }
+        }
+
+        // FUNÇÕES PRA ABRIR LINKS NO KODULAR
+        function abrirWhatsAppCanal() {
+            window.open('https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d', '_system');
+        }
+        
+        function abrirWhatsAppVip() {
+            window.open('https://wa.me/message/2EPEENB2KKE3K1', '_system');
+        }
+        
+        function abrirFacebook() {
+            window.open('https://www.facebook.com/share/1KYt8erXZp/', '_system');
         }
     </script>
 </body>
