@@ -75,6 +75,7 @@
             cursor:pointer; margin-top:15px; text-decoration:none; display:block;
         }
         .boletim-titulo { color: #FFD700; font-size: 16px; margin-bottom: 10px; font-weight: bold; }
+        .vazio { color: #888; text-align: center; padding: 40px 20px; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -210,44 +211,13 @@
         </div>
     </div>
 
-    <!-- TELA 4: JOGOS VIP ODD BAIXA -->
+    <!-- TELA 4: JOGOS VIP ODD BAIXA - VAZIA -->
     <div id="tela-jogos-vip-baixa" class="tela">
         <div class="topo">
             <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
             <h1>VIP ODD BAIXA <span class="tag-vip">VIP</span></h1>
         </div>
-
-        <div class="boletim-titulo">BOLETIM 1</div>
-        <div class="jogo">
-            <div class="liga"><span>Dominica • Premiere League</span><span>19/06/2026, 00:00</span><span class="odd">2.75</span></div>
-            <div class="times"><span>Harlem United FC</span><span class="vs">VS</span><span>We United Dominica</span></div>
-            <div class="palpite">⚽ Dupla Chance: 12</div>
-            <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
-            <div class="palpite">⚽ Total de golos no jogo: Mais de (3.5)</div>
-            <div class="palpite">⚽ Total de Golos na 1ª Parte: Mais de (1.5)</div>
-            <div class="id-fixa">Elephantbet online 🆔7831828</div>
-        </div>
-
-        <div style="height: 20px;"></div>
-
-        <div class="boletim-titulo">BOLETIM 2</div>
-        <div class="jogo">
-            <div class="liga"><span>Múltipla</span><span>19/06/2026</span><span class="odd">2.67 / 2.39</span></div>
-            <div class="times"><span>Fjolnir</span><span class="vs">VS</span><span>Hviti Riddarinn</span></div>
-            <div class="palpite">⚽ Total de Golos na 1ª Parte: Mais de (1.5)</div>
-            <div class="palpite">⚽ Dupla Chance: 12</div>
-            <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
-            <div class="palpite">⚽ Total de golos no jogo: Mais de (3.5)</div>
-        </div>
-        <div class="jogo">
-            <div class="liga"><span>Islândia • 3. Deild</span><span>19/06/2026, 20:15</span></div>
-            <div class="times"><span>KA Asvellir</span><span class="vs">VS</span><span>Arbaer</span></div>
-            <div class="palpite">⚽ Dupla Chance: 12</div>
-            <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
-            <div class="palpite">⚽ Total de golos no jogo: Mais de (3.5)</div>
-            <div class="palpite">⚽ Total de Golos na 1ª Parte: Mais de (1.5)</div>
-            <div class="id-fixa">Elephantbet online 🆔7832429</div>
-        </div>
+        <div class="vazio">Nenhum jogo VIP adicionado ainda. 👑</div>
     </div>
 
     <!-- TELA 5: ACESSO VIP ODD ALTA -->
@@ -269,24 +239,13 @@
         </div>
     </div>
 
-    <!-- TELA 6: JOGOS VIP ODD ALTA -->
+    <!-- TELA 6: JOGOS VIP ODD ALTA - VAZIA -->
     <div id="tela-jogos-vip-alta" class="tela">
         <div class="topo">
             <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
             <h1>VIP ODD ALTA <span class="tag-vip">VIP</span></h1>
         </div>
-
-        <div class="jogo">
-            <div class="liga"><span>CHAMPIONS LEAGUE</span><span>24/06/2025</span></div>
-            <div class="times"><span>Ajax</span><span class="vs">VS</span><span>Benfica</span></div>
-            <div class="palpite">💎 Placar Exato 2-1 - Odd 8.50</div>
-        </div>
-
-        <div class="jogo">
-            <div class="liga"><span>EUROPA LEAGUE</span><span>25/06/2025</span></div>
-            <div class="times"><span>Roma</span><span class="vs">VS</span><span>Sevilla</span></div>
-            <div class="palpite">💎 Empate HT/FT - Odd 12.00</div>
-        </div>
+        <div class="vazio">Nenhum jogo VIP adicionado ainda. 📈</div>
     </div>
 
     <!-- TELA 7: REDES SOCIAIS -->
@@ -404,3 +363,22 @@
             window.open('https://wa.me/message/2EPEENB2KKE3K1', '_system');
         }
         
+        function abrirFacebook() {
+            window.open('https://www.facebook.com/share/1KYt8erXZp/', '_system');
+        }
+
+        function partilharApp() {
+            var texto = "🔥 APP PALPITE OURO 👑\n\nPalpites grátis todo dia + VIP com 8 anos de análise!\n\nBaixa aqui: https://www.mediafire.com/file/brii6nys1ugy981/PalpitesOuro24.apk/file\n\nEntra no canal: https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d";
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Palpite Ouro',
+                    text: texto
+                });
+            } else {
+                window.open('https://wa.me/?text=' + encodeURIComponent(texto), '_system');
+            }
+        }
+    </script>
+</body>
+            </html>
