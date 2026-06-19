@@ -5,77 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palpite Ouro</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0A0A0F; font-family: 'Arial', sans-serif; color: #fff; padding: 20px; }
-        .tela { display: none; }
-        .tela.ativa { display: block; animation: fadeIn 0.3s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .header { text-align: center; margin-bottom: 30px; }
-        .logo-emoji { font-size: 70px; margin: 0 auto 15px; display: block; }
-        h1 { color: #FFD700; font-size: 24px; margin-bottom: 5px; }
-        .versao { color: #888; font-size: 12px; }
-        .menu { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
-        .card {
-            background: #1A1A2E; border-radius: 15px; padding: 20px; text-align: center;
-            border: 1px solid #2A2A3E; cursor: pointer; transition: 0.3s;
-        }
-        .card:active { transform: scale(0.95); background: #FFD700; }
-        .card:active h3, .card:active p { color: #000; }
-        .card-icon {
-            width: 45px; height: 45px; background: linear-gradient(135deg, #FFD700, #FF8C00);
-            border-radius: 12px; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;
-        }
-        .card h3 { font-size: 14px; margin-bottom: 5px; color: #fff; }
-        .card p { font-size: 11px; color: #888; }
-        .topo { display: flex; align-items: center; margin-bottom: 20px; }
-        .voltar {
-            background: #FFD700; color: #000; border: none; padding: 8px 12px;
-            border-radius: 8px; font-weight: bold; margin-right: 15px; cursor: pointer;
-        }
-        .jogo { background: #1A1A2E; border-radius: 15px; padding: 15px; margin-bottom: 15px; border: 1px solid #2A2A3E; }
-        .liga { display: flex; justify-content: space-between; font-size: 11px; color: #888; margin-bottom: 10px; }
-        .times { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-weight: bold; }
-        .vs { background: #FFD700; color: #000; padding: 3px 8px; border-radius: 5px; font-size: 12px; }
-        .palpite { background: #2A2A3E; border-radius: 8px; padding: 10px; text-align: center; color: #FFD700; font-size: 14px; margin-bottom: 8px; }
-        .palpite:last-child { margin-bottom: 0; }
-        .box-vip { background:#1A1A2E; border-radius:15px; padding:25px; text-align:center; margin-top:40px; }
-        .input-codigo {
-            width:100%; padding:15px; border-radius:10px; border:1px solid #2A2A3E;
-            background:#0A0A0F; color:#fff; text-align:center; font-size:16px; margin-bottom:15px;
-        }
-        .btn-desbloquear {
-            width:100%; padding:15px; border-radius:10px; border:none;
-            background:linear-gradient(135deg, #FFD700, #FF8C00); color:#000;
-            font-weight:bold; font-size:16px; cursor:pointer; margin-bottom:15px; text-decoration:none; display:block;
-        }
-        .btn-secundario { background:#2A2A3E; color:#FFD700; }
-        .btn-vip { background:linear-gradient(135deg, #FFD700, #FF8C00); color:#000; }
-        .aviso {
-            background: #1A1A2E; border: 1px solid #FFA500; border-radius: 10px;
-            padding: 12px; font-size: 11px; color: #FFA500; text-align: center; margin-top: 20px;
-        }
-        .tag-vip {
-            background: linear-gradient(135deg, #FFD700, #FF8C00); color: #000; 
-            font-size: 10px; padding: 3px 8px; border-radius: 5px; font-weight: bold; margin-left: 10px;
-        }
-        .id-fixa {
-            background: #FFD700; color: #000; text-align: center; padding: 8px; 
-            border-radius: 8px; font-weight: bold; font-size: 12px; margin-top: 10px;
-        }
-        .odd { color: #FFD700; font-weight: bold; }
-        .dica-item {
-            background: #2A2A3E; border-radius: 8px; padding: 12px; margin-bottom: 10px;
-            border-left: 3px solid #FFD700; text-align: left;
-        }
-        .dica-titulo { color: #FFD700; font-weight: bold; font-size: 13px; margin-bottom: 5px; }
-        .dica-texto { color: #ccc; font-size: 12px; line-height: 1.5; }
-        .btn-share {
-            width:100%; padding:15px; border-radius:10px; border:1px solid #FFD700;
-            background:transparent; color:#FFD700; font-weight:bold; font-size:14px; 
-            cursor:pointer; margin-top:15px; text-decoration:none; display:block;
-        }
-        .boletim-titulo { color: #FFD700; font-size: 16px; margin-bottom: 10px; font-weight: bold; }
-        .vazio { color: #888; text-align: center; padding: 40px 20px; font-size: 14px; }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#0A0A0F;font-family:Arial,sans-serif;color:#fff;padding:20px}
+        .tela{display:none}
+        .tela.ativa{display:block}
+        .header{text-align:center;margin-bottom:30px}
+        .logo-emoji{font-size:70px;margin:0 auto 15px;display:block}
+        h1{color:#FFD700;font-size:24px;margin-bottom:5px}
+        .versao{color:#888;font-size:12px}
+        .menu{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}
+        .card{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;border:1px solid #2A2A3E;cursor:pointer}
+        .card:active{transform:scale(0.95);background:#FFD700}
+        .card:active h3,.card:active p{color:#000}
+        .card-icon{width:45px;height:45px;background:linear-gradient(135deg,#FFD700,#FF8C00);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+        .card h3{font-size:14px;margin-bottom:5px;color:#fff}
+        .card p{font-size:11px;color:#888}
+        .topo{display:flex;align-items:center;margin-bottom:20px}
+        .voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}
+        .jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:1px solid #2A2A3E}
+        .liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:10px}
+        .times{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-weight:bold}
+        .vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:12px}
+        .palpite{background:#2A2A3E;border-radius:8px;padding:10px;text-align:center;color:#FFD700;font-size:14px;margin-bottom:8px}
+        .box-vip{background:#1A1A2E;border-radius:15px;padding:25px;text-align:center;margin-top:40px}
+        .input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0A0F;color:#fff;text-align:center;font-size:16px;margin-bottom:15px}
+        .btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;font-size:16px;cursor:pointer;margin-bottom:15px}
+        .btn-secundario{background:#2A2A3E;color:#FFD700}
+        .aviso{background:#1A1A2E;border:1px solid #FFA500;border-radius:10px;padding:12px;font-size:11px;color:#FFA500;text-align:center;margin-top:20px}
+        .tag-vip{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;margin-left:10px}
+        .id-fixa{background:#FFD700;color:#000;text-align:center;padding:8px;border-radius:8px;font-weight:bold;font-size:12px;margin-top:10px}
+        .odd{color:#FFD700;font-weight:bold}
+        .boletim-titulo{color:#FFD700;font-size:16px;margin-bottom:10px;font-weight:bold}
+        .info-resumo{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;line-height:2;font-size:13px}
+        .btn-share{width:100%;padding:15px;border-radius:10px;border:1px solid #FFD700;background:transparent;color:#FFD700;font-weight:bold;font-size:14px;cursor:pointer;margin-top:15px}
     </style>
 </head>
 <body>
@@ -108,20 +70,18 @@
             
             <div class="card" onclick="abrirTela('tela-info')">
                 <div class="card-icon">🔔</div>
-                <h3>INFORMAÇÕES GERAIS</h3>
-                <p>Avisos e notificações</p>
+                <h3>INFO</h3>
+                <p>Regras + Partilhar</p>
             </div>
             
             <div class="card" onclick="abrirTela('tela-redes')">
                 <div class="card-icon">🔗</div>
                 <h3>REDES SOCIAIS</h3>
-                <p>Siga-nos e fale connosco</p>
+                <p>Fale connosco</p>
             </div>
         </div>
         
-        <div class="aviso">
-            ⚠️ Após a compra do código VIP, utilize as apostas imediatamente.
-        </div>
+        <div class="aviso">⚠️ Use as apostas VIP imediatamente após comprar.</div>
     </div>
 
     <!-- TELA 2: APOSTAS GRATUITAS -->
@@ -144,7 +104,7 @@
             <div class="id-fixa">Elephantbet online 🆔7825171</div>
         </div>
 
-        <div style="height: 20px;"></div>
+        <div style="height:20px"></div>
 
         <div class="boletim-titulo">BOLETIM 2</div>
         <div class="jogo">
@@ -159,7 +119,7 @@
             <div class="id-fixa">Elephantbet online 🆔7827168</div>
         </div>
 
-        <div style="height: 20px;"></div>
+        <div style="height:20px"></div>
 
         <div class="boletim-titulo">BOLETIM 3</div>
         <div class="jogo">
@@ -174,7 +134,7 @@
             <div class="id-fixa">Elephantbet online 🆔7830107</div>
         </div>
 
-        <div style="height: 20px;"></div>
+        <div style="height:20px"></div>
 
         <div class="boletim-titulo">BOLETIM 4</div>
         <div class="jogo">
@@ -196,28 +156,70 @@
         </div>
         
         <div class="box-vip">
-            <div style="font-size:50px; margin-bottom:15px;">👑</div>
-            <h2 style="color:#FFD700; margin-bottom:10px;">CONTEÚDO EXCLUSIVO</h2>
-            <p style="color:#888; font-size:14px; margin-bottom:25px;">
-                Insira o código de desbloqueio para acessar os palpites VIP
-            </p>
+            <div style="font-size:50px;margin-bottom:15px">👑</div>
+            <h2 style="color:#FFD700;margin-bottom:10px">CONTEÚDO EXCLUSIVO</h2>
+            <p style="color:#888;font-size:14px;margin-bottom:25px">Insira o código de desbloqueio</p>
             
             <input id="codigoVip" type="text" placeholder="Digite seu código" class="input-codigo">
             <button onclick="verificarCodigo()" class="btn-desbloquear">DESBLOQUEAR</button>
             
-            <p style="color:#888; font-size:12px; margin-top:20px;">
-                Não tem código? <span style="color:#FFD700; text-decoration:underline;" onclick="abrirTela('tela-redes')">Fale com o Suporte</span>
+            <p style="color:#888;font-size:12px;margin-top:20px">
+                Não tem código? <span style="color:#FFD700;text-decoration:underline" onclick="abrirTela('tela-redes')">Fale com o Suporte</span>
             </p>
         </div>
     </div>
 
-    <!-- TELA 4: JOGOS VIP ODD BAIXA - VAZIA -->
+    <!-- TELA 4: JOGOS VIP ODD BAIXA - COM OS 3 BOLETINS -->
     <div id="tela-jogos-vip-baixa" class="tela">
         <div class="topo">
             <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
             <h1>VIP ODD BAIXA <span class="tag-vip">VIP</span></h1>
         </div>
-        <div class="vazio">Nenhum jogo VIP adicionado ainda. 👑</div>
+
+        <div class="boletim-titulo">BOLETIM 1</div>
+        <div class="jogo">
+            <div class="liga"><span>Dominica • Premiere League</span><span>19/06/2026, 00:00</span><span class="odd">2.75</span></div>
+            <div class="times"><span>Harlem United FC</span><span class="vs">VS</span><span>We United Dominica</span></div>
+            <div class="palpite">⚽ Dupla Chance: 12</div>
+            <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
+            <div class="palpite">⚽ Total de golos no jogo: Mais de (3.5)</div>
+            <div class="palpite">⚽ Total de Golos na 1ª Parte: Mais de (1.5)</div>
+            <div class="id-fixa">Elephantbet online 🆔7831828</div>
+        </div>
+
+        <div style="height:20px"></div>
+
+        <div class="boletim-titulo">BOLETIM 2</div>
+        <div class="jogo">
+            <div class="liga"><span>Múltipla</span><span>19/06/2026</span><span class="odd">2.67 / 2.39</span></div>
+            <div class="times"><span>Fjolnir</span><span class="vs">VS</span><span>Hviti Riddarinn</span></div>
+            <div class="palpite">⚽ Total de Golos na 1ª Parte: Mais de (1.5)</div>
+            <div class="palpite">⚽ Dupla Chance: 12</div>
+            <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
+            <div class="palpite">⚽ Total de golos no jogo: Mais de (3.5)</div>
+        </div>
+        <div class="jogo">
+            <div class="liga"><span>Islândia • 3. Deild</span><span>19/06/2026, 20:15</span></div>
+            <div class="times"><span>KA Asvellir</span><span class="vs">VS</span><span>Arbaer</span></div>
+            <div class="palpite">⚽ Dupla Chance: 12</div>
+            <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
+            <div class="palpite">⚽ Total de golos no jogo: Mais de (3.5)</div>
+            <div class="palpite">⚽ Total de Golos na 1ª Parte: Mais de (1.5)</div>
+            <div class="id-fixa">Elephantbet online 🆔7832429</div>
+        </div>
+
+        <div style="height:20px"></div>
+
+        <div class="boletim-titulo">BOLETIM 3</div>
+        <div class="jogo">
+            <div class="liga"><span>Austrália • NPL Queensland</span><span>19/06/2026, 10:30</span><span class="odd">3.77</span></div>
+            <div class="times"><span>Gold Coast Knights SC</span><span class="vs">VS</span><span>Magic United TFA</span></div>
+            <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
+            <div class="palpite">⚽ Total de golos no jogo: Mais de (3.5)</div>
+            <div class="palpite">⚽ Total de golos do Magic United TFA: Mais de (1.5)</div>
+            <div class="palpite">⚽ Dupla Chance: 12</div>
+            <div class="id-fixa">Elephantbet online 🆔7949678</div>
+        </div>
     </div>
 
     <!-- TELA 5: ACESSO VIP ODD ALTA -->
@@ -228,11 +230,9 @@
         </div>
         
         <div class="box-vip">
-            <div style="font-size:50px; margin-bottom:15px;">📈</div>
-            <h2 style="color:#FFD700; margin-bottom:10px;">ODDS ALTAS</h2>
-            <p style="color:#888; font-size:14px; margin-bottom:25px;">
-                Insira o código de desbloqueio para palpites com odds altas
-            </p>
+            <div style="font-size:50px;margin-bottom:15px">📈</div>
+            <h2 style="color:#FFD700;margin-bottom:10px">ODDS ALTAS</h2>
+            <p style="color:#888;font-size:14px;margin-bottom:25px">Insira o código de desbloqueio</p>
             
             <input id="codigoVipAlta" type="text" placeholder="Digite seu código" class="input-codigo">
             <button onclick="verificarCodigoAlta()" class="btn-desbloquear">DESBLOQUEAR</button>
@@ -256,76 +256,40 @@
         </div>
         
         <div class="box-vip">
-            <div style="font-size:50px; margin-bottom:15px;">🔗</div>
-            <h2 style="color:#FFD700; margin-bottom:10px;">SIGA-NOS E FALE CONNOSCO</h2>
-            <p style="color:#888; font-size:14px; margin-bottom:25px;">
-                Redes sociais e suporte num só lugar
-            </p>
+            <div style="font-size:50px;margin-bottom:15px">🔗</div>
+            <h2 style="color:#FFD700;margin-bottom:10px">SIGA-NOS E FALE CONNOSCO</h2>
+            <p style="color:#888;font-size:14px;margin-bottom:25px">Redes sociais e suporte</p>
             
-            <button onclick="abrirWhatsAppCanal()" class="btn-desbloquear">
-                WHATSAPP CANAL
-            </button>
+            <button onclick="abrirWhatsAppCanal()" class="btn-desbloquear">WHATSAPP CANAL</button>
             
-            <button onclick="abrirWhatsAppVip()" class="btn-desbloquear btn-vip">
-                👑 VIP WHATSAPP - FALAR COM ROSS
-            </button>
+            <button onclick="abrirWhatsAppVip()" class="btn-desbloquear btn-vip">👑 VIP WHATSAPP - FALAR COM ROSS</button>
             
-            <button onclick="abrirFacebook()" class="btn-desbloquear btn-secundario">
-                FACEBOOK SUPORTE
-            </button>
+            <button onclick="abrirFacebook()" class="btn-desbloquear btn-secundario">FACEBOOK SUPORTE</button>
         </div>
     </div>
 
-    <!-- TELA 8: INFORMAÇÕES GERAIS -->
+    <!-- TELA 8: INFORMAÇÕES GERAIS - RESUMIDA + PARTILHAR -->
     <div id="tela-info" class="tela">
         <div class="topo">
             <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
-            <h1>INFORMAÇÕES GERAIS</h1>
+            <h1>INFO</h1>
         </div>
         
-        <div class="jogo">
-            <h3 style="color:#FFD700; margin-bottom:15px; text-align:center;">🔔 FAMÍLIA PALPITE OURO</h3>
+        <div class="info-resumo">
+            <div style="font-size:40px;margin-bottom:15px">👑</div>
+            <b style="color:#FFD700">PALPITE OURO</b><br><br>
             
-            <div class="dica-item">
-                <div class="dica-titulo">👑 BEM-VINDO AO TIME DOS VENCEDORES</div>
-                <div class="dica-texto">Aqui não tem achismo. São 8 anos analisando padrão de jogo, odd e mercado. Quem me segue sabe: disciplina bate sorte.</div>
-            </div>
-
-            <div class="dica-item">
-                <div class="dica-titulo">🎁 GRÁTIS TODO DIA ÀS 10H</div>
-                <div class="dica-texto">Palpites gratuitos atualizados diariamente. Entra, copia e cola. Sem frescura. Se bater, volta aqui e agradece.</div>
-            </div>
-
-            <div class="dica-item">
-                <div class="dica-titulo">💎 VIP = OUTRO NÍVEL</div>
-                <div class="dica-texto">Código VIP dura 24h. São jogos que eu mesmo meto dinheiro. Quando libero, é pra usar na hora. Odd baixa pra banca, odd alta pra multiplicar.</div>
-            </div>
-
-            <div class="dica-item">
-                <div class="dica-titulo">🧠 REGRA DE OURO #1</div>
-                <div class="dica-texto">Nunca aposte mais de 5% da banca num bilhete. Gestão é o que separa amador de profissional. Quem quebra banca não volta.</div>
-            </div>
-
-            <div class="dica-item">
-                <div class="dica-titulo">🧠 REGRA DE OURO #2</div>
-                <div class="dica-texto">Red é normal. Até eu levo red. O segredo é a constância. No fim do mês, green cobre tudo. Confia no processo.</div>
-            </div>
-
-            <div class="dica-item">
-                <div class="dica-titulo">🧠 REGRA DE OURO #3</div>
-                <div class="dica-texto">Não inventa. Se eu mandei "Mais de 2.5", não mete "Mais de 3.5" pra ganhar mais. Respeita a análise.</div>
-            </div>
-
-            <button onclick="partilharApp()" class="btn-share">
-                📲 PARTILHA O APP COM A TUA BANDA
-            </button>
-
-            <p style="color:#888; font-size:11px; text-align:center; margin-top:20px; line-height:1.5;">
-                ⚠️ Jogue com responsabilidade. Apostas são para maiores de 18 anos.<br>
-                Dúvidas? Fala comigo no WhatsApp VIP.<br><br>
-                Boa sorte e bons greens! 🍀👑
-            </p>
+            🎁 <b>GRÁTIS:</b> Todo dia às 10h<br>
+            👑 <b>VIP:</b> Código dura 24h<br>
+            🧠 <b>REGRA:</b> Nunca aposte +5% da banca<br>
+            ⚠️ <b>+18:</b> Jogue com responsabilidade<br><br>
+            
+            <span style="color:#FFD700">Dúvidas? WhatsApp VIP</span>
         </div>
+
+        <button onclick="partilharApp()" class="btn-share">
+            📲 PARTILHA NO WHATSAPP
+        </button>
     </div>
 
     <script>
@@ -381,4 +345,4 @@
         }
     </script>
 </body>
-    </html>
+                                                                  </html>
