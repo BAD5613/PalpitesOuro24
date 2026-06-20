@@ -1,327 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palpite Ouro</title>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{background:#0A0A0F;font-family:Arial,sans-serif;color:#fff;padding:20px}
-        .tela{display:none}
-        .tela.ativa{display:block}
-        .header{text-align:center;margin-bottom:30px}
-        .logo-emoji{font-size:70px;margin:0 auto 15px;display:block}
-        h1{color:#FFD700;font-size:24px;margin-bottom:5px}
-        .versao{color:#888;font-size:12px}
-        .menu{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}
-        .card{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;border:1px solid #2A2A3E;cursor:pointer}
-        .card:active{transform:scale(0.95);background:#FFD700}
-        .card:active h3,.card:active p{color:#000}
-        .card-icon{width:45px;height:45px;background:linear-gradient(135deg,#FFD700,#FF8C00);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px}
-        .card h3{font-size:14px;margin-bottom:5px;color:#fff}
-        .card p{font-size:11px;color:#888}
-        .topo{display:flex;align-items:center;margin-bottom:20px}
-        .voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}
-        .jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:1px solid #2A2A3E}
-        .liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:10px}
-        .times{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-weight:bold}
-        .vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:12px}
-        .palpite{background:#2A2A3E;border-radius:8px;padding:10px;text-align:center;color:#FFD700;font-size:14px;margin-bottom:8px}
-        .box-vip{background:#1A1A2E;border-radius:15px;padding:25px;text-align:center;margin-top:40px}
-        .input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0A0F;color:#fff;text-align:center;font-size:16px;margin-bottom:15px}
-        .btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;font-size:16px;cursor:pointer;margin-bottom:15px}
-        .btn-secundario{background:#2A2A3E;color:#FFD700}
-        .aviso{background:#1A1A2E;border:1px solid #FFA500;border-radius:10px;padding:12px;font-size:11px;color:#FFA500;text-align:center;margin-top:20px}
-        .tag-vip{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;margin-left:10px}
-        .id-fixa{background:#FFD700;color:#000;text-align:center;padding:8px;border-radius:8px;font-weight:bold;font-size:12px;margin-top:10px}
-        .odd{color:#FFD700;font-weight:bold}
-        .boletim-titulo{color:#FFD700;font-size:16px;margin-bottom:10px;font-weight:bold}
-        .info-resumo{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;line-height:2;font-size:13px}
-        .btn-share{width:100%;padding:15px;border-radius:10px;border:1px solid #FFD700;background:transparent;color:#FFD700;font-weight:bold;font-size:14px;cursor:pointer;margin-top:15px}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palpite Ouro</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0A0A0F;font-family:Arial,sans-serif;color:#fff;padding:20px}
+.tela{display:none}.tela.ativa{display:block}
+.header{text-align:center;margin-bottom:30px}
+.logo-emoji{font-size:70px;margin:0 auto 15px;display:block}
+h1{color:#FFD700;font-size:24px;margin-bottom:5px}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}
+.card{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;border:1px solid #2A2A3E;cursor:pointer}
+.card:active{transform:scale(0.95);background:#FFD700}
+.card:active h3,.card:active p{color:#000}
+.card-icon{width:45px;height:45px;background:linear-gradient(135deg,#FFD700,#FF8C00);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.card h3{font-size:14px;margin-bottom:5px;color:#fff}
+.card p{font-size:11px;color:#888}
+.topo{display:flex;align-items:center;margin-bottom:20px}
+.voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}
+.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:1px solid #2A2A3E}
+.liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:10px}
+.times{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-weight:bold}
+.vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:12px}
+.palpite{background:#2A2A3E;border-radius:8px;padding:10px;text-align:center;color:#FFD700;font-size:14px;margin-bottom:8px}
+.box-vip{background:#1A1A2E;border-radius:15px;padding:25px;text-align:center;margin-top:40px}
+.input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0A0F;color:#fff;text-align:center;font-size:16px;margin-bottom:15px}
+.btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;font-size:16px;cursor:pointer;margin-bottom:15px}
+.btn-secundario{background:#2A2A3E;color:#FFD700}
+.aviso{background:#1A1A2E;border:1px solid #FFA500;border-radius:10px;padding:12px;font-size:11px;color:#FFA500;text-align:center;margin-top:20px}
+.tag-vip{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;margin-left:10px}
+.id-fixa{background:#FFD700;color:#000;text-align:center;padding:8px;border-radius:8px;font-weight:bold;font-size:12px;margin-top:10px}
+.odd{color:#FFD700;font-weight:bold}
+.boletim-titulo{color:#FFD700;font-size:16px;margin-bottom:10px;font-weight:bold}
+.badge-hoje{background:#00FF00;color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:inline-block;margin-bottom:15px}
+.btn-share{width:100%;padding:15px;border-radius:10px;border:1px solid #FFD700;background:transparent;color:#FFD700;font-weight:bold;font-size:14px;cursor:pointer;margin-top:15px}
+.info-resumo{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;line-height:2;font-size:13px}
+</style>
 </head>
 <body>
-    <!-- TELA 1: MENU PRINCIPAL -->
-    <div id="tela-menu" class="tela ativa">
-        <div class="header">
-            <div class="logo-emoji">👑</div>
-            <h1>PALPITE OURO</h1>
-            <p class="versao">VERSÃO 1.0</p>
-        </div>
-        
-        <div class="menu">
-            <div class="card" onclick="abrirTela('tela-gratuitas')">
-                <div class="card-icon">🎁</div>
-                <h3>APOSTAS GRATUITAS</h3>
-                <p>Palpites grátis</p>
-            </div>
-            
-            <div class="card" onclick="abrirTela('tela-vip')">
-                <div class="card-icon">👑</div>
-                <h3>VIP ODD BAIXA</h3>
-                <p>Palpites exclusivos</p>
-            </div>
-            
-            <div class="card" onclick="abrirTela('tela-vip-alta')">
-                <div class="card-icon">📈</div>
-                <h3>VIP ODD ALTA</h3>
-                <p>Altas odds VIP</p>
-            </div>
-            
-            <div class="card" onclick="abrirTela('tela-info')">
-                <div class="card-icon">🔔</div>
-                <h3>INFO</h3>
-                <p>Regras + Partilhar</p>
-            </div>
-            
-            <div class="card" onclick="abrirTela('tela-redes')">
-                <div class="card-icon">🔗</div>
-                <h3>REDES SOCIAIS</h3>
-                <p>Fale connosco</p>
-            </div>
-        </div>
-        
-        <div class="aviso">⚠️ Use as apostas VIP imediatamente após comprar.</div>
-    </div>
+<div id="tela-menu" class="tela ativa">
+<div class="header"><div class="logo-emoji">👑</div><h1>PALPITE OURO</h1></div>
+<div class="menu">
+<div class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>4 fixas de hoje</p></div>
+<div class="card" onclick="abrirTela('tela-vip')"><div class="card-icon">👑</div><h3>VIP ODD BAIXA</h3><p>4 boletins</p></div>
+<div class="card" onclick="abrirTela('tela-vip-alta')"><div class="card-icon">📈</div><h3>VIP ODD ALTA</h3><p>3 boletins</p></div>
+<div class="card" onclick="abrirTela('tela-redes')"><div class="card-icon">🔗</div><h3>REDES SOCIAIS</h3><p>Fale connosco</p></div>
+<div class="card" onclick="abrirTela('tela-info')"><div class="card-icon">🔔</div><h3>INFO</h3><p>Regras + Partilhar</p></div>
+</div>
+<div class="aviso">⚠️ Use as apostas VIP imediatamente após comprar.</div>
+</div>
 
-    <!-- TELA 2: APOSTAS GRATUITAS -->
-    <div id="tela-gratuitas" class="tela">
-        <div class="topo">
-            <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
-            <h1>APOSTAS GRATUITAS</h1>
-        </div>
+<div id="tela-gratuitas" class="tela">
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>GRÁTIS HOJE 20/06</h1></div>
+<span class="badge-hoje">🔥 FIXAS DE HOJE</span>
 
-        <div class="boletim-titulo">BOLETIM 1</div>
-        <div class="jogo">
-            <div class="liga"><span>EUA • USL League Two</span><span>20/06/2026, 00:00</span><span class="odd">3.10</span></div>
-            <div class="times"><span>Tobacco Road FC</span><span class="vs">VS</span><span>Asheville City SC</span></div>
-            <div class="palpite">⚽ Dupla Chance: 12</div>
-            <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
-            <div class="palpite">⚽ Total de golos no jogo: Mais de (3.5)</div>
-            <div class="palpite">⚽ Total de Golos na 1ª Parte: Mais de (1.5)</div>
-            <div class="id-fixa">Elephantbet online 🆔8137236</div>
-        </div>
+<div class="boletim-titulo">FIXA GRÁTIS #1 - ODD 10.50</div>
+<div class="jogo"><div class="liga"><span>Noruega • Quarta Divisão</span><span>20/06, 12:00</span><span class="odd">10.50</span></div><div class="times"><span>Volda TI</span><span class="vs">VS</span><span>Byasen IL</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Volda TI: Mais de 1.5</div></div>
 
-        <div style="height:20px"></div>
+<div class="boletim-titulo">FIXA GRÁTIS #2 - ODD 9.80</div>
+<div class="jogo"><div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 13:30</span><span class="odd">9.80</span></div><div class="times"><span>Tromsdalen UIL</span><span class="vs">VS</span><span>Stjordals Blink</span></div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Tromsdalen: Mais de 1.5</div></div>
 
-        <div class="boletim-titulo">BOLETIM 2</div>
-        <div class="jogo">
-            <div class="liga"><span>EUA • USL League Two</span><span>20/06/2026, 01:00</span><span class="odd">2.99</span></div>
-            <div class="times"><span>AC Houston Sur</span><span class="vs">VS</span><span>Houston FC</span></div>
-            <div class="palpite">⚽ Dupla Chance: 12</div>
-            <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
-            <div class="palpite">⚽ Total de golos no jogo: Mais de (3.5)</div>
-            <div class="palpite">⚽ Total de Golos na 1ª Parte: Mais de (1.5)</div>
-            <div class="id-fixa">Elephantbet online 🆔8137236</div>
-        </div>
+<div class="boletim-titulo">FIXA GRÁTIS #3 - ODD 11.20</div>
+<div class="jogo"><div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 14:00</span><span class="odd">11.20</span></div><div class="times"><span>IL Bjarg</span><span class="vs">VS</span><span>FK Vidar</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ HT/FT: 1/1 ou 2/2</div></div>
 
-        <div style="height:20px"></div>
+<div class="boletim-titulo">FIXA GRÁTIS #4 - ODD 8.90</div>
+<div class="jogo"><div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 13:00</span><span class="odd">8.90</span></div><div class="times"><span>Kjelsas IL</span><span class="vs">VS</span><span>Ullensaker/Kisa</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Kjelsas: Mais de 1.5</div></div>
+</div>
 
-        <div class="boletim-titulo">BOLETIM 3</div>
-        <div class="jogo">
-            <div class="liga"><span>Nova Zelândia • Central League</span><span>20/06/2026, 04:45</span><span class="odd">3.78</span></div>
-            <div class="times"><span>Wellington Olympic AFC</span><span class="vs">VS</span><span>Western Suburbs FC Porirua</span></div>
-            <div class="palpite">⚽ Dupla Chance: 12</div>
-            <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
-            <div class="palpite">⚽ Total de golos no jogo: Mais de (3.5)</div>
-            <div class="palpite">⚽ Total de Golos na 1ª Parte: Mais de (1.5)</div>
-            <div class="id-fixa">Elephantbet online 🆔8137236</div>
-        </div>
-    </div>
+<div id="tela-vip" class="tela">
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>VIP ODD BAIXA</h1></div>
+<div class="box-vip"><div style="font-size:50px;margin-bottom:15px">👑</div><h2 style="color:#FFD700;margin-bottom:10px">CONTEÚDO EXCLUSIVO</h2><input id="codigoVip" type="text" placeholder="Digite seu código" class="input-codigo"><button onclick="verificarCodigo()" class="btn-desbloquear">DESBLOQUEAR</button></div>
+</div>
 
-    <!-- TELA 3: ACESSO VIP ODD BAIXA -->
-    <div id="tela-vip" class="tela">
-        <div class="topo">
-            <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
-            <h1>VIP ODD BAIXA</h1>
-        </div>
-        
-        <div class="box-vip">
-            <div style="font-size:50px;margin-bottom:15px">👑</div>
-            <h2 style="color:#FFD700;margin-bottom:10px">CONTEÚDO EXCLUSIVO</h2>
-            <p style="color:#888;font-size:14px;margin-bottom:25px">Insira o código de desbloqueio</p>
-            
-            <input id="codigoVip" type="text" placeholder="Digite seu código" class="input-codigo">
-            <button onclick="verificarCodigo()" class="btn-desbloquear">DESBLOQUEAR</button>
-            
-            <p style="color:#888;font-size:12px;margin-top:20px">
-                Não tem código? <span style="color:#FFD700;text-decoration:underline" onclick="abrirTela('tela-redes')">Fale com o Suporte</span>
-            </p>
-        </div>
-    </div>
+<div id="tela-jogos-vip-baixa" class="tela">
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>VIP ODD BAIXA <span class="tag-vip">VIP</span></h1></div>
+<span class="badge-hoje">🔥 JOGOS DE HOJE 20/06</span>
+<div class="boletim-titulo">BOLETIM 1</div>
+<div class="jogo"><div class="liga"><span>Noruega • Quarta Divisão</span><span>20/06, 12:00</span><span class="odd">2.62</span></div><div class="times"><span>IL Heming</span><span class="vs">VS</span><span>Gamle Oslo FK</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="id-fixa">Elephantbet online 🆔8287169</div></div>
+<div class="boletim-titulo">BOLETIM 2</div>
+<div class="jogo"><div class="liga"><span>Noruega • Quarta Divisão</span><span>20/06, 14:00</span><span class="odd">2.61</span></div><div class="times"><span>Lyn 1896 FK 2</span><span class="vs">VS</span><span>Lillehammer FK</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="id-fixa">Elephantbet online 🆔8287692</div></div>
+<div class="boletim-titulo">BOLETIM 3</div>
+<div class="jogo"><div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 13:00</span><span class="odd">2.79</span></div><div class="times"><span>Kjelsas IL</span><span class="vs">VS</span><span>Ullensaker/Kisa</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="id-fixa">Elephantbet online 🆔8288056</div></div>
+<div class="boletim-titulo">BOLETIM 4</div>
+<div class="jogo"><div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 14:00</span><span class="odd">2.77</span></div><div class="times"><span>IL Bjarg</span><span class="vs">VS</span><span>FK Vidar</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div></div>
+</div>
 
-    <!-- TELA 4: JOGOS VIP ODD BAIXA - ATUALIZADA COM TEUS IDs -->
-    <div id="tela-jogos-vip-baixa" class="tela">
-        <div class="topo">
-            <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
-            <h1>VIP ODD BAIXA <span class="tag-vip">VIP</span></h1>
-        </div>
+<div id="tela-vip-alta" class="tela">
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>VIP ODD ALTA</h1></div>
+<div class="box-vip"><div style="font-size:50px;margin-bottom:15px">📈</div><h2 style="color:#FFD700;margin-bottom:10px">ODDS ALTAS</h2><input id="codigoVipAlta" type="text" placeholder="Digite seu código" class="input-codigo"><button onclick="verificarCodigoAlta()" class="btn-desbloquear">DESBLOQUEAR</button></div>
+</div>
 
-        <div class="boletim-titulo">BOLETIM 1</div>
-        <div class="jogo">
-            <div class="liga"><span>Mundial de Seleções</span><span>20/06/2026, 01:30</span><span class="odd">1.34</span></div>
-            <div class="times"><span>Brasil</span><span class="vs">VS</span><span>Haiti</span></div>
-            <div class="palpite">⚽ Resultado do Jogo: Brasil</div>
-            <div class="palpite">⚽ Total de Golos da Brasil na 1ª Parte: Mais de (0.5)</div>
-            <div class="palpite">⚽ Total de golos no jogo: Mais de (1.5)</div>
-            <div class="id-fixa">Elephantbet online 🆔8157200</div>
-        </div>
-        <div class="jogo">
-            <div class="liga"><span>Mundial de Seleções</span><span>21/06/2026, 01:00</span><span class="odd">1.23</span></div>
-            <div class="times"><span>Equador</span><span class="vs">VS</span><span>Curaçao</span></div>
-            <div class="palpite">⚽ Total de golos no jogo: Mais de (1.5)</div>
-            <div class="palpite">⚽ Resultado do Jogo: Equador</div>
-            <div class="id-fixa">Elephantbet online 🆔8157200</div>
-        </div>
+<div id="tela-jogos-vip-alta" class="tela">
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>VIP ODD ALTA <span class="tag-vip">VIP</span></h1></div>
+<span class="badge-hoje">🔥 JOGOS DE HOJE 20/06</span>
+<div class="boletim-titulo">BOLETIM 1</div>
+<div class="jogo"><div class="liga"><span>Noruega • Quarta Divisão</span><span>20/06, 12:00</span><span class="odd">5.39</span></div><div class="times"><span>Volda TI</span><span class="vs">VS</span><span>Byasen IL</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Volda TI: Mais de 1.5</div><div class="palpite">⚽ Byasen IL: Mais de 1.5</div><div class="id-fixa">Elephantbet online 🆔8286383</div></div>
+<div class="boletim-titulo">BOLETIM 2</div>
+<div class="jogo"><div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 13:30</span><span class="odd">6.65</span></div><div class="times"><span>Tromsdalen UIL</span><span class="vs">VS</span><span>Stjordals Blink</span></div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Tromsdalen: Mais de 1.5</div><div class="palpite">⚽ Stjordals: Mais de 1.5</div></div>
+<div class="boletim-titulo">BOLETIM 3</div>
+<div class="jogo"><div class="liga"><span>Noruega • Segunda Divisão</span><span>21/06, 15:00</span><span class="odd">7.76</span></div><div class="times"><span>Odds BK</span><span class="vs">VS</span><span>IL Hodd</span></div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ IL Hodd: Mais de 1.5</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Odds BK: Mais de 1.5</div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="id-fixa">Elephantbet online 🆔8289341</div></div>
+</div>
 
-        <div style="height:20px"></div>
+<div id="tela-redes" class="tela">
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>REDES SOCIAIS</h1></div>
+<div class="box-vip">
+<div style="font-size:50px;margin-bottom:15px">🔗</div>
+<h2 style="color:#FFD700;margin-bottom:10px">SIGA-NOS E FALE CONNOSCO</h2>
+<p style="color:#888;font-size:14px;margin-bottom:25px">Redes sociais e suporte</p>
+<button onclick="abrirWhatsAppCanal()" class="btn-desbloquear">WHATSAPP CANAL</button>
+<button onclick="abrirWhatsAppVip()" class="btn-desbloquear">👑 VIP WHATSAPP - FALAR COM ROSS</button>
+<button onclick="abrirFacebook()" class="btn-desbloquear btn-secundario">FACEBOOK SUPORTE</button>
+</div>
+</div>
 
-        <div class="boletim-titulo">BOLETIM 2</div>
-        <div class="jogo">
-            <div class="liga"><span>Mundial de Seleções</span><span>20/06/2026, 04:00</span><span class="odd">3.15</span></div>
-            <div class="times"><span>Turquia</span><span class="vs">VS</span><span>Paraguai</span></div>
-            <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
-            <div class="palpite">⚽ Dupla Chance: 12</div>
-            <div class="palpite">⚽ Total de Golos na 2ª Parte: Mais de (0.5)</div>
-            <div class="palpite">⚽ Total de Golos na 1ª Parte: Mais de (0.5)</div>
-            <div class="id-fixa">Elephantbet online 🆔8156892</div>
-        </div>
+<div id="tela-info" class="tela">
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>INFO</h1></div>
+<div class="info-resumo"><div style="font-size:40px;margin-bottom:15px">👑</div><b style="color:#FFD700">PALPITE OURO</b><br><br>🎁 <b>GRÁTIS:</b> Todo dia às 10h<br>👑 <b>VIP:</b> Código dura 24h<br>🧠 <b>REGRA:</b> Nunca aposte +5% da banca<br>⚠️ <b>+18:</b> Jogue com responsabilidade<br><br><span style="color:#FFD700">Dúvidas? WhatsApp VIP</span></div>
+<button onclick="partilharApp()" class="btn-share">📲 PARTILHA NO WHATSAPP</button>
+</div>
 
-        <div style="height:20px"></div>
-
-        <div class="boletim-titulo">BOLETIM 3</div>
-        <div class="jogo">
-            <div class="liga"><span>Mundial de Seleções</span><span>20/06/2026, 21:00</span><span class="odd">4.70</span></div>
-            <div class="times"><span>Alemanha</span><span class="vs">VS</span><span>Costa do Marfim</span></div>
-            <div class="palpite">⚽ Total de golos do Alemanha: Mais de (0.5)</div>
-            <div class="palpite">⚽ Resultado da 1ª Parte: Alemanha</div>
-            <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
-            <div class="palpite">⚽ Total de golos no jogo: Mais de (3.5)</div>
-            <div class="id-fixa">Elephantbet online 🆔8157427</div>
-        </div>
-    </div>
-
-    <!-- TELA 5: ACESSO VIP ODD ALTA -->
-    <div id="tela-vip-alta" class="tela">
-        <div class="topo">
-            <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
-            <h1>VIP ODD ALTA</h1>
-        </div>
-        
-        <div class="box-vip">
-            <div style="font-size:50px;margin-bottom:15px">📈</div>
-            <h2 style="color:#FFD700;margin-bottom:10px">ODDS ALTAS</h2>
-            <p style="color:#888;font-size:14px;margin-bottom:25px">Insira o código de desbloqueio</p>
-            
-            <input id="codigoVipAlta" type="text" placeholder="Digite seu código" class="input-codigo">
-            <button onclick="verificarCodigoAlta()" class="btn-desbloquear">DESBLOQUEAR</button>
-        </div>
-    </div>
-
-    <!-- TELA 6: JOGOS VIP ODD ALTA -->
-    <div id="tela-jogos-vip-alta" class="tela">
-        <div class="topo">
-            <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
-            <h1>VIP ODD ALTA <span class="tag-vip">VIP</span></h1>
-        </div>
-        <div class="vazio">Nenhum jogo VIP adicionado ainda. 📈</div>
-    </div>
-
-    <!-- TELA 7: REDES SOCIAIS -->
-    <div id="tela-redes" class="tela">
-        <div class="topo">
-            <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
-            <h1>REDES SOCIAIS</h1>
-        </div>
-        
-        <div class="box-vip">
-            <div style="font-size:50px;margin-bottom:15px">🔗</div>
-            <h2 style="color:#FFD700;margin-bottom:10px">SIGA-NOS E FALE CONNOSCO</h2>
-            <p style="color:#888;font-size:14px;margin-bottom:25px">Redes sociais e suporte</p>
-            
-            <button onclick="abrirWhatsAppCanal()" class="btn-desbloquear">WHATSAPP CANAL</button>
-            
-            <button onclick="abrirWhatsAppVip()" class="btn-desbloquear btn-vip">👑 VIP WHATSAPP - FALAR COM ROSS</button>
-            
-            <button onclick="abrirFacebook()" class="btn-desbloquear btn-secundario">FACEBOOK SUPORTE</button>
-        </div>
-    </div>
-
-    <!-- TELA 8: INFORMAÇÕES GERAIS -->
-    <div id="tela-info" class="tela">
-        <div class="topo">
-            <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
-            <h1>INFO</h1>
-        </div>
-        
-        <div class="info-resumo">
-            <div style="font-size:40px;margin-bottom:15px">👑</div>
-            <b style="color:#FFD700">PALPITE OURO</b><br><br>
-            
-            🎁 <b>GRÁTIS:</b> Todo dia às 10h<br>
-            👑 <b>VIP:</b> Código dura 24h<br>
-            🧠 <b>REGRA:</b> Nunca aposte +5% da banca<br>
-            ⚠️ <b>+18:</b> Jogue com responsabilidade<br><br>
-            
-            <span style="color:#FFD700">Dúvidas? WhatsApp VIP</span>
-        </div>
-
-        <button onclick="partilharApp()" class="btn-share">
-            📲 PARTILHA NO WHATSAPP
-        </button>
-    </div>
-
-    <script>
-        function abrirTela(idTela) {
-            document.querySelectorAll('.tela').forEach(tela => {
-                tela.classList.remove('ativa');
-            });
-            document.getElementById(idTela).classList.add('ativa');
-            window.scrollTo(0, 0);
-        }
-        
-        function verificarCodigo() {
-            var codigo = document.getElementById('codigoVip').value;
-            if(codigo === 'BAD666') {
-                abrirTela('tela-jogos-vip-baixa');
-            } else {
-                alert('Código inválido! ❌\n\nFale com o suporte para comprar.');
-            }
-        }
-        
-        function verificarCodigoAlta() {
-            var codigo = document.getElementById('codigoVipAlta').value;
-            if(codigo === 'BAD666') {
-                abrirTela('tela-jogos-vip-alta');
-            } else {
-                alert('Código inválido! ❌\n\nFale com o suporte para comprar.');
-            }
-        }
-
-        function abrirWhatsAppCanal() {
-            window.open('https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d', '_system');
-        }
-        
-        function abrirWhatsAppVip() {
-            window.open('https://wa.me/message/2EPEENB2KKE3K1', '_system');
-        }
-        
-        function abrirFacebook() {
-            window.open('https://www.facebook.com/share/1KYt8erXZp/', '_system');
-        }
-
-        function partilharApp() {
-            var texto = "🔥 APP PALPITE OURO 👑\n\nPalpites grátis todo dia + VIP com 8 anos de análise!\n\nBaixa aqui: https://www.mediafire.com/file/brii6nys1ugy981/PalpitesOuro24.apk/file\n\nEntra no canal: https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d";
-            
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Palpite Ouro',
-                    text: texto
-                });
-            } else {
-                window.open('https://wa.me/?text=' + encodeURIComponent(texto), '_system');
-            }
-        }
-    </script>
+<script>
+function abrirTela(idTela){document.querySelectorAll('.tela').forEach(tela=>{tela.classList.remove('ativa')});document.getElementById(idTela).classList.add('ativa');window.scrollTo(0,0)}
+function verificarCodigo(){var codigo=document.getElementById('codigoVip').value;if(codigo==='BAD666'){abrirTela('tela-jogos-vip-baixa')}else{alert('Código inválido! ❌')}}
+function verificarCodigoAlta(){var codigo=document.getElementById('codigoVipAlta').value;if(codigo==='BAD666'){abrirTela('tela-jogos-vip-alta')}else{alert('Código inválido! ❌')}}
+function abrirWhatsAppCanal(){window.open('https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d','_system')}
+function abrirWhatsAppVip(){window.open('https://wa.me/message/2EPEENB2KKE3K1','_system')}
+function abrirFacebook(){window.open('https://www.facebook.com/share/1KYt8erXZp/','_system')}
+function partilharApp(){var texto="🔥 APP PALPITE OURO 👑\n\nPalpites grátis todo dia + VIP com 8 anos de análise!\n\nBaixa aqui: https://www.mediafire.com/file/brii6nys1ugy981/PalpitesOuro24.apk/file\n\nEntra no canal: https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d";if(navigator.share){navigator.share({title:'Palpite Ouro',text:texto})}else{window.open('https://wa.me/?text='+encodeURIComponent(texto),'_system')}}
+</script>
 </body>
-                                                             </html>
+    </html>
