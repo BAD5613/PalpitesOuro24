@@ -20,7 +20,9 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 .card p{font-size:11px;color:#888}
 .topo{display:flex;align-items:center;margin-bottom:20px}
 .voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}
-.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:1px solid #2A2A3E}
+.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:1px solid #2A2A3E;position:relative}
+.jogo.ao-vivo{border:2px solid #FF0000;cursor:pointer}
+.jogo.ao-vivo:active{transform:scale(0.98)}
 .liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:10px}
 .times{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-weight:bold}
 .vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:12px}
@@ -40,6 +42,8 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 .info-resumo{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;line-height:2;font-size:13px}
 .status-ao-vivo{background:#FF0000;color:#fff;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:none;margin-left:10px;animation:pisca 1.5s infinite}
 .status-ao-vivo.ativo{display:inline-block}
+.badge-clique{position:absolute;top:10px;right:10px;background:#FF0000;color:#fff;font-size:9px;padding:4px 8px;border-radius:5px;font-weight:bold;display:none}
+.jogo.ao-vivo.badge-clique{display:block}
 @keyframes pisca{0%,100%{opacity:1}50%{opacity:0.5}}
 </style>
 </head>
@@ -61,7 +65,9 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 <span class="badge-hoje">🔥 FIXAS DE HOJE</span>
 
 <div class="boletim-titulo">FIXA GRÁTIS #1 - ODD 10.50 <span class="status-ao-vivo" data-hora="12:00">AO VIVO</span></div>
-<div class="jogo"><div class="liga"><span>Noruega • Quarta Divisão</span><span>20/06, 12:00</span><span class="odd">10.50</span></div><div class="times"><span>Volda TI 2</span><span class="vs">VS</span><span>1 Byasen IL</span></div>
+<div class="jogo" data-hora="12:00" data-link="https://SEU-LINK-DE-PUBLICIDADE-AQUI.com">
+<span class="badge-clique">📺 CLIQUE VER AO VIVO</span>
+<div class="liga"><span>Noruega • Quarta Divisão</span><span>20/06, 12:00</span><span class="odd">10.50</span></div><div class="times"><span>Volda TI 2</span><span class="vs">VS</span><span>1 Byasen IL</span></div>
 <div class="palpite green">🟢 Total 1ª Parte: Mais de 1.5</div>
 <div class="palpite green">🟢 Ambas marcarão: Sim</div>
 <div class="palpite">⚽ Total de golos: Mais de 3.5</div>
@@ -69,13 +75,19 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 </div>
 
 <div class="boletim-titulo">FIXA GRÁTIS #2 - ODD 9.80 <span class="status-ao-vivo" data-hora="13:30">AO VIVO</span></div>
-<div class="jogo"><div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 13:30</span><span class="odd">9.80</span></div><div class="times"><span>Tromsdalen UIL</span><span class="vs">VS</span><span>Stjordals Blink</span></div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Tromsdalen: Mais de 1.5</div></div>
+<div class="jogo" data-hora="13:30" data-link="https://SEU-LINK-DE-PUBLICIDADE-AQUI.com">
+<span class="badge-clique">📺 CLIQUE VER AO VIVO</span>
+<div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 13:30</span><span class="odd">9.80</span></div><div class="times"><span>Tromsdalen UIL</span><span class="vs">VS</span><span>Stjordals Blink</span></div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Tromsdalen: Mais de 1.5</div></div>
 
 <div class="boletim-titulo">FIXA GRÁTIS #3 - ODD 11.20 <span class="status-ao-vivo" data-hora="14:00">AO VIVO</span></div>
-<div class="jogo"><div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 14:00</span><span class="odd">11.20</span></div><div class="times"><span>IL Bjarg</span><span class="vs">VS</span><span>FK Vidar</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ HT/FT: 1/1 ou 2/2</div></div>
+<div class="jogo" data-hora="14:00" data-link="https://SEU-LINK-DE-PUBLICIDADE-AQUI.com">
+<span class="badge-clique">📺 CLIQUE VER AO VIVO</span>
+<div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 14:00</span><span class="odd">11.20</span></div><div class="times"><span>IL Bjarg</span><span class="vs">VS</span><span>FK Vidar</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ HT/FT: 1/1 ou 2/2</div></div>
 
 <div class="boletim-titulo">FIXA GRÁTIS #4 - ODD 8.90 <span class="status-ao-vivo" data-hora="13:00">AO VIVO</span></div>
-<div class="jogo"><div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 13:00</span><span class="odd">8.90</span></div><div class="times"><span>Kjelsas IL</span><span class="vs">VS</span><span>Ullensaker/Kisa</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Kjelsas: Mais de 1.5</div></div>
+<div class="jogo" data-hora="13:00" data-link="https://SEU-LINK-DE-PUBLICIDADE-AQUI.com">
+<span class="badge-clique">📺 CLIQUE VER AO VIVO</span>
+<div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 13:00</span><span class="odd">8.90</span></div><div class="times"><span>Kjelsas IL</span><span class="vs">VS</span><span>Ullensaker/Kisa</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Kjelsas: Mais de 1.5</div></div>
 </div>
 
 <div id="tela-vip" class="tela">
@@ -87,13 +99,21 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 <div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>VIP ODD BAIXA <span class="tag-vip">VIP</span></h1></div>
 <span class="badge-hoje">🔥 JOGOS DE HOJE 20/06</span>
 <div class="boletim-titulo">BOLETIM 1 <span class="status-ao-vivo" data-hora="12:00">AO VIVO</span></div>
-<div class="jogo"><div class="liga"><span>Noruega • Quarta Divisão</span><span>20/06, 12:00</span><span class="odd">2.62</span></div><div class="times"><span>IL Heming</span><span class="vs">VS</span><span>Gamle Oslo FK</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="id-fixa">Elephantbet online 🆔8287169</div></div>
+<div class="jogo" data-hora="12:00" data-link="https://SEU-LINK-DE-PUBLICIDADE-AQUI.com">
+<span class="badge-clique">📺 CLIQUE VER AO VIVO</span>
+<div class="liga"><span>Noruega • Quarta Divisão</span><span>20/06, 12:00</span><span class="odd">2.62</span></div><div class="times"><span>IL Heming</span><span class="vs">VS</span><span>Gamle Oslo FK</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="id-fixa">Elephantbet online 🆔8287169</div></div>
 <div class="boletim-titulo">BOLETIM 2 <span class="status-ao-vivo" data-hora="14:00">AO VIVO</span></div>
-<div class="jogo"><div class="liga"><span>Noruega • Quarta Divisão</span><span>20/06, 14:00</span><span class="odd">2.61</span></div><div class="times"><span>Lyn 1896 FK 2</span><span class="vs">VS</span><span>Lillehammer FK</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="id-fixa">Elephantbet online 🆔8287692</div></div>
+<div class="jogo" data-hora="14:00" data-link="https://SEU-LINK-DE-PUBLICIDADE-AQUI.com">
+<span class="badge-clique">📺 CLIQUE VER AO VIVO</span>
+<div class="liga"><span>Noruega • Quarta Divisão</span><span>20/06, 14:00</span><span class="odd">2.61</span></div><div class="times"><span>Lyn 1896 FK 2</span><span class="vs">VS</span><span>Lillehammer FK</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="id-fixa">Elephantbet online 🆔8287692</div></div>
 <div class="boletim-titulo">BOLETIM 3 <span class="status-ao-vivo" data-hora="13:00">AO VIVO</span></div>
-<div class="jogo"><div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 13:00</span><span class="odd">2.79</span></div><div class="times"><span>Kjelsas IL</span><span class="vs">VS</span><span>Ullensaker/Kisa</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="id-fixa">Elephantbet online 🆔8288056</div></div>
+<div class="jogo" data-hora="13:00" data-link="https://SEU-LINK-DE-PUBLICIDADE-AQUI.com">
+<span class="badge-clique">📺 CLIQUE VER AO VIVO</span>
+<div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 13:00</span><span class="odd">2.79</span></div><div class="times"><span>Kjelsas IL</span><span class="vs">VS</span><span>Ullensaker/Kisa</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="id-fixa">Elephantbet online 🆔8288056</div></div>
 <div class="boletim-titulo">BOLETIM 4 <span class="status-ao-vivo" data-hora="14:00">AO VIVO</span></div>
-<div class="jogo"><div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 14:00</span><span class="odd">2.77</span></div><div class="times"><span>IL Bjarg</span><span class="vs">VS</span><span>FK Vidar</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div></div>
+<div class="jogo" data-hora="14:00" data-link="https://SEU-LINK-DE-PUBLICIDADE-AQUI.com">
+<span class="badge-clique">📺 CLIQUE VER AO VIVO</span>
+<div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 14:00</span><span class="odd">2.77</span></div><div class="times"><span>IL Bjarg</span><span class="vs">VS</span><span>FK Vidar</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div></div>
 </div>
 
 <div id="tela-vip-alta" class="tela">
@@ -105,7 +125,9 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 <div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>VIP ODD ALTA <span class="tag-vip">VIP</span></h1></div>
 <span class="badge-hoje">🔥 JOGOS DE HOJE 20/06</span>
 <div class="boletim-titulo">BOLETIM 1 <span class="status-ao-vivo" data-hora="12:00">AO VIVO</span></div>
-<div class="jogo"><div class="liga"><span>Noruega • Quarta Divisão</span><span>20/06, 12:00</span><span class="odd">5.39</span></div><div class="times"><span>Volda TI 2</span><span class="vs">VS</span><span>1 Byasen IL</span></div>
+<div class="jogo" data-hora="12:00" data-link="https://SEU-LINK-DE-PUBLICIDADE-AQUI.com">
+<span class="badge-clique">📺 CLIQUE VER AO VIVO</span>
+<div class="liga"><span>Noruega • Quarta Divisão</span><span>20/06, 12:00</span><span class="odd">5.39</span></div><div class="times"><span>Volda TI 2</span><span class="vs">VS</span><span>1 Byasen IL</span></div>
 <div class="palpite green">🟢 Total 1ª Parte: Mais de 1.5</div>
 <div class="palpite">⚽ Dupla Chance: 12</div>
 <div class="palpite green">🟢 Ambas marcarão: Sim</div>
@@ -114,7 +136,9 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 <div class="palpite">⚽ Byasen IL: Mais de 1.5</div>
 <div class="id-fixa">Elephantbet online 🆔8286383</div></div>
 <div class="boletim-titulo">BOLETIM 2 <span class="status-ao-vivo" data-hora="13:30">AO VIVO</span></div>
-<div class="jogo"><div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 13:30</span><span class="odd">6.65</span></div><div class="times"><span>Tromsdalen UIL</span><span class="vs">VS</span><span>Stjordals Blink</span></div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Tromsdalen: Mais de 1.5</div><div class="palpite">⚽ Stjordals: Mais de 1.5</div></div>
+<div class="jogo" data-hora="13:30" data-link="https://SEU-LINK-DE-PUBLICIDADE-AQUI.com">
+<span class="badge-clique">📺 CLIQUE VER AO VIVO</span>
+<div class="liga"><span>Noruega • Terceira Divisão</span><span>20/06, 13:30</span><span class="odd">6.65</span></div><div class="times"><span>Tromsdalen UIL</span><span class="vs">VS</span><span>Stjordals Blink</span></div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Tromsdalen: Mais de 1.5</div><div class="palpite">⚽ Stjordals: Mais de 1.5</div></div>
 <div class="boletim-titulo">BOLETIM 3</div>
 <div class="jogo"><div class="liga"><span>Noruega • Segunda Divisão</span><span>21/06, 15:00</span><span class="odd">7.76</span></div><div class="times"><span>Odds BK</span><span class="vs">VS</span><span>IL Hodd</span></div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ IL Hodd: Mais de 1.5</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="palpite">⚽ Odds BK: Mais de 1.5</div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="id-fixa">Elephantbet online 🆔8289341</div></div>
 </div>
@@ -146,17 +170,24 @@ function abrirWhatsAppVip(){window.open('https://wa.me/message/2EPEENB2KKE3K1','
 function abrirFacebook(){window.open('https://www.facebook.com/share/1KYt8erXZp/','_system')}
 function partilharApp(){var texto="🔥 APP PALPITE OURO 👑\n\nPalpites grátis todo dia + VIP com 8 anos de análise!\n\nBaixa aqui: https://4br.me/PalpitesOuro24\n\nEntra no canal: https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d";if(navigator.share){navigator.share({title:'Palpite Ouro',text:texto})}else{window.open('https://wa.me/?text='+encodeURIComponent(texto),'_system')}}
 
-// ATUALIZA AO VIVO AUTOMÁTICO
+// ATUALIZA AO VIVO + CLIQUE PUBLICIDADE
 function atualizarAoVivo(){
 var agora=new Date();
 var horaAtual=agora.getHours()*60+agora.getMinutes();
-document.querySelectorAll('.status-ao-vivo').forEach(function(badge){
-var horaJogo=badge.getAttribute('data-hora').split(':');
-var minutosJogo=parseInt(horaJogo[0])*60+parseInt(horaJogo[1]);
+document.querySelectorAll('.jogo').forEach(function(jogo){
+var horaJogo=jogo.getAttribute('data-hora');
+if(!horaJogo)return;
+var h=horaJogo.split(':');
+var minutosJogo=parseInt(h[0])*60+parseInt(h[1]);
+var badge=jogo.previousElementSibling?jogo.previousElementSibling.querySelector('.status-ao-vivo'):null;
+if(!badge){badge=jogo.parentElement.querySelector('.status-ao-vivo')}
 if(horaAtual>=minutosJogo && horaAtual<minutosJogo+120){
-badge.classList.add('ativo');
-var minutosDecorridos=horaAtual-minutosJogo;
-badge.textContent='AO VIVO '+minutosDecorridos+'\'';
+jogo.classList.add('ao-vivo');
+if(badge){badge.classList.add('ativo');var minutosDecorridos=horaAtual-minutosJogo;badge.textContent='AO VIVO '+minutosDecorridos+'\''}
+jogo.onclick=function(){var link=jogo.getAttribute('data-link');if(link&&link.includes('http')){window.open(link,'_system')}}
+}else{
+jogo.classList.remove('ao-vivo');
+jogo.onclick=null;
 }
 });
 }
@@ -164,4 +195,4 @@ setInterval(atualizarAoVivo,60000);
 atualizarAoVivo();
 </script>
 </body>
-                                                                                                                                      </html>
+  </html>
