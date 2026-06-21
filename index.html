@@ -174,6 +174,7 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 <button onclick="abrirWhatsAppVip()" class="btn-desbloquear">👑 VIP WHATSAPP - FALAR COM ROSS</button>
 <button onclick="abrirFacebook()" class="btn-desbloquear btn-secundario">FACEBOOK SUPORTE</button>
 </div>
+</div>
 
 <div id="tela-info" class="tela">
 <div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>INFO</h1></div>
@@ -260,7 +261,6 @@ badge.classList.add('ativo');
 var minutosDecorridos=horaAtual-minutosJogo;
 badge.textContent='AO VIVO '+minutosDecorridos+'\'';
 }
-// Deixa os palpites verdes só quando tá ao vivo
 palpites.forEach(function(p){
 p.classList.add('green');
 var texto = p.textContent.replace('⚽','🟢');
@@ -275,7 +275,6 @@ if(linkAds&&linkJogo){abrirJogoAoVivo(linkAds,linkJogo)}
 }else{
 jogo.classList.remove('ao-vivo');
 if(badge){badge.classList.remove('ativo')}
-// Volta pros palpites amarelos antes do jogo
 palpites.forEach(function(p){
 p.classList.remove('green');
 var texto = p.textContent.replace('🟢','⚽');
