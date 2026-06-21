@@ -29,7 +29,7 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 .palpite{background:#2A2A3E;border-radius:8px;padding:10px;text-align:center;color:#FFD700;font-size:14px;margin-bottom:8px}
 .palpite.green{background:rgba(0,255,0,0.15);border:1px solid #00FF00;color:#00FF00;font-weight:bold}
 .box-vip{background:#1A1A2E;border-radius:15px;padding:25px;text-align:center;margin-top:40px}
-.input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0F;color:#fff;text-align:center;font-size:16px;margin-bottom:15px}
+.input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0A0F;color:#fff;text-align:center;font-size:16px;margin-bottom:15px}
 .btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;font-size:16px;cursor:pointer;margin-bottom:15px}
 .aviso{background:#1A1A2E;border:1px solid #FFA500;border-radius:10px;padding:12px;font-size:11px;color:#FFA500;text-align:center;margin-top:20px}
 .tag-vip{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;margin-left:10px}
@@ -43,6 +43,7 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 .status-ao-vivo.ativo{display:inline-block}
 .badge-clique{position:absolute;top:-10px;right:-10px;background:#FF0000;color:#fff;font-size:9px;padding:5px 10px;border-radius:20px;font-weight:bold;animation:pulse 2s infinite;z-index:10;display:none}
 .jogo.ao-vivo.badge-clique{display:block}
+.sem-jogos{background:#1A1A2E;border-radius:15px;padding:40px;text-align:center;color:#888;font-size:14px}
 @keyframes pisca{0%,100%{opacity:1}50%{opacity:0.5}}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 .modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:9999;display:none;align-items:center;justify-content:center;flex-direction:column}
@@ -57,7 +58,7 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 <div id="tela-menu" class="tela ativa">
 <div class="header"><div class="logo-emoji">👑</div><h1>PALPITE OURO</h1></div>
 <div class="menu">
-<div class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>4 fixas de hoje</p></div>
+<div class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>7 fixas de hoje</p></div>
 <div class="card" onclick="abrirTela('tela-vip')"><div class="card-icon">👑</div><h3>VIP ODD BAIXA</h3><p>4 boletins</p></div>
 <div class="card" onclick="abrirTela('tela-vip-alta')"><div class="card-icon">📈</div><h3>VIP ODD ALTA</h3><p>3 boletins</p></div>
 <div class="card" onclick="abrirTela('tela-redes')"><div class="card-icon">🔗</div><h3>REDES SOCIAIS</h3><p>Fale connosco</p></div>
@@ -68,48 +69,76 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 
 <div id="tela-gratuitas" class="tela">
 <div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>GRÁTIS HOJE</h1></div>
-<span class="badge-hoje">🔥 FIXAS DE HOJE</span>
+<span class="badge-hoje">🔥 FIXAS DE HOJE 21/06</span>
 
-<div class="boletim-titulo">FIXA GRÁTIS #1 - ODD 10.50 <span class="status-ao-vivo" data-hora="12:00">AO VIVO</span></div>
-<div class="jogo" data-hora="12:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/live?btag=TROCA_POR_TEU_CODIGO_AFILIADO">
+<div class="boletim-titulo">FIXA GRÁTIS #1 - ODD 2.97 <span class="status-ao-vivo" data-hora="12:00">AO VIVO</span></div>
+<div class="jogo" data-hora="12:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.bantubet.co.ao/live">
 <span class="badge-clique">📺 ASSISTIR</span>
-<div class="liga"><span>Noruega • Quarta Divisão</span><span>12:00</span><span class="odd">10.50</span></div><div class="times"><span>Volda TI 2</span><span class="vs">VS</span><span>2 Byasen IL</span></div>
-<div class="palpite green">🟢 Total 1ª Parte: Mais de 1.5</div>
-<div class="palpite green">🟢 Ambas marcarão: Sim</div>
-<div class="palpite green">🟢 Total de golos: Mais de 3.5</div>
-<div class="palpite green">🟢 Volda TI: Mais de 1.5</div>
+<div class="liga"><span>Suécia • Terceira Divisão</span><span>12:00</span><span class="odd">2.97</span></div><div class="times"><span>Karlslunds IF HFK</span><span class="vs">VS</span><span>FOC Farsta</span></div>
+<div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div>
+<div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div>
+<div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div>
+<div class="id-fixa">Bantubet 🆔8592265</div>
 </div>
 
-<div class="boletim-titulo">FIXA GRÁTIS #2 - ODD 9.80 <span class="status-ao-vivo" data-hora="13:30">AO VIVO</span></div>
-<div class="jogo" data-hora="13:30" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/live?btag=TROCA_POR_TEU_CODIGO_AFILIADO">
+<div class="boletim-titulo">FIXA GRÁTIS #2 - ODD 2.24 <span class="status-ao-vivo" data-hora="13:00">AO VIVO</span></div>
+<div class="jogo" data-hora="13:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.bantubet.co.ao/live">
 <span class="badge-clique">📺 ASSISTIR</span>
-<div class="liga"><span>Noruega • Terceira Divisão</span><span>13:30</span><span class="odd">9.80</span></div><div class="times"><span>Tromsdalen UIL</span><span class="vs">VS</span><span>Stjordals Blink</span></div>
-<div class="palpite green">🟢 Ambas marcarão: Sim</div>
-<div class="palpite green">🟢 Total 1ª Parte: Mais de 1.5</div>
-<div class="palpite green">🟢 Dupla Chance: 12</div>
-<div class="palpite green">🟢 Total de golos: Mais de 3.5</div>
-<div class="palpite green">🟢 Tromsdalen: Mais de 1.5</div>
+<div class="liga"><span>Noruega • Championship Sub19</span><span>13:00</span><span class="odd">2.24</span></div><div class="times"><span>Kjelsas IL U19</span><span class="vs">VS</span><span>SK Sprint-Jeloy U19</span></div>
+<div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div>
+<div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 4.5</div>
+<div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div>
+<div class="id-fixa">Bantubet 🆔8592359</div>
 </div>
 
-<div class="boletim-titulo">FIXA GRÁTIS #3 - ODD 11.20 <span class="status-ao-vivo" data-hora="14:00">AO VIVO</span></div>
-<div class="jogo" data-hora="14:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/live?btag=TROCA_POR_TEU_CODIGO_AFILIADO">
+<div class="boletim-titulo">FIXA GRÁTIS #3 - ODD 2.20 <span class="status-ao-vivo" data-hora="14:00">AO VIVO</span></div>
+<div class="jogo" data-hora="14:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.bantubet.co.ao/live">
 <span class="badge-clique">📺 ASSISTIR</span>
-<div class="liga"><span>Noruega • Terceira Divisão</span><span>14:00</span><span class="odd">11.20</span></div><div class="times"><span>IL Bjarg</span><span class="vs">VS</span><span>FK Vidar</span></div>
-<div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div>
-<div class="palpite green">🟢 Dupla Chance: 12</div>
-<div class="palpite green">🟢 Ambas marcarão: Sim</div>
-<div class="palpite green">🟢 Total de golos: Mais de 3.5</div>
-<div class="palpite">⚽ HT/FT: 1/1 ou 2/2</div>
+<div class="liga"><span>Noruega • Quarta Divisão</span><span>14:00</span><span class="odd">2.20</span></div><div class="times"><span>IF Floya</span><span class="vs">VS</span><span>Stromsgodset IF 2</span></div>
+<div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div>
+<div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div>
+<div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div>
+<div class="id-fixa">Bantubet 🆔8592496</div>
 </div>
 
-<div class="boletim-titulo">FIXA GRÁTIS #4 - ODD 8.90 <span class="status-ao-vivo" data-hora="13:00">AO VIVO</span></div>
-<div class="jogo" data-hora="13:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/live?btag=TROCA_POR_TEU_CODIGO_AFILIADO">
+<div class="boletim-titulo">FIXA GRÁTIS #4 - ODD 3.62 <span class="status-ao-vivo" data-hora="15:00">AO VIVO</span></div>
+<div class="jogo" data-hora="15:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.bantubet.co.ao/live">
 <span class="badge-clique">📺 ASSISTIR</span>
-<div class="liga"><span>Noruega • Terceira Divisão</span><span>13:00</span><span class="odd">8.90</span></div><div class="times"><span>Kjelsas IL</span><span class="vs">VS</span><span>Ullensaker/Kisa</span></div>
-<div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div>
-<div class="palpite">⚽ Ambas marcarão: Sim</div>
-<div class="palpite">⚽ Total de golos: Mais de 3.5</div>
-<div class="palpite green">🟢 Kjelsas: Mais de 1.5</div>
+<div class="liga"><span>Suécia • Terceira Divisão</span><span>15:00</span><span class="odd">3.62</span></div><div class="times"><span>Kristianstads FC</span><span class="vs">VS</span><span>Laholms FK</span></div>
+<div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div>
+<div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div>
+<div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div>
+<div class="id-fixa">Bantubet 🆔8592627</div>
+</div>
+
+<div class="boletim-titulo">FIXA GRÁTIS #5 - ODD 2.51 <span class="status-ao-vivo" data-hora="15:00">AO VIVO</span></div>
+<div class="jogo" data-hora="15:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.bantubet.co.ao/live">
+<span class="badge-clique">📺 ASSISTIR</span>
+<div class="liga"><span>Islândia • 1. Deild Feminino</span><span>15:00</span><span class="odd">2.51</span></div><div class="times"><span>UMF Selfoss (Wom)</span><span class="vs">VS</span><span>IF Grotta (Wom)</span></div>
+<div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div>
+<div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div>
+<div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div>
+<div class="id-fixa">Bantubet 🆔8592627</div>
+</div>
+
+<div class="boletim-titulo">FIXA GRÁTIS #6 - ODD 2.54 <span class="status-ao-vivo" data-hora="19:00">AO VIVO</span></div>
+<div class="jogo" data-hora="19:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.bantubet.co.ao/live">
+<span class="badge-clique">📺 ASSISTIR</span>
+<div class="liga"><span>Islândia • 1. Deild</span><span>19:00</span><span class="odd">2.54</span></div><div class="times"><span>Breidablik UBK</span><span class="vs">VS</span><span>KA Akureyri</span></div>
+<div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div>
+<div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div>
+<div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div>
+<div class="id-fixa">Bantubet 🆔8592987</div>
+</div>
+
+<div class="boletim-titulo">FIXA GRÁTIS #7 - ODD 3.04 <span class="status-ao-vivo" data-hora="20:15">AO VIVO</span></div>
+<div class="jogo" data-hora="20:15" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.bantubet.co.ao/live">
+<span class="badge-clique">📺 ASSISTIR</span>
+<div class="liga"><span>Islândia • 1. Deild</span><span>20:15</span><span class="odd">3.04</span></div><div class="times"><span>Grotta</span><span class="vs">VS</span><span>Fylkir Reykjavik</span></div>
+<div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div>
+<div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div>
+<div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div>
+<div class="id-fixa">Bantubet 🆔8592987</div>
 </div>
 </div>
 
@@ -121,10 +150,7 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 <div id="tela-jogos-vip-baixa" class="tela">
 <div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>VIP ODD BAIXA <span class="tag-vip">VIP</span></h1></div>
 <span class="badge-hoje">🔥 JOGOS DE HOJE</span>
-<div class="boletim-titulo">BOLETIM 1 <span class="status-ao-vivo" data-hora="12:00">AO VIVO</span></div>
-<div class="jogo" data-hora="12:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/live?btag=TROCA_POR_TEU_CODIGO_AFILIADO">
-<span class="badge-clique">📺 ASSISTIR</span>
-<div class="liga"><span>Noruega • Quarta Divisão</span><span>12:00</span><span class="odd">2.62</span></div><div class="times"><span>IL Heming</span><span class="vs">VS</span><span>Gamle Oslo FK</span></div><div class="palpite">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite">⚽ Dupla Chance: 12</div><div class="palpite">⚽ Ambas marcarão: Sim</div><div class="palpite">⚽ Total de golos: Mais de 3.5</div><div class="id-fixa">Elephantbet online 🆔8287169</div></div>
+<div class="sem-jogos">Nenhum boletim disponível no momento.<br>Aguarde atualização.</div>
 </div>
 
 <div id="tela-vip-alta" class="tela">
@@ -135,17 +161,7 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 <div id="tela-jogos-vip-alta" class="tela">
 <div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>VIP ODD ALTA <span class="tag-vip">VIP</span></h1></div>
 <span class="badge-hoje">🔥 JOGOS DE HOJE</span>
-<div class="boletim-titulo">BOLETIM 1 <span class="status-ao-vivo" data-hora="12:00">AO VIVO</span></div>
-<div class="jogo" data-hora="12:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/live?btag=TROCA_POR_TEU_CODIGO_AFILIADO">
-<span class="badge-clique">📺 ASSISTIR</span>
-<div class="liga"><span>Noruega • Quarta Divisão</span><span>12:00</span><span class="odd">5.39</span></div><div class="times"><span>Volda TI 2</span><span class="vs">VS</span><span>2 Byasen IL</span></div>
-<div class="palpite green">🟢 Total 1ª Parte: Mais de 1.5</div>
-<div class="palpite">⚽ Dupla Chance: 12</div>
-<div class="palpite green">🟢 Ambas marcarão: Sim</div>
-<div class="palpite green">🟢 Total de golos: Mais de 3.5</div>
-<div class="palpite green">🟢 Volda TI: Mais de 1.5</div>
-<div class="palpite">⚽ Byasen IL: Mais de 1.5</div>
-<div class="id-fixa">Elephantbet online 🆔8286383</div></div>
+<div class="sem-jogos">Nenhum boletim disponível no momento.<br>Aguarde atualização.</div>
 </div>
 
 <div id="tela-redes" class="tela">
@@ -157,7 +173,6 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 <button onclick="abrirWhatsAppCanal()" class="btn-desbloquear">WHATSAPP CANAL</button>
 <button onclick="abrirWhatsAppVip()" class="btn-desbloquear">👑 VIP WHATSAPP - FALAR COM ROSS</button>
 <button onclick="abrirFacebook()" class="btn-desbloquear btn-secundario">FACEBOOK SUPORTE</button>
-</div>
 </div>
 
 <div id="tela-info" class="tela">
@@ -186,8 +201,8 @@ document.getElementById(idTela).classList.add('ativa');
 window.scrollTo(0,0);
 }
 
-function verificarCodigo(){var codigo=document.getElementById('codigoVip').value;if(codigo==='BAD666'){abrirTela('tela-jogos-vip-baixa')}else{alert('Código inválido! ❌')}}
-function verificarCodigoAlta(){var codigo=document.getElementById('codigoVipAlta').value;if(codigo==='BAD666'){abrirTela('tela-jogos-vip-alta')}else{alert('Código inválido! ❌')}}
+function verificarCodigo(){var codigo=document.getElementById('codigoVip').value;if(codigo==='PAGO000'){abrirTela('tela-jogos-vip-baixa')}else{alert('Código inválido! ❌')}}
+function verificarCodigoAlta(){var codigo=document.getElementById('codigoVipAlta').value;if(codigo==='PAGO000'){abrirTela('tela-jogos-vip-alta')}else{alert('Código inválido! ❌')}}
 function abrirWhatsAppCanal(){window.open('https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d','_system')}
 function abrirWhatsAppVip(){window.open('https://wa.me/message/2EPEENB2KKE3K1','_system')}
 function abrirFacebook(){window.open('https://www.facebook.com/share/1KYt8erXZp/','_system')}
@@ -236,6 +251,7 @@ var h=horaJogo.split(':');
 var minutosJogo=parseInt(h[0])*60+parseInt(h[1]);
 var tituloAnterior = jogo.previousElementSibling;
 var badge = tituloAnterior? tituloAnterior.querySelector('.status-ao-vivo') : null;
+var palpites = jogo.querySelectorAll('.palpite');
 
 if(horaAtual>=minutosJogo && horaAtual<minutosJogo+120){
 jogo.classList.add('ao-vivo');
@@ -244,6 +260,12 @@ badge.classList.add('ativo');
 var minutosDecorridos=horaAtual-minutosJogo;
 badge.textContent='AO VIVO '+minutosDecorridos+'\'';
 }
+// Deixa os palpites verdes só quando tá ao vivo
+palpites.forEach(function(p){
+p.classList.add('green');
+var texto = p.textContent.replace('⚽','🟢');
+p.textContent = texto;
+});
 jogo.onclick=function(e){
 e.stopPropagation();
 var linkAds=jogo.getAttribute('data-ads');
@@ -253,6 +275,12 @@ if(linkAds&&linkJogo){abrirJogoAoVivo(linkAds,linkJogo)}
 }else{
 jogo.classList.remove('ao-vivo');
 if(badge){badge.classList.remove('ativo')}
+// Volta pros palpites amarelos antes do jogo
+palpites.forEach(function(p){
+p.classList.remove('green');
+var texto = p.textContent.replace('🟢','⚽');
+p.textContent = texto;
+});
 jogo.onclick=null;
 }
 });
