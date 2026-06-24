@@ -2,112 +2,70 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0A0A0F">
+<meta name="mobile-web-app-capable" content="yes">
 <title>Palpite Ouro</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0A0A0F;font-family:Arial,sans-serif;color:#fff;padding:20px}
-.tela{display:none}.tela.ativa{display:block}
-.header{text-align:center;margin-bottom:30px}
-.logo-emoji{font-size:70px;margin:0 auto 15px;display:block}
-h1{color:#FFD700;font-size:24px;margin-bottom:5px}
-.menu{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}
-.card{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;border:1px solid #2A2A3E;cursor:pointer}
-.card:active{transform:scale(0.95);background:#FFD700}
-.card:active h3,.card:active p{color:#000}
-.card-icon{width:45px;height:45px;background:linear-gradient(135deg,#FFD700,#FF8C00);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px}
-.card h3{font-size:14px;margin-bottom:5px;color:#fff}
-.card p{font-size:11px;color:#888}
-.topo{display:flex;align-items:center;margin-bottom:20px}
-.voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}
-.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:2px solid #2A2A3E;position:relative;transition:all 0.3s}
-.jogo.ao-vivo{border:2px solid #FF0000;cursor:pointer;box-shadow:0 0 20px rgba(255,0,0,0.4)}
-.jogo.ao-vivo:active{transform:scale(0.98)}
-.liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:10px}
-.times{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-weight:bold;font-size:16px}
-.vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:12px}
-.palpite{background:#2A2A2E;border-radius:8px;padding:10px;text-align:center;color:#FFD700;font-size:14px;margin-bottom:8px}
-.palpite.green{background:rgba(0,255,0,0.15);border:1px solid #00FF00;color:#00FF00;font-weight:bold}
-.box-vip{background:#1A1A2E;border-radius:15px;padding:25px;text-align:center;margin-top:40px}
-.input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0A0F;color:#fff;text-align:center;font-size:16px;margin-bottom:15px}
-.btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;font-size:16px;cursor:pointer;margin-bottom:15px}
-.btn-secundario{background:transparent;border:1px solid #FFD700;color:#FFD700}
-.aviso{background:#1A1A2E;border:1px solid #FFA500;border-radius:10px;padding:12px;font-size:11px;color:#FFA500;text-align:center;margin-top:20px}
-.tag-vip{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;margin-left:10px}
-.id-fixa{background:#FFD700;color:#000;text-align:center;padding:8px;border-radius:8px;font-weight:bold;font-size:12px;margin-top:10px}
-.odd{color:#FFD700;font-weight:bold}
-.boletim-titulo{color:#FFD700;font-size:16px;margin-bottom:10px;font-weight:bold;display:flex;align-items:center;flex-wrap:wrap}
-.badge-hoje{background:#00FF00;color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:inline-block;margin-bottom:15px}
-.btn-share{width:100%;padding:15px;border-radius:10px;border:1px solid #FFD700;background:transparent;color:#FFD700;font-weight:bold;font-size:14px;cursor:pointer;margin-top:15px}
-.info-resumo{background:#1A1A2E;border-radius:15px;padding:20px;text-align:left;line-height:1.6;font-size:13px}
-.status-ao-vivo{background:#FF0000;color:#fff;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:none;margin-left:10px;animation:pisca 1.5s infinite}
-.status-ao-vivo.ativo{display:inline-block}
-.badge-clique{position:absolute;top:-10px;right:-10px;background:#FF0000;color:#fff;font-size:9px;padding:5px 10px;border-radius:20px;font-weight:bold;animation:pulse 2s infinite;z-index:10;display:none}
-.jogo.ao-vivo.badge-clique{display:block}
-.sem-jogos{background:#1A1A2E;border-radius:15px;padding:40px;text-align:center;color:#888;font-size:14px}
-@keyframes pisca{0%,100%{opacity:1}50%{opacity:0.5}}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
-.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:9999;display:none;align-items:center;justify-content:center;flex-direction:column}
-.modal.ativo{display:flex}
-.modal-conteudo{background:#1A1A2E;padding:25px;border-radius:15px;text-align:center;width:90%;max-width:350px}
-.contador{font-size:35px;color:#FFD700;margin:15px 0;font-weight:bold}
-.btn-pular{padding:12px 25px;background:#FFD700;color:#000;border:none;border-radius:8px;margin-top:15px;font-weight:bold;display:none}
-.btn-pular.ativo{display:inline-block}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0A0A0F;font-family:system-ui,Arial,sans-serif;color:#fff;padding:20px}.tela{display:none}.tela.ativa{display:block}.header{text-align:center;margin-bottom:30px}.logo-emoji{font-size:70px;margin:0 auto 15px;display:block}h1{color:#FFD700;font-size:24px;margin-bottom:5px}h2{color:#FFD700;font-size:20px;margin-bottom:5px}.menu{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}.card{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;border:1px solid #2A2A3E;cursor:pointer;border:none;width:100%}.card:active{transform:scale(.95);background:#FFD700}.card:active h3,.card:active p{color:#000}.card-icon{width:45px;height:45px;background:linear-gradient(135deg,#FFD700,#FF8C00);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px}.card h3{font-size:14px;margin-bottom:5px;color:#fff}.card p{font-size:11px;color:#888}.topo{display:flex;align-items:center;margin-bottom:20px}.voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:2px solid #2A2A3E;position:relative;transition:transform.3s,box-shadow.3s}.jogo.ao-vivo{border:2px solid #FF0000;cursor:pointer;box-shadow:0 0 20px rgba(255,0,0,.4)}.jogo.ao-vivo:active{transform:scale(.98)}.liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:10px}.times{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-weight:bold;font-size:16px}.vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:12px}.palpite{background:#2A2A2E;border-radius:8px;padding:10px;text-align:center;color:#FFD700;font-size:14px;margin-bottom:8px}.palpite.green{background:rgba(0,255,0,.15);border:1px solid #00FF00;color:#00FF00;font-weight:bold}.box-vip{background:#1A1A2E;border-radius:15px;padding:25px;text-align:center;margin-top:40px}.input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0A0F;color:#fff;text-align:center;font-size:16px;margin-bottom:15px}.btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;font-size:16px;cursor:pointer;margin-bottom:15px}.btn-secundario{background:transparent;border:1px solid #FFD700;color:#FFD700}.aviso{background:#1A1A2E;border:1px solid #FFA500;border-radius:10px;padding:12px;font-size:11px;color:#FFA500;text-align:center;margin-top:20px}.tag-vip{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;margin-left:10px}.id-fixa{background:#FFD700;color:#000;text-align:center;padding:8px;border-radius:8px;font-weight:bold;font-size:12px;margin-top:10px}.odd{color:#FFD700;font-weight:bold}.boletim-titulo{color:#FFD700;font-size:16px;margin-bottom:10px;font-weight:bold;display:flex;align-items:center;flex-wrap:wrap}.badge-hoje{background:#00FF00;color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:inline-block;margin-bottom:15px}.btn-share{width:100%;padding:15px;border-radius:10px;border:1px solid #FFD700;background:transparent;color:#FFD700;font-weight:bold;font-size:14px;cursor:pointer;margin-top:15px}.info-resumo{background:#1A1A2E;border-radius:15px;padding:20px;text-align:left;line-height:1.6;font-size:13px}.status-ao-vivo{background:#FF0000;color:#fff;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:none;margin-left:10px;animation:pisca 1.5s infinite}.status-ao-vivo.ativo{display:inline-block}.badge-clique{position:absolute;top:-10px;right:-10px;background:#FF0000;color:#fff;font-size:9px;padding:5px 10px;border-radius:20px;font-weight:bold;animation:pulse 2s infinite;z-index:10;display:none}.jogo.ao-vivo.badge-clique{display:block}.sem-jogos{background:#1A1A2E;border-radius:15px;padding:40px;text-align:center;color:#888;font-size:14px}@keyframes pisca{0%,100%{opacity:1}50%{opacity:.5}}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);z-index:999999;display:none;align-items:center;justify-content:center;flex-direction:column}.modal.ativo{display:flex}.modal-conteudo{background:#1A1A2E;padding:25px;border-radius:15px;text-align:center;width:90%;max-width:350px}.contador{font-size:35px;color:#FFD700;margin:15px 0;font-weight:bold}.btn-pular{padding:12px 25px;background:#FFD700;color:#000;border:none;border-radius:8px;margin-top:15px;font-weight:bold;display:none}.btn-pular.ativo{display:inline-block}
 </style>
 </head>
 <body>
 <div id="tela-menu" class="tela ativa">
 <div class="header"><div class="logo-emoji">👑</div><h1>PALPITE OURO</h1></div>
 <div class="menu">
-<div class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>1 fixa de hoje</p></div>
-<div class="card" onclick="abrirTela('tela-vip')"><div class="card-icon">👑</div><h3>VIP ODD BAIXA</h3><p>4 boletins</p></div>
-<div class="card" onclick="abrirTela('tela-vip-alta')"><div class="card-icon">📈</div><h3>VIP ODD ALTA</h3><p>3 boletins</p></div>
-<div class="card" onclick="abrirTela('tela-redes')"><div class="card-icon">🔗</div><h3>REDES SOCIAIS</h3><p>Fale connosco</p></div>
-<div class="card" onclick="abrirTela('tela-info')"><div class="card-icon">🔔</div><h3>INFO</h3><p>Regras + Partilhar</p></div>
+<button class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>4 fixas de hoje</p></button>
+<button class="card" onclick="abrirTela('tela-vip')"><div class="card-icon">👑</div><h3>VIP ODD BAIXA</h3><p>2 boletins</p></button>
+<button class="card" onclick="abrirTela('tela-vip-alta')"><div class="card-icon">📈</div><h3>VIP ODD ALTA</h3><p>2 boletins</p></button>
+<button class="card" onclick="abrirTela('tela-redes')"><div class="card-icon">🔗</div><h3>REDES SOCIAIS</h3><p>Fale connosco</p></button>
+<button class="card" onclick="abrirTela('tela-info')"><div class="card-icon">🔔</div><h3>INFO</h3><p>Regras + Partilhar</p></button>
 </div>
 <div class="aviso">⚠️ Use as apostas VIP imediatamente após comprar.</div>
 </div>
 
 <div id="tela-gratuitas" class="tela">
-<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>GRÁTIS HOJE</h1></div>
-<span class="badge-hoje">🔥 FIXA DE HOJE 23/06</span>
-<div class="boletim-titulo">FIXA GRÁTIS #1 - ODD 3.74 <span class="status-ao-vivo" data-hora="19:45">AO VIVO</span></div>
-<div class="jogo" data-hora="19:45" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao">
-<span class="badge-clique">📺 ASSISTIR</span>
-<div class="liga"><span>Mundo • Amigáveis de Clubes</span><span>19:45</span><span class="odd">3.74</span></div>
-<div class="times"><span>Annan Athletic FC</span><span class="vs">VS</span><span>Johnstone Burgh FC</span></div>
-<div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div>
-<div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div>
-<div class="palpite" data-tipo="btts">⚽ Ambas marcam: Sim</div>
-<div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div>
-<div class="id-fixa">Elephantbet 🆔9257752</div>
-</div>
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>GRÁTIS HOJE</h2></div>
+<span class="badge-hoje">🔥 FIXAS DE HOJE <span id="dataHoje"></span></span>
+<div class="boletim-titulo">FIXA GRÁTIS #1 - ODD 2.90 <span class="status-ao-vivo" data-hora="20:15">AO VIVO</span></div>
+<div class="jogo" data-hora="20:15" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao"><span class="badge-clique">📺 ASSISTIR</span><div class="liga"><span>Islândia • Urvalsdeild - Feminino</span><span>20:15</span><span class="odd">2.90</span></div><div class="times"><span>FH Hafnarfjordur (W)</span><span class="vs">VS</span><span>Valur Reykjavik FC (W)</span></div><div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div><div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div><div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div><div class="id-fixa">Elephantbet 🆔9319732</div></div>
+<div class="boletim-titulo">FIXA GRÁTIS #2 - ODD 2.18 <span class="status-ao-vivo" data-hora="18:00">AO VIVO</span></div>
+<div class="jogo" data-hora="18:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao"><span class="badge-clique">📺 ASSISTIR</span><div class="liga"><span>Noruega • Quarta Divisão</span><span>18:00</span><span class="odd">2.18</span></div><div class="times"><span>Gamle Oslo FK</span><span class="vs">VS</span><span>Lokomotiv Oslo FK</span></div><div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div><div class="palpite" data-tipo="btts">⚽ Ambas marcam: Sim</div><div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div><div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div><div class="id-fixa">Elephantbet 🆔9513711</div></div>
+<div class="boletim-titulo">FIXA GRÁTIS #3 - ODD 3.15 <span class="status-ao-vivo" data-hora="18:00">AO VIVO</span></div>
+<div class="jogo" data-hora="18:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao"><span class="badge-clique">📺 ASSISTIR</span><div class="liga"><span>Suécia • Terceira Divisão</span><span>18:00</span><span class="odd">3.15</span></div><div class="times"><span>Kubikenborgs IF</span><span class="vs">VS</span><span>Fransta IK</span></div><div class="palpite" data-tipo="btts">⚽ Ambas marcam: Sim</div><div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div><div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div><div class="id-fixa">Elephantbet 🆔9513075</div></div>
+<div class="boletim-titulo">FIXA GRÁTIS #4 - ODD 4.31 <span class="status-ao-vivo" data-hora="20:15">AO VIVO</span></div>
+<div class="jogo" data-hora="20:15" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao"><span class="badge-clique">📺 ASSISTIR</span><div class="liga"><span>Islândia • 4. Deild</span><span>20:15</span><span class="odd">4.31</span></div><div class="times"><span>Hamar Hveragerdi</span><span class="vs">VS</span><span>Ellidi Reykjavik</span></div><div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div><div class="palpite" data-tipo="gols">⚽ Total Hamar: Mais de 2.5</div><div class="palpite" data-tipo="gols">⚽ Total Ellidi: Mais de 1.5</div><div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div><div class="id-fixa">Elephantbet 🆔9514111</div></div>
 </div>
 
 <div id="tela-vip" class="tela">
-<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>VIP ODD BAIXA</h1></div>
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD BAIXA</h2></div>
 <div class="box-vip"><div style="font-size:50px;margin-bottom:15px">👑</div><h2 style="color:#FFD700;margin-bottom:10px">CONTEÚDO EXCLUSIVO</h2><input id="codigoVip" type="text" placeholder="Digite seu código" class="input-codigo"><button onclick="verificarCodigo()" class="btn-desbloquear">DESBLOQUEAR</button></div>
 </div>
 
 <div id="tela-jogos-vip-baixa" class="tela">
-<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>VIP ODD BAIXA <span class="tag-vip">VIP</span></h1></div>
-<span class="badge-hoje">🔥 JOGOS DE HOJE</span>
-<div class="sem-jogos">Nenhum boletim disponível no momento.<br>Aguarde atualização.</div>
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD BAIXA <span class="tag-vip">VIP</span></h2></div>
+<span class="badge-hoje">🔥 JOGOS DE HOJE <span id="dataHojeVip"></span></span>
+<div class="boletim-titulo">VIP BAIXA #1 - ODD 4.12 <span class="status-ao-vivo" data-hora="18:00">AO VIVO</span></div>
+<div class="jogo" data-hora="18:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao"><span class="badge-clique">📺 ASSISTIR</span><div class="liga"><span>Noruega • Quarta Divisão</span><span>18:00</span><span class="odd">4.12</span></div><div class="times"><span>Gamle Oslo FK</span><span class="vs">VS</span><span>Lokomotiv Oslo FK</span></div><div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div><div class="palpite" data-tipo="btts">⚽ Ambas marcam: Sim</div><div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div><div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite" data-tipo="gols">⚽ Total Gamle Oslo: Mais de 2.5</div><div class="palpite" data-tipo="gols">⚽ Total Lokomotiv: Mais de 1.5</div><div class="id-fixa">Elephantbet 🆔9513792</div></div>
+<div class="boletim-titulo">VIP BAIXA #2 - ODD 3.09 <span class="status-ao-vivo" data-hora="20:15">AO VIVO</span></div>
+<div class="jogo" data-hora="20:15" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao"><span class="badge-clique">📺 ASSISTIR</span><div class="liga"><span>Islândia • Urvalsdeild - Feminino</span><span>20:15</span><span class="odd">3.09</span></div><div class="times"><span>FH Hafnarfjordur (W)</span><span class="vs">VS</span><span>Valur Reykjavik FC (W)</span></div><div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div><div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div><div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite" data-tipo="gols">⚽ Total FH Hafnarfjordur: Mais de 1.5</div><div class="id-fixa">Elephantbet 🆔9319452</div></div>
 </div>
 
 <div id="tela-vip-alta" class="tela">
-<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>VIP ODD ALTA</h1></div>
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD ALTA</h2></div>
 <div class="box-vip"><div style="font-size:50px;margin-bottom:15px">📈</div><h2 style="color:#FFD700;margin-bottom:10px">ODDS ALTAS</h2><input id="codigoVipAlta" type="text" placeholder="Digite seu código" class="input-codigo"><button onclick="verificarCodigoAlta()" class="btn-desbloquear">DESBLOQUEAR</button></div>
 </div>
 
 <div id="tela-jogos-vip-alta" class="tela">
-<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>VIP ODD ALTA <span class="tag-vip">VIP</span></h1></div>
-<span class="badge-hoje">🔥 JOGOS DE HOJE</span>
-<div class="sem-jogos">Nenhum boletim disponível no momento.<br>Aguarde atualização.</div>
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD ALTA <span class="tag-vip">VIP</span></h2></div>
+<span class="badge-hoje">🔥 JOGOS DE HOJE <span id="dataHojeVipAlta"></span></span>
+<div class="boletim-titulo">VIP ALTA #1 - ODD 14.46 <span class="tag-vip">MÚLTIPLA</span></div>
+<div class="jogo" data-hora="20:15" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao"><div class="liga"><span>Islândia • Urvalsdeild - Feminino</span><span>20:15</span><span class="odd">14.46</span></div><div class="times"><span>FH + Grindavik</span><span class="vs">VS</span><span>Valur + Vikingur</span></div><div class="palpite">⚽ Múltipla 2 Jogos - 8 Seleções</div><div class="palpite">⚽ FH: DC 12 + Over 3.5 + Over 1.5 HT + FH Over 1.5</div><div class="palpite">⚽ Grindavik: DC 12 + Over 3.5 + Over 1.5 HT + Grindavik Over 2.5 + Vikingur Over 1.5</div><div class="id-fixa">Elephantbet 🆔9319452</div></div>
+<div class="boletim-titulo">VIP ALTA #2 - ODD 6.66 <span class="status-ao-vivo" data-hora="19:45">AO VIVO</span></div>
+<div class="jogo" data-hora="19:45" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao"><span class="badge-clique">📺 ASSISTIR</span><div class="liga"><span>Mundo • Amigáveis de Clubes</span><span>19:45</span><span class="odd">6.66</span></div><div class="times"><span>Annan Athletic FC</span><span class="vs">VS</span><span>Johnstone Burgh FC</span></div><div class="palpite" data-tipo="ht">⚽ Total 1ª Parte: Mais de 1.5</div><div class="palpite" data-tipo="dc">⚽ Dupla Chance: 12</div><div class="palpite" data-tipo="btts">⚽ Ambas marcam: Sim</div><div class="palpite" data-tipo="gols">⚽ Total de golos: Mais de 3.5</div><div class="palpite" data-tipo="gols">⚽ Total Annan: Mais de 1.5</div><div class="palpite" data-tipo="gols">⚽ Total Johnstone: Mais de 1.5</div><div class="id-fixa">Elephantbet 🆔9319605</div></div>
 </div>
 
 <div id="tela-redes" class="tela">
-<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>REDES SOCIAIS</h1></div>
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>REDES SOCIAIS</h2></div>
 <div class="box-vip">
 <div style="font-size:50px;margin-bottom:15px">🔗</div>
 <h2 style="color:#FFD700;margin-bottom:10px">SIGA-NOS E FALE CONNOSCO</h2>
@@ -116,10 +74,9 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 <button onclick="abrirWhatsAppVip()" class="btn-desbloquear">👑 VIP WHATSAPP - FALAR COM ROSS</button>
 <button onclick="abrirFacebook()" class="btn-desbloquear btn-secundario">FACEBOOK SUPORTE</button>
 </div>
-</div>
 
 <div id="tela-info" class="tela">
-<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h1>INFO</h1></div>
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>INFO</h2></div>
 <div class="info-resumo">
 <div style="text-align:center;font-size:40px;margin-bottom:15px">👑</div>
 <b style="color:#FFD700;font-size:18px;display:block;text-align:center;margin-bottom:15px">COMO FUNCIONA O VIP PALPITE OURO244</b>
@@ -144,9 +101,7 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 <button onclick="cadastrarElephantbet()" class="btn-desbloquear" style="background:linear-gradient(135deg,#E91E63,#9C27B0)">💰 CADASTRAR NA ELEPHANTBET</button>
 <button onclick="partilharApp()" class="btn-share">📲 PARTILHA NO WHATSAPP</button>
 <button onclick="abrirWhatsAppVip()" class="btn-desbloquear" style="margin-top:10px">👑 PEDIR CÓDIGO VIP</button>
-</div>
-
-<div id="modalAds" class="modal">
+                                                                                                                                                                <div id="modalAds" class="modal">
 <div class="modal-conteudo">
 <h3 style="color:#FFD700;margin-bottom:15px">📺 Patrocinado</h3>
 <div style="font-size:50px;margin:20px 0">🎬</div>
@@ -157,23 +112,24 @@ h1{color:#FFD700;font-size:24px;margin-bottom:5px}
 </div>
 
 <script>
-var linkJogoAtual = '';
-var intervaloAds;
-function abrirTela(idTela){document.querySelectorAll('.tela').forEach(tela=>{tela.classList.remove('ativa')});document.getElementById(idTela).classList.add('ativa');window.scrollTo(0,0);}
-function verificarCodigo(){var codigo=document.getElementById('codigoVip').value;if(codigo==='PAGO000'){abrirTela('tela-jogos-vip-baixa')}else{alert('Código inválido! ❌')}}
-function verificarCodigoAlta(){var codigo=document.getElementById('codigoVipAlta').value;if(codigo==='PAGO000'){abrirTela('tela-jogos-vip-alta')}else{alert('Código inválido! ❌')}}
+var linkJogoAtual='';var intervaloAds;var intervaloAoVivo;
+function abrirTela(idTela){document.querySelectorAll('.tela').forEach(t=>{t.classList.remove('ativa')});document.getElementById(idTela).classList.add('ativa');window.scrollTo(0,0)}
+function verificarCodigo(){var c=document.getElementById('codigoVip').value;if(c==='PAGO000'){abrirTela('tela-jogos-vip-baixa')}else{alert('Código inválido! ❌')}}
+function verificarCodigoAlta(){var c=document.getElementById('codigoVipAlta').value;if(c==='PAGO000'){abrirTela('tela-jogos-vip-alta')}else{alert('Código inválido! ❌')}}
 function abrirWhatsAppCanal(){window.open('https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d','_system')}
 function abrirWhatsAppVip(){window.open('https://wa.me/message/2EPEENB2KKE3K1','_system')}
 function abrirFacebook(){window.open('https://www.facebook.com/share/1KYt8erXZp/','_system')}
 function cadastrarElephantbet(){window.open('https://www.elephantbet.co.ao/affiliates/?btag=2754760','_system')}
-function partilharApp(){var texto=`👑 APP PALPITE OURO - SEM RISCO 👑\n\n✅ Palpites grátis todo dia às 10h\n✅ VIP: Paga 20% SÓ SE GANHAR\n✅ Se perder, não pagas nada\n\nCadastra na Elephantbet: https://www.elephantbet.co.ao/affiliates/?btag=2754760\n\nBaixa o app: https://4br.me/PalpitesOuro24\n\nEntra no canal WhatsApp:\nhttps://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d\n\n+18 | Jogue com responsabilidade`;if(navigator.share){navigator.share({title:'Palpite Ouro VIP',text:texto})}else{window.open('https://wa.me/?text='+encodeURIComponent(texto),'_system')}}
-function abrirJogoAoVivo(linkAds,linkJogo){var modal=document.getElementById('modalAds');var contador=document.getElementById('contador');var btnPular=document.getElementById('btnPular');var tempo=5;linkJogoAtual = linkJogo;modal.classList.add('ativo');contador.textContent=tempo;btnPular.classList.remove('ativo');window.open(linkAds,'_blank');clearInterval(intervaloAds);intervaloAds=setInterval(function(){tempo--;contador.textContent=tempo;if(tempo<=0){clearInterval(intervaloAds);btnPular.classList.add('ativo');fecharAdsEAbrirJogo();}},1000);}
-function pularAds(){clearInterval(intervaloAds);fecharAdsEAbrirJogo();}
-function fecharAdsEAbrirJogo(){var modal=document.getElementById('modalAds');modal.classList.remove('ativo');window.open(linkJogoAtual,'_system');}
-function atualizarAoVivo(){var agora=new Date();var horaAtual=agora.getHours()*60+agora.getMinutes();document.querySelectorAll('.jogo').forEach(function(jogo){var horaJogo=jogo.getAttribute('data-hora');if(!horaJogo)return;var h=horaJogo.split(':');var minutosJogo=parseInt(h[0])*60+parseInt(h[1]);var tituloAnterior = jogo.previousElementSibling;var badge = tituloAnterior? tituloAnterior.querySelector('.status-ao-vivo') : null;var palpites = jogo.querySelectorAll('.palpite');if(horaAtual>=minutosJogo && horaAtual<minutosJogo+120){jogo.classList.add('ao-vivo');if(badge){badge.classList.add('ativo');var minutosDecorridos=horaAtual-minutosJogo;badge.textContent='AO VIVO '+minutosDecorridos+'\'';}palpites.forEach(function(p){p.classList.add('green');var texto = p.textContent.replace('⚽','🟢');p.textContent = texto;});jogo.onclick=function(e){e.stopPropagation();var linkAds=jogo.getAttribute('data-ads');var linkJogo=jogo.getAttribute('data-jogo');if(linkAds&&linkJogo){abrirJogoAoVivo(linkAds,linkJogo)}}}else{jogo.classList.remove('ao-vivo');if(badge){badge.classList.remove('ativo')}palpites.forEach(function(p){p.classList.remove('green');var texto = p.textContent.replace('🟢','⚽');p.textContent = texto;});jogo.onclick=null;}});}
-setInterval(atualizarAoVivo,10000);
-document.addEventListener('DOMContentLoaded',function(){atualizarAoVivo();});
-document.addEventListener('visibilitychange',function(){if(!document.hidden){atualizarAoVivo()}});
+function partilharApp(){var t=`👑 APP PALPITE OURO - SEM RISCO 👑\n\n✅ Palpites grátis todo dia às 10h\n✅ VIP: Paga 20% SÓ SE GANHAR\n✅ Se perder, não pagas nada\n\nCadastra na Elephantbet: https://www.elephantbet.co.ao/affiliates/?btag=2754760\n\nBaixa o app: https://4br.me/PalpitesOuro24\n\nEntra no canal WhatsApp:\nhttps://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d\n\n+18 | Jogue com responsabilidade`;if(navigator.share&&navigator.canShare({text:t})){navigator.share({title:'Palpite Ouro VIP',text:t})}else{window.open('https://wa.me/?text='+encodeURIComponent(t),'_system')}}
+function abrirJogoAoVivo(linkAds,linkJogo){var m=document.getElementById('modalAds');var c=document.getElementById('contador');var b=document.getElementById('btnPular');var t=5;linkJogoAtual=linkJogo;m.classList.add('ativo');c.textContent=t;b.classList.remove('ativo');window.open(linkAds,'_blank');clearInterval(intervaloAds);intervaloAds=setInterval(function(){t--;c.textContent=t;if(t<=0){clearInterval(intervaloAds);b.classList.add('ativo');fecharAdsEAbrirJogo()}},1000)}
+function pularAds(){clearInterval(intervaloAds);fecharAdsEAbrirJogo()}
+function fecharAdsEAbrirJogo(){var m=document.getElementById('modalAds');m.classList.remove('ativo');window.open(linkJogoAtual,'_blank')}
+function atualizarAoVivo(){var a=new Date();var h=a.getHours()*60+a.getMinutes();document.querySelectorAll('.jogo').forEach(function(j){var hj=j.getAttribute('data-hora');if(!hj)return;var s=hj.split(':');var mj=parseInt(s[0])*60+parseInt(s[1]);var t=j.previousElementSibling;var b=t?t.querySelector('.status-ao-vivo'):null;var p=j.querySelectorAll('.palpite');if(h>=mj&&h<mj+120){j.classList.add('ao-vivo');if(b){b.classList.add('ativo');var md=h-mj;b.textContent='AO VIVO '+md+'\''}p.forEach(function(x){x.classList.add('green');if(!x.textContent.includes('🟢')){x.textContent=x.textContent.replace('⚽','🟢')}});if(!j.dataset.onclickSet){j.onclick=function(e){e.stopPropagation();var la=j.getAttribute('data-ads');var lj=j.getAttribute('data-jogo');if(la&&lj){abrirJogoAoVivo(la,lj)}};j.dataset.onclickSet='true'}}else{j.classList.remove('ao-vivo');if(b){b.classList.remove('ativo')}p.forEach(function(x){x.classList.remove('green');x.textContent=x.textContent.replace('🟢','⚽')});j.onclick=null;delete j.dataset.onclickSet}})}
+function atualizarDatas(){const d=new Date().toLocaleDateString('pt-PT',{day:'2-digit',month:'2-digit'});document.querySelectorAll('#dataHoje,#dataHojeVip,#dataHojeVipAlta').forEach(e=>{if(e)e.textContent=d})}
+function iniciarLoop(){clearInterval(intervaloAoVivo);atualizarAoVivo();intervaloAoVivo=setInterval(atualizarAoVivo,10000)}
+document.addEventListener('DOMContentLoaded',function(){atualizarDatas();iniciarLoop()});
+document.addEventListener('visibilitychange',function(){if(document.hidden){clearInterval(intervaloAoVivo)}else{iniciarLoop()}});
+document.getElementById('modalAds').addEventListener('click',function(e){if(e.target===this)pularAds()});
 </script>
 </body>
-</html>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
