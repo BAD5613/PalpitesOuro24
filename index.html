@@ -20,7 +20,7 @@
     <button class="card" onclick="abrirTela('tela-gratuitas')">
       <div class="card-icon">🎁</div>
       <h3>APOSTAS GRATUITAS</h3>
-      <p>1 boletim de hoje</p>
+      <p>2 boletins de hoje</p>
     </button>
     <button class="card" onclick="abrirTela('tela-vip')">
       <div class="card-icon">👑</div>
@@ -71,6 +71,26 @@
   </div>
 
   <div class="id-fixa">ELEPHANTBET 🆔1983619 - ODD TOTAL 15.58</div>
+
+  <!-- FIXA GRÁTIS #2 - ELEPHANT BET - ODD 2.60+ - ID 1998797 -->
+  <div class="boletim-titulo" style="margin-top:30px">FIXA GRÁTIS #2 - ODD 2.60+ <span class="status-ao-vivo" data-hora="17:00">AO VIVO</span></div>
+
+  <div class="jogo" data-hora="17:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
+    <span class="badge-clique">📺 ASSISTIR</span>
+    <div class="liga"><span>Finlândia • Terceira Divisão</span><span>17:00</span><span class="odd">1.68</span></div>
+    <div class="times"><span>FC Jazz Pori</span><span class="vs">VS</span><span>KPV Kokkola</span></div>
+    <div class="palpite">⚽ Resultado: FC Jazz Pori + Jazz marca +0.5 HT</div>
+  </div>
+
+  <div class="jogo" data-hora="17:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
+    <span class="badge-clique">📺 ASSISTIR</span>
+    <div class="liga"><span>Mundo • Amigáveis de Clubes</span><span>17:00</span><span class="odd">1.55</span></div>
+    <div class="times"><span>Leithaprodersdorf</span><span class="vs">VS</span><span>Arkadia Traiskirchen</span></div>
+    <div class="palpite">⚽ Resultado: FCM Arkadia + Arkadia marca +0.5 HT</div>
+  </div>
+
+  <div class="palpite" style="color:#888;font-size:12px;background:transparent">+ 1 seleção adicional no boletim</div>
+  <div class="id-fixa">ELEPHANTBET 🆔1998797 - ODD TOTAL 2.60+</div>
 
 </div>
 
@@ -188,7 +208,7 @@ function abrirJogoAoVivo(linkAds,linkJogo){var m=document.getElementById('modalA
 function pularAds(){clearInterval(intervaloAds);fecharAdsEAbrirJogo()}
 function fecharAdsEAbrirJogo(){var m=document.getElementById('modalAds');m.classList.remove('ativo');window.open(linkJogoAtual,'_blank')}
 function atualizarAoVivo(){var a=new Date(new Date().toLocaleString("en-US", {timeZone: "Africa/Luanda"}));var h=a.getHours()*60+a.getMinutes();document.querySelectorAll('.jogo').forEach(function(j){var hj=j.getAttribute('data-hora');if(!hj)return;var s=hj.split(':');var mj=parseInt(s[0])*60+parseInt(s[1]);var t=j.previousElementSibling;while(t &&!t.classList.contains('boletim-titulo')){t=t.previousElementSibling}var b=t?t.querySelector('.status-ao-vivo'):null;var p=j.querySelectorAll('.palpite');if(h>=mj&&h<mj+120){j.classList.add('ao-vivo');if(b){b.classList.add('ativo');var md=h-mj;b.textContent='AO VIVO '+md+'\''}p.forEach(function(x){if(!x.classList.contains('green')){x.classList.add('green');x.textContent=x.textContent.replace('⚽','🟢')}});if(!j.dataset.onclickSet){j.onclick=function(e){e.stopPropagation();var la=j.getAttribute('data-ads');var lj=j.getAttribute('data-jogo');if(la&&lj){abrirJogoAoVivo(la,lj)}};j.dataset.onclickSet='true'}}else{j.classList.remove('ao-vivo');if(b){b.classList.remove('ativo')}p.forEach(function(x){x.classList.remove('green');x.textContent=x.textContent.replace('🟢','⚽')});j.onclick=null;delete j.dataset.onclickSet}})}
-function atualizarDatas(){const d=new Date().toLocaleDateString('pt-PT',{day:'2-digit',month:'2-digit'});document.querySelectorAll('#dataHoje,#dataHojeVipAlta').forEach(e=>{if(e)e.textContent=d})}
+function atualizarDatas(){const d=new Date().toLocaleDateString('pt-PT',{day:'2-digit',month:'2-digit'});document.querySelectorAll('#dataHoje,#dataHojeVip,#dataHojeVipAlta').forEach(e=>{if(e)e.textContent=d})}
 function iniciarLoop(){clearInterval(intervaloAoVivo);atualizarAoVivo();intervaloAoVivo=setInterval(atualizarAoVivo,10000)}
 document.addEventListener('DOMContentLoaded',function(){atualizarDatas();iniciarLoop()});
 document.addEventListener('visibilitychange',function(){if(document.hidden){clearInterval(intervaloAoVivo)}else{iniciarLoop()}});
