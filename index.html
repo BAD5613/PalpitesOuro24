@@ -7,7 +7,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <title>Palpite Ouro</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{background:#0A0A0F;font-family:system-ui,Arial,sans-serif;color:#fff;padding:20px}.tela{display:none}.tela.ativa{display:block}.header{text-align:center;margin-bottom:30px}.logo-emoji{font-size:70px;margin:0 auto 15px;display:block}h1{color:#FFD700;font-size:24px;margin-bottom:5px}h2{color:#FFD700;font-size:20px;margin-bottom:5px}.menu{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}.card{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;border:1px solid #2A2A3E;cursor:pointer;border:none;width:100%}.card:active{transform:scale(.95);background:#FFD700}.card:active h3,.card:active p{color:#000}.card-icon{width:45px;height:45px;background:linear-gradient(135deg,#FFD700,#FF8C00);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px}.card h3{font-size:14px;margin-bottom:5px;color:#fff}.card p{font-size:11px;color:#888}.topo{display:flex;align-items:center;margin-bottom:20px}.voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:2px solid #2A2A3E;position:relative;transition:transform.3s,box-shadow.3s}.jogo.ao-vivo{border:2px solid #FF0000;cursor:pointer;box-shadow:0 0 20px rgba(255,0,0,.4)}.jogo.ao-vivo:active{transform:scale(.98)}.liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:10px}.times{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-weight:bold;font-size:16px}.vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:12px}.palpite{background:#2A2A2E;border-radius:8px;padding:10px;text-align:center;color:#FFD700;font-size:14px;margin-bottom:8px}.palpite.green{background:rgba(0,255,0,.15);border:1px solid #00FF00;color:#00FF00;font-weight:bold}.box-vip{background:#1A1A2E;border-radius:15px;padding:25px;text-align:center;margin-top:40px}.input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0A0F;color:#fff;text-align:center;font-size:16px;margin-bottom:15px}.btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;font-size:16px;cursor:pointer;margin-bottom:15px}.btn-secundario{background:transparent;border:1px solid #FFD700;color:#FFD700}.aviso{background:#1A1A2E;border:1px solid #FFA500;border-radius:10px;padding:12px;font-size:11px;color:#FFA500;text-align:center;margin-top:20px}.tag-vip{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;margin-left:10px}.id-fixa{background:#FFD700;color:#000;text-align:center;padding:8px;border-radius:8px;font-weight:bold;font-size:12px;margin-top:10px}.odd{color:#FFD700;font-weight:bold}.boletim-titulo{color:#FFD700;font-size:16px;margin-bottom:10px;font-weight:bold;display:flex;align-items:center;flex-wrap:wrap}.badge-hoje{background:#00FF00;color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:inline-block;margin-bottom:15px}.btn-share{width:100%;padding:15px;border-radius:10px;border:1px solid #FFD700;background:transparent;color:#FFD700;font-weight:bold;font-size:14px;cursor:pointer;margin-top:15px}.info-resumo{background:#1A1A2E;border-radius:15px;padding:20px;text-align:left;line-height:1.6;font-size:13px}.status-ao-vivo{background:#FF0000;color:#fff;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:none;margin-left:10px;animation:pisca 1.5s infinite}.status-ao-vivo.ativo{display:inline-block}.badge-clique{position:absolute;top:-10px;right:-10px;background:#FF0000;color:#fff;font-size:9px;padding:5px 10px;border-radius:20px;font-weight:bold;animation:pulse 2s infinite;z-index:10;display:none}.jogo.ao-vivo.badge-clique{display:block}.sem-jogos{background:#1A1A2E;border-radius:15px;padding:40px;text-align:center;color:#888;font-size:14px}.boletim-sep{height:1px;background:#2A2A3E;margin:30px 0}@keyframes pisca{0%,100%{opacity:1}50%{opacity:.5}}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);z-index:999999;display:none;align-items:center;justify-content:center;flex-direction:column}.modal.ativo{display:flex}.modal-conteudo{background:#1A1A2E;padding:25px;border-radius:15px;text-align:center;width:90%;max-width:350px}.contador{font-size:35px;color:#FFD700;margin:15px 0;font-weight:bold}.btn-pular{padding:12px 25px;background:#FFD700;color:#000;border:none;border-radius:8px;margin-top:15px;font-weight:bold;display:none}.btn-pular.ativo{display:inline-block}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0A0A0F;font-family:system-ui,Arial,sans-serif;color:#fff;padding:20px}.tela{display:none}.tela.ativa{display:block}.header{text-align:center;margin-bottom:30px}.logo-emoji{font-size:70px;margin:0 auto 15px;display:block}h1{color:#FFD700;font-size:24px;margin-bottom:5px}h2{color:#FFD700;font-size:20px;margin-bottom:5px}.menu{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}.card{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;border:1px solid #2A2A3E;cursor:pointer;border:none;width:100%}.card:active{transform:scale(.95);background:#FFD700}.card:active h3,.card:active p{color:#000}.card-icon{width:45px;height:45px;background:linear-gradient(135deg,#FFD700,#FF8C00);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px}.card h3{font-size:14px;margin-bottom:5px;color:#fff}.card p{font-size:11px;color:#888}.topo{display:flex;align-items:center;margin-bottom:20px}.voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:2px solid #2A2A3E;position:relative;transition:transform.3s,box-shadow.3s}.jogo.ao-vivo{border:2px solid #FF0000;cursor:pointer;box-shadow:0 0 20px rgba(255,0,0,.4)}.liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:10px}.times{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-weight:bold;font-size:16px}.vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:12px}.palpite{background:#2A2A2E;border-radius:8px;padding:10px;text-align:center;color:#FFD700;font-size:14px;margin-bottom:8px}.palpite.green{background:rgba(0,255,0,.15);border:1px solid #00FF00;color:#00FF00;font-weight:bold}.box-vip{background:#1A1A2E;border-radius:15px;padding:25px;text-align:center;margin-top:40px}.input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0A0F;color:#fff;text-align:center;font-size:16px;margin-bottom:15px}.btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;font-size:16px;cursor:pointer;margin-bottom:15px}.btn-secundario{background:transparent;border:1px solid #FFD700;color:#FFD700}.aviso{background:#1A1A2E;border:1px solid #FFA500;border-radius:10px;padding:12px;font-size:11px;color:#FFA500;text-align:center;margin-top:20px}.tag-vip{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;margin-left:10px}.id-fixa{background:#FFD700;color:#000;text-align:center;padding:8px;border-radius:8px;font-weight:bold;font-size:12px;margin-top:10px}.odd{color:#FFD700;font-weight:bold}.boletim-titulo{color:#FFD700;font-size:16px;margin-bottom:10px;font-weight:bold;display:flex;align-items:center;flex-wrap:wrap}.badge-hoje{background:#00FF00;color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:inline-block;margin-bottom:15px}.btn-share{width:100%;padding:15px;border-radius:10px;border:1px solid #FFD700;background:transparent;color:#FFD700;font-weight:bold;font-size:14px;cursor:pointer;margin-top:15px}.info-resumo{background:#1A1A2E;border-radius:15px;padding:20px;text-align:left;line-height:1.6;font-size:13px}.status-ao-vivo{background:#FF0000;color:#fff;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:none;margin-left:10px;animation:pisca 1.5s infinite}.status-ao-vivo.ativo{display:inline-block}.badge-clique{position:absolute;top:-10px;right:-10px;background:#FF0000;color:#fff;font-size:9px;padding:5px 10px;border-radius:20px;font-weight:bold;animation:pulse 2s infinite;z-index:10;display:none}.jogo.ao-vivo.badge-clique{display:block}.sem-jogos{background:#1A1A2E;border-radius:15px;padding:40px;text-align:center;color:#888;font-size:14px}.boletim-sep{height:1px;background:#2A2A3E;margin:30px 0}@keyframes pisca{0%,100%{opacity:1}50%{opacity:.5}}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);z-index:999999;display:none;align-items:center;justify-content:center;flex-direction:column}.modal.ativo{display:flex}.modal-conteudo{background:#1A1A2E;padding:25px;border-radius:15px;text-align:center;width:90%;max-width:350px}.contador{font-size:35px;color:#FFD700;margin:15px 0;font-weight:bold}.btn-pular{padding:12px 25px;background:#FFD700;color:#000;border:none;border-radius:8px;margin-top:15px;font-weight:bold;display:none}.btn-pular.ativo{display:inline-block}
 </style>
 </head>
 <body>
@@ -53,34 +53,80 @@
   </div>
   <span class="badge-hoje">🔥 FIXAS DE HOJE <span class="dataHoje">11/07</span></span>
 
-  <!-- BOLETIM UNICO - ID 4524302 - 11/07/2026 - 3 JOGOS USL LEAGUE TWO -->
-  <div class="boletim-titulo">BOLETIM DO DIA – 3 JOGOS – ODD 4.17 <span class="status-ao-vivo" data-hora="00:00">AO VIVO</span></div>
+  <!-- BOLETIM UNICO - ID 4570991 - 11/07/2026 - 10 JOGOS - ODD 58.54 -->
+  <div class="boletim-titulo">BOLETIM DO DIA – 10 JOGOS – ODD 58.54 <span class="status-ao-vivo" data-hora="09:30">AO VIVO</span></div>
 
-  <div class="jogo" data-hora="00:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
+  <div class="jogo" data-hora="09:30" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
     <span class="badge-clique">📺 ASSISTIR</span>
-    <div class="liga"><span>EUA • USL League Two</span><span>00:00</span><span class="odd">1.63</span></div>
-    <div class="times"><span>FC Miami City</span><span class="vs">VS</span><span>Lakeland United FC</span></div>
-    <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
-    <div class="palpite">⚽ Total de golos no jogo: Mais de 2.5</div>
+    <div class="liga"><span>Eslováquia • Amigáveis</span><span>09:30</span><span class="odd">1.43</span></div>
+    <div class="times"><span>FK Humenne</span><span class="vs">VS</span><span>FC Kosice</span></div>
+    <div class="palpite">⚽ Resultado do Jogo: FC Kosice</div>
   </div>
 
-  <div class="jogo" data-hora="00:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
+  <div class="jogo" data-hora="09:30" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
     <span class="badge-clique">📺 ASSISTIR</span>
-    <div class="liga"><span>EUA • USL League Two</span><span>00:00</span><span class="odd">1.59</span></div>
-    <div class="times"><span>Western Mass Pioneers</span><span class="vs">VS</span><span>Vermont Green FC</span></div>
-    <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
-    <div class="palpite">⚽ Total de golos no jogo: Mais de 2.5</div>
+    <div class="liga"><span>China • U20</span><span>09:30</span><span class="odd">1.48</span></div>
+    <div class="times"><span>Wenzhou Yincai U20</span><span class="vs">VS</span><span>Linyi Yihu U20</span></div>
+    <div class="palpite">⚽ Resultado do Jogo: Linyi Yihu U20</div>
   </div>
 
-  <div class="jogo" data-hora="03:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
+  <div class="jogo" data-hora="10:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
     <span class="badge-clique">📺 ASSISTIR</span>
-    <div class="liga"><span>EUA • USL League Two</span><span>03:00</span><span class="odd">1.61</span></div>
-    <div class="times"><span>FC Tucson</span><span class="vs">VS</span><span>Capo FC 2</span></div>
-    <div class="palpite">⚽ Ambas equipas marcarão: Sim</div>
-    <div class="palpite">⚽ Total de golos no jogo: Mais de 2.5</div>
+    <div class="liga"><span>Polónia • III Liga</span><span>10:00</span><span class="odd">1.53</span></div>
+    <div class="times"><span>KS Warta Sieradz</span><span class="vs">VS</span><span>TKP Elana Torun</span></div>
+    <div class="palpite">⚽ Resultado do Jogo: KS Warta Sieradz</div>
   </div>
 
-  <div class="id-fixa">ELEPHANTBET 🆔4524302 - ODD TOTAL 4.17 - 11/07/2026</div>
+  <div class="jogo" data-hora="12:30" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
+    <span class="badge-clique">📺 ASSISTIR</span>
+    <div class="liga"><span>Inglaterra • Amigáveis</span><span>12:30</span><span class="odd">1.48</span></div>
+    <div class="times"><span>FC Halifax Town</span><span class="vs">VS</span><span>Bradford City</span></div>
+    <div class="palpite">⚽ Resultado do Jogo: Bradford City</div>
+  </div>
+
+  <div class="jogo" data-hora="13:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
+    <span class="badge-clique">📺 ASSISTIR</span>
+    <div class="liga"><span>Holanda • Amigáveis</span><span>13:00</span><span class="odd">1.47</span></div>
+    <div class="times"><span>Groningen</span><span class="vs">VS</span><span>Emmen</span></div>
+    <div class="palpite">⚽ Resultado do Jogo: Groningen</div>
+  </div>
+
+  <div class="jogo" data-hora="14:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
+    <span class="badge-clique">📺 ASSISTIR</span>
+    <div class="liga"><span>Escócia • Amigáveis</span><span>14:00</span><span class="odd">1.48</span></div>
+    <div class="times"><span>Linfield FC</span><span class="vs">VS</span><span>FC Aberdeen</span></div>
+    <div class="palpite">⚽ Resultado do Jogo: FC Aberdeen</div>
+  </div>
+
+  <div class="jogo" data-hora="14:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
+    <span class="badge-clique">📺 ASSISTIR</span>
+    <div class="liga"><span>Finlândia • Kakkonen</span><span>14:00</span><span class="odd">1.56</span></div>
+    <div class="times"><span>PK Keski-Uusimaa</span><span class="vs">VS</span><span>FC Jazz Pori</span></div>
+    <div class="palpite">⚽ Resultado do Jogo: PK Keski-Uusimaa</div>
+  </div>
+
+  <div class="jogo" data-hora="15:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
+    <span class="badge-clique">📺 ASSISTIR</span>
+    <div class="liga"><span>Inglaterra • Isthmian Premier</span><span>15:00</span><span class="odd">1.52</span></div>
+    <div class="times"><span>Tonbridge Angels FC</span><span class="vs">VS</span><span>Biggleswade FC</span></div>
+    <div class="palpite">⚽ Resultado do Jogo: Tonbridge Angels FC</div>
+  </div>
+
+  <div class="jogo" data-hora="15:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
+    <span class="badge-clique">📺 ASSISTIR</span>
+    <div class="liga"><span>Escócia • Lowland League</span><span>15:00</span><span class="odd">1.48</span></div>
+    <div class="times"><span>Broxburn Athletic FC</span><span class="vs">VS</span><span>Clydebank FC</span></div>
+    <div class="palpite">⚽ Resultado do Jogo: Clydebank FC</div>
+  </div>
+
+  <div class="jogo" data-hora="15:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
+    <span class="badge-clique">📺 ASSISTIR</span>
+    <div class="liga"><span>Finlândia • Kolmonen</span><span>15:00</span><span class="odd">1.60</span></div>
+    <div class="times"><span>Nurmijarven Jalkapalloseura</span><span class="vs">VS</span><span>Esbo Bollklubb</span></div>
+    <div class="palpite">⚽ Resultado do Jogo: Esbo Bollklubb</div>
+  </div>
+
+  <div class="id-fixa">ELEPHANTBET 🆔4570991 - ODD TOTAL 58.54 - 11/07/2026</div>
 
   <div style="text-align:center;color:#888;font-size:11px;margin-top:20px">+18 | Odds de 11/07/2026 WAT | Isto é uma análise, não é garantia. Jogue com responsabilidade</div>
 </div>
