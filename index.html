@@ -12,10 +12,9 @@
 .card-icon{width:45px;height:45px;background:linear-gradient(135deg,#FFD700,#FF8C00);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px}
 .card h3{font-size:14px;color:#fff}.card p{font-size:11px;color:#888}
 .topo{display:flex;align-items:center;margin-bottom:20px}.voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}
-.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:2px solid #2A2A3E;position:relative}
-.jogo.ao-vivo{border:2px solid #FF0000;box-shadow:0 0 20px rgba(255,0,0,.4)}
+.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:2px solid #2A2A3E}
 .jogo.ganhou{border:2px solid #00FF00;background:#122212;box-shadow:0 0 20px rgba(0,255,0,.3)}
-.jogo.perdido{border:2px solid #FF3B3B;background:#1F1212;opacity:.8}
+.jogo.perdido{border:2px solid #FF3B3B;background:#1F1212;opacity:.9}
 .liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:10px}
 .times{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-weight:bold;font-size:14px}
 .vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:11px}
@@ -33,17 +32,16 @@
 .btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;cursor:pointer;margin-bottom:15px}
 .btn-elephant{width:100%;padding:15px;border-radius:15px;border:none;background:linear-gradient(135deg,#E91E63,#9C27B0);color:#000;font-weight:bold;cursor:pointer;margin-bottom:15px;font-size:16px}
 .btn-share{width:100%;padding:15px;border-radius:15px;border:1px solid #FFD700;background:transparent;color:#FFD700;font-weight:bold;cursor:pointer;margin-bottom:15px;font-size:15px}
-.badge-clique{position:absolute;top:-10px;right:-10px;background:#FF0000;color:#fff;font-size:9px;padding:5px 10px;border-radius:20px;font-weight:bold;animation:pulse 2s infinite;display:none}
-.jogo.ao-vivo .badge-clique{display:block}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 .info-box{background:#1E1E33;border-radius:20px;padding:20px;text-align:left;line-height:1.7}
-.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);z-index:9999;display:none;align-items:center;justify-content:center}.modal.ativo{display:flex}.modal-conteudo{background:#1A1A2E;padding:25px;border-radius:15px;text-align:center;width:90%;max-width:350px}.contador{font-size:35px;color:#FFD700;margin:15px 0;font-weight:bold}.btn-pular{padding:12px 25px;background:#FFD700;color:#000;border:none;border-radius:8px;margin-top:15px;font-weight:bold;display:none}.btn-pular.ativo{display:inline-block}
+.status-final{text-align:center;padding:10px;border-radius:10px;margin:15px 0;font-weight:bold}
+.status-final.perdido{background:rgba(255,59,59,.15);border:1px solid #FF3B3B;color:#FF3B3B}
+.status-final.ganhou{background:rgba(0,255,0,.15);border:1px solid #00FF00;color:#00FF00}
 </style>
 </head>
 <body>
 <div id="tela-menu" class="tela ativa"><div class="header"><div class="logo-emoji">👑</div><h1>PALPITE OURO</h1></div>
 <div class="menu">
-<button class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>2 boletins - 2 GREEN já</p></button>
+<button class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>Resultados de hoje</p></button>
 <button class="card" onclick="abrirTela('tela-vip')"><div class="card-icon">👑</div><h3>VIP ODD BAIXA</h3><p>2 boletins</p></button>
 <button class="card" onclick="abrirTela('tela-vip-alta')"><div class="card-icon">📈</div><h3>VIP ODD ALTA</h3><p>2 boletins</p></button>
 <button class="card" onclick="abrirTela('tela-redes')"><div class="card-icon">🔗</div><h3>REDES SOCIAIS</h3><p>Fale connosco</p></button>
@@ -51,40 +49,45 @@
 </div></div>
 
 <div id="tela-gratuitas" class="tela">
-<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>GRÁTIS HOJE</h2></div>
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>GRÁTIS HOJE - RESULTADOS</h2></div>
 
-<span class="badge-hoje">BOLETIM 1 - SEGURO - 2 GREEN</span>
+<span class="badge-hoje">BOLETIM 1 - ID 5634880 - FINALIZADO</span>
 <div class="boletim-titulo">BOLETIM 15/07 – ID 5634880 – ODD ~12.16</div>
 
-<div class="jogo ganhou"><div class="liga"><span>Amigáveis • 10:00 • Terminado</span><span class="odd">1.53</span></div><div class="times"><span>Fortuna Dusseldorf</span><span class="vs">VS</span><span>MFK Ruzomberok</span></div><div class="palpite green">⚽ Resultado do Jogo - Fortuna Dusseldorf</div><div class="res" style="display:flex"><span>Resultado: 2:0</span><span class="g">Ganhou ✅</span></div></div>
+<div class="jogo ganhou"><div class="liga"><span>Amigáveis • 10:00 • Terminado</span><span class="odd">1.53</span></div><div class="times"><span>Fortuna Dusseldorf</span><span class="vs">VS</span><span>MFK Ruzomberok</span></div><div class="palpite green">⚽ Resultado - Fortuna Dusseldorf</div><div class="res"><span>Resultado: 2:0</span><span class="g">Ganhou ✅</span></div></div>
 
-<div class="jogo ganhou"><div class="liga"><span>NPL Northern NSW • 11:00 • Ao vivo 54'</span><span class="odd">1.50</span></div><div class="times"><span>Charlestown Azzurri FC</span><span class="vs">VS</span><span>Weston Workers Bears FC</span></div><div class="palpite green">⚽ Resultado do Jogo - Weston Workers Bears FC (FORA)</div><div class="res" style="display:flex"><span>Placar ao vivo: 0:3 (0:3) 54'</span><span class="g">Ganhando ✅</span></div></div>
+<div class="jogo ganhou"><div class="liga"><span>NPL Northern NSW • 11:00 • Terminado</span><span class="odd">1.50</span></div><div class="times"><span>Charlestown Azzurri FC</span><span class="vs">VS</span><span>Weston Workers Bears FC</span></div><div class="palpite green">⚽ Resultado - Weston Workers Bears FC (FORA)</div><div class="res"><span>Resultado: 0:5 (0:3)</span><span class="g">Ganhou ✅</span></div></div>
 
-<div class="jogo" data-hora="17:30"><div class="liga"><span>Bélgica • 17:30</span><span class="odd">1.56</span></div><div class="times"><span>Patro Eisden</span><span class="vs">VS</span><span>Sint Truidense VV</span></div><div class="palpite">⚽ Resultado do Jogo - Sint Truidense VV</div><div class="res"><span>Resultado: --</span><span></span></div></div>
+<div class="jogo ganhou"><div class="liga"><span>Amigáveis • 17:30 • Terminado</span><span class="odd">1.56</span></div><div class="times"><span>Patro Eisden</span><span class="vs">VS</span><span>Sint Truidense VV</span></div><div class="palpite green">⚽ Resultado - Sint Truidense VV</div><div class="res"><span>Resultado: 0:4 (0:2)</span><span class="g">Ganhou ✅</span></div></div>
 
-<div class="jogo" data-hora="17:30"><div class="liga"><span>França • 17:30</span><span class="odd">1.52</span></div><div class="times"><span>Olympique Lyonnais</span><span class="vs">VS</span><span>Servette FC</span></div><div class="palpite">⚽ Resultado do Jogo - Olympique Lyonnais</div><div class="res"><span>Resultado: --</span><span></span></div></div>
+<div class="jogo ganhou"><div class="liga"><span>Amigáveis • 17:30 • Terminado</span><span class="odd">1.52</span></div><div class="times"><span>Olympique Lyonnais</span><span class="vs">VS</span><span>Servette FC</span></div><div class="palpite green">⚽ Resultado - Olympique Lyonnais</div><div class="res"><span>Resultado: 2:1 (1:1)</span><span class="g">Ganhou ✅</span></div></div>
 
-<div class="jogo" data-hora="18:00"><div class="liga"><span>Alemanha • 18:00</span><span class="odd">1.47</span></div><div class="times"><span>Bor. M.Gladbach II</span><span class="vs">VS</span><span>TuS Koblenz</span></div><div class="palpite">⚽ Resultado do Jogo - Borussia M.Gladbach II</div></div>
+<div class="jogo perdido"><div class="liga"><span>Amigáveis • 18:00 • Terminado</span><span class="odd">1.47</span></div><div class="times"><span>Borussia M.Gladbach II</span><span class="vs">VS</span><span>TuS Koblenz</span></div><div class="palpite red">⚽ Resultado - Borussia M.Gladbach II</div><div class="res"><span>Resultado: 3:4 (1:2)</span><span class="r">Perdido ❌</span></div></div>
 
-<div class="jogo" data-hora="18:30"><div class="liga"><span>Alemanha • 18:30</span><span class="odd">1.53</span></div><div class="times"><span>TSG Sprockhovel</span><span class="vs">VS</span><span>Ratingen 04/19</span></div><div class="palpite">⚽ Resultado do Jogo - Ratingen 04/19</div></div>
+<div class="jogo perdido"><div class="liga"><span>Amigáveis • 18:30 • Terminado</span><span class="odd">1.47</span></div><div class="times"><span>TSG Sprockhovel</span><span class="vs">VS</span><span>Ratingen 04/19</span></div><div class="palpite red">⚽ Resultado - Ratingen 04/19</div><div class="res"><span>Resultado: 2:1 (0:0)</span><span class="r">Perdido ❌</span></div></div>
 
-<div class="id-fixa">ELEPHANTBET 🆔5634880 - 2 GREEN já - Falta 🤏</div>
+<div class="status-final perdido">❌ BOLETIM 1 PERDIDO - 4 GREEN / 2 RED - ID 6491666177</div>
+<div class="id-fixa">ELEPHANTBET 🆔5634880 / 6491666177 - 15.07.2026</div>
+
 <div class="boletim-sep"></div>
 
-<span class="badge-hoje" style="background:#FFD700;color:#000">BOLETIM 2 - ODD 42.721 - 1 GREEN</span>
+<span class="badge-hoje" style="background:#FFD700;color:#000">BOLETIM 2 - ID 5659887 - ODD 42.721 - FINALIZADO</span>
 <div class="boletim-titulo">BOLETIM 15/07 – ID 5659887 – ODD 42.721</div>
 
-<div class="jogo" data-hora="18:00"><div class="liga"><span>Amigáveis • 18:00</span><span class="odd">2.11</span></div><div class="times"><span>Borussia M.Gladbach II</span><span class="vs">VS</span><span>TuS Koblenz</span></div><div class="palpite">⚽ Total 1ª Parte Mais de 1.5 + Ambas Sim</div></div>
+<div class="jogo ganhou"><div class="liga"><span>Amigáveis • 18:00 • Terminado</span><span class="odd">2.11</span></div><div class="times"><span>Borussia M.Gladbach II</span><span class="vs">VS</span><span>TuS Koblenz</span></div><div class="palpite green">⚽ Total 1ª Parte Mais de 1.5 + Ambas Sim</div><div class="res"><span>Resultado: 3:4 (1:2) - 1ª parte 3 golos + Ambas sim ✅</span><span class="g">Ganhou ✅</span></div></div>
 
-<div class="jogo ganhou"><div class="liga"><span>Austrália NPL • 11:00 • Ao vivo 54'</span><span class="odd">2.11</span></div><div class="times"><span>Charlestown Azzurri FC</span><span class="vs">VS</span><span>Weston Workers Bears FC</span></div><div class="palpite green">⚽ Dupla Chance 12 + Mais de 3.5 + Weston Mais de 1.5</div><div class="res" style="display:flex"><span>Placar: 0:3 - Weston já tem 3 golos ✅</span><span class="g">Ganhando ✅</span></div></div>
+<div class="jogo ganhou"><div class="liga"><span>NPL • 11:00 • Terminado</span><span class="odd">2.11</span></div><div class="times"><span>Charlestown Azzurri</span><span class="vs">VS</span><span>Weston Workers</span></div><div class="palpite green">⚽ Dupla 12 + Mais de 3.5 + Weston Mais de 1.5</div><div class="res"><span>Resultado: 0:5 - Mais de 3.5 e Weston 5 golos ✅</span><span class="g">Ganhou ✅</span></div></div>
 
-<div class="jogo" data-hora="17:30"><div class="liga"><span>Amigáveis • 17:30</span><span class="odd">1.81</span></div><div class="times"><span>Patro Eisden</span><span class="vs">VS</span><span>Sint Truidense VV</span></div><div class="palpite">⚽ Dupla Chance 12 + Ambas Sim</div></div>
+<div class="jogo perdido"><div class="liga"><span>Amigáveis • 17:30 • Terminado</span><span class="odd">1.81</span></div><div class="times"><span>Patro Eisden</span><span class="vs">VS</span><span>Sint Truidense VV</span></div><div class="palpite red">⚽ Dupla 12 + Ambas Sim</div><div class="res"><span>Resultado: 0:4 - Ambas não marcou ❌</span><span class="r">Perdido ❌</span></div></div>
 
-<div class="jogo" data-hora="17:30"><div class="liga"><span>Amigáveis • 17:30</span><span class="odd">2.82</span></div><div class="times"><span>Olympique Lyonnais</span><span class="vs">VS</span><span>Servette FC</span></div><div class="palpite">⚽ 1ª Parte Mais de 1.5 + Ambas Sim + Mais de 3.5</div></div>
+<div class="jogo perdido"><div class="liga"><span>Amigáveis • 17:30 • Terminado</span><span class="odd">2.82</span></div><div class="times"><span>Olympique Lyonnais</span><span class="vs">VS</span><span>Servette FC</span></div><div class="palpite red">⚽ 1ª Parte Mais de 1.5 + Ambas Sim + Mais de 3.5</div><div class="res"><span>Resultado: 2:1 - Só 3 golos, precisava 4 ❌</span><span class="r">Perdido ❌</span></div></div>
 
-<div class="jogo" data-hora="18:30"><div class="liga"><span>Alemanha • 18:30</span><span class="odd">1.88</span></div><div class="times"><span>TSG Sprockhovel</span><span class="vs">VS</span><span>Ratingen 04/19</span></div><div class="palpite">⚽ 1ª Parte Mais de 1.5 + Ratingen Mais de 1.5</div></div>
+<div class="jogo perdido"><div class="liga"><span>Amigáveis • 18:30 • Terminado</span><span class="odd">1.88</span></div><div class="times"><span>TSG Sprockhovel</span><span class="vs">VS</span><span>Ratingen 04/19</span></div><div class="palpite red">⚽ 1ª Parte Mais de 1.5 + Ratingen Mais de 1.5</div><div class="res"><span>Resultado: 2:1 (0:0) - 1ª parte 0:0 ❌</span><span class="r">Perdido ❌</span></div></div>
 
-<div class="id-fixa">ELEPHANTBET 🆔5659887 - ODD 42.721 - Weston 0:3 ganhando</div>
+<div class="status-final perdido">❌ BOLETIM 2 PERDIDO - ID 5659887</div>
+<div class="id-fixa">ELEPHANTBET 🆔5659887 - ODD 42.721 - 500Kz → 23,446.55Kz - PERDIDO</div>
+
+<div style="text-align:center;color:#888;font-size:11px;margin-top:20px">+18 | Isto é uma análise, não é garantia. Jogue com responsabilidade</div>
 </div>
 
 <div id="tela-vip" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD BAIXA</h2></div><div class="box-vip"><div style="font-size:50px">👑</div><h2 style="color:#FFD700">CONTEÚDO EXCLUSIVO</h2><input id="codigoVip" type="text" placeholder="Digite seu código" class="input-codigo"><button onclick="verificarCodigo()" class="btn-desbloquear">DESBLOQUEAR</button></div></div>
@@ -93,9 +96,7 @@
 <div id="tela-jogos-vip-alta" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD ALTA</h2></div><div style="text-align:center;background:#1A1A2E;padding:20px;border-radius:15px">Nenhum boletim.</div></div>
 <div id="tela-redes" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>REDES SOCIAIS</h2></div><div class="box-vip"><h2 style="color:#FFD700">SIGA-NOS</h2><button onclick="abrirWhatsAppCanal()" class="btn-desbloquear">WHATSAPP CANAL</button><button onclick="abrirWhatsAppVip()" class="btn-desbloquear">👑 VIP WHATSAPP</button></div></div>
 <div id="tela-info" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>INFO</h2></div><div style="text-align:center;margin-bottom:20px"><div style="font-size:60px">👑</div><h2 style="color:#FFD700;font-size:20px;margin:15px 0">COMO FUNCIONA O VIP PALPITE OURO24</h2><div style="color:#00FF00;font-weight:bold">Sem risco pra ti. Paga só se lucrar.</div></div><div class="info-box">PASSO A PASSO:<br>1. Tu pedes acesso VIP no meu PV<br>2. Eu te envio o CÓDIGO VIP do dia: válido 24h<br>3. Tu usas o código, tiras as fixas e fazes a aposta<br>4. Envia screenshot da fixa apostada aqui no PV<br>5. Agora só esperamos o resultado juntos<br><br><span style="color:#00FF00;font-weight:bold">SE BATER GREEN:</span> Tu me pagas 20% do lucro<br><br><span style="color:#FF5555;font-weight:bold">SE BATER RED:</span> Tu não me deves nada. Zero.<br></div><div style="margin:20px 0;line-height:1.8">⚠️ <b>REGRA:</b> Só trabalho com gente séria.<br><br>🎯 <b>GRÁTIS:</b> Todo dia às 10h no canal<br>👑 <b>VIP:</b> Código novo todo dia<br><br>+18 | Nunca aposte +5% da banca | Jogue com responsabilidade</div><button onclick="cadastrarElephantbet()" class="btn-elephant">💰 CADASTRAR NA ELEPHANTBET</button><button onclick="partilharApp()" class="btn-share">📲 PARTILHA NO WHATSAPP</button><button onclick="abrirWhatsAppVip()" class="btn-desbloquear" style="background:linear-gradient(135deg,#FFD700,#FFA500)">👑 PEDIR CÓDIGO VIP</button></div>
-<div id="modalAds" class="modal"><div class="modal-conteudo"><h3 style="color:#FFD700">📺 Patrocinado</h3><div class="contador" id="contador">5</div><button class="btn-pular" id="btnPular" onclick="pularAds()">Abrir Jogo Agora</button></div></div>
 <script>
-var linkJogoAtual='',intervaloAds;
 function abrirTela(id){document.querySelectorAll('.tela').forEach(t=>t.classList.remove('ativa'));document.getElementById(id).classList.add('ativa');window.scrollTo(0,0)}
 function verificarCodigo(){var c=document.getElementById('codigoVip').value;c==='PAGO000'?abrirTela('tela-jogos-vip-baixa'):alert('Código inválido!')}
 function verificarCodigoAlta(){var c=document.getElementById('codigoVipAlta').value;c==='PAGO000'?abrirTela('tela-jogos-vip-alta'):alert('Código inválido!')}
@@ -105,4 +106,4 @@ function cadastrarElephantbet(){window.open('https://www.elephantbet.co.ao/affil
 function partilharApp(){var t=`👑 APP PALPITE OURO\nBaixa: https://4br.me/PalpitesOuro24\nCanal: https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d`;if(navigator.share)navigator.share({title:'Palpite Ouro',text:t});else window.open('https://wa.me/?text='+encodeURIComponent(t),'_system')}
 </script>
 </body>
-                                                                                                                                                                                                                                                                                                 </html>
+                                                                                        </html>
