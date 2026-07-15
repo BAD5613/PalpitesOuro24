@@ -3,104 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#0A0A0F">
-<meta name="mobile-web-app-capable" content="yes">
 <title>Palpite Ouro</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{background:#0A0A0F;font-family:system-ui,Arial,sans-serif;color:#fff;padding:20px}.tela{display:none}.tela.ativa{display:block}.header{text-align:center;margin-bottom:30px}.logo-emoji{font-size:70px;margin:0 auto 15px;display:block}h1{color:#FFD700;font-size:24px;margin-bottom:5px}h2{color:#FFD700;font-size:20px;margin-bottom:5px}.menu{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}.card{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;border:1px solid #2A2A3E;cursor:pointer;border:none;width:100%}.card:active{transform:scale(.95);background:#FFD700}.card:active h3,.card:active p{color:#000}.card-icon{width:45px;height:45px;background:linear-gradient(135deg,#FFD700,#FF8C00);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px}.card h3{font-size:14px;margin-bottom:5px;color:#fff}.card p{font-size:11px;color:#888}.topo{display:flex;align-items:center;margin-bottom:20px}.voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:2px solid #2A2A3E;position:relative;transition:transform.3s,box-shadow.3s}.jogo.ao-vivo{border:2px solid #FF0000;cursor:pointer;box-shadow:0 0 20px rgba(255,0,0,.4)}.liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:10px}.times{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-weight:bold;font-size:16px}.vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:12px}.palpite{background:#2A2A2E;border-radius:8px;padding:10px;text-align:center;color:#FFD700;font-size:14px;margin-bottom:8px}.palpite.green{background:rgba(0,255,0,.15);border:1px solid #00FF00;color:#00FF00;font-weight:bold}.box-vip{background:#1A1A2E;border-radius:15px;padding:25px;text-align:center;margin-top:40px}.input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0A0F;color:#fff;text-align:center;font-size:16px;margin-bottom:15px}.btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;font-size:16px;cursor:pointer;margin-bottom:15px}.btn-secundario{background:transparent;border:1px solid #FFD700;color:#FFD700}.aviso{background:#1A1A2E;border:1px solid #FFA500;border-radius:10px;padding:12px;font-size:11px;color:#FFA500;text-align:center;margin-top:20px}.tag-vip{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;margin-left:10px}.id-fixa{background:#FFD700;color:#000;text-align:center;padding:8px;border-radius:8px;font-weight:bold;font-size:12px;margin-top:10px}.odd{color:#FFD700;font-weight:bold}.boletim-titulo{color:#FFD700;font-size:16px;margin-bottom:10px;font-weight:bold;display:flex;align-items:center;flex-wrap:wrap}.badge-hoje{background:#00FF00;color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:inline-block;margin-bottom:15px}.btn-share{width:100%;padding:15px;border-radius:10px;border:1px solid #FFD700;background:transparent;color:#FFD700;font-weight:bold;font-size:14px;cursor:pointer;margin-top:15px}.info-resumo{background:#1A1A2E;border-radius:15px;padding:20px;text-align:left;line-height:1.6;font-size:13px}.status-ao-vivo{background:#FF0000;color:#fff;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:none;margin-left:10px;animation:pisca 1.5s infinite}.status-ao-vivo.ativo{display:inline-block}.badge-clique{position:absolute;top:-10px;right:-10px;background:#FF0000;color:#fff;font-size:9px;padding:5px 10px;border-radius:20px;font-weight:bold;animation:pulse 2s infinite;z-index:10;display:none}.jogo.ao-vivo.badge-clique{display:block}.sem-jogos{background:#1A1A2E;border-radius:15px;padding:40px;text-align:center;color:#888;font-size:14px}.boletim-sep{height:1px;background:#2A2A3E;margin:30px 0}@keyframes pisca{0%,100%{opacity:1}50%{opacity:.5}}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);z-index:999999;display:none;align-items:center;justify-content:center;flex-direction:column}.modal.ativo{display:flex}.modal-conteudo{background:#1A1A2E;padding:25px;border-radius:15px;text-align:center;width:90%;max-width:350px}.contador{font-size:35px;color:#FFD700;margin:15px 0;font-weight:bold}.btn-pular{padding:12px 25px;background:#FFD700;color:#000;border:none;border-radius:8px;margin-top:15px;font-weight:bold;display:none}.btn-pular.ativo{display:inline-block}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0A0A0F;font-family:system-ui,Arial;color:#fff;padding:20px}
+.tela{display:none}.tela.ativa{display:block}.header{text-align:center;margin-bottom:30px}.logo-emoji{font-size:70px;display:block}h1{color:#FFD700;font-size:24px}h2{color:#FFD700;font-size:20px}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}
+.card{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;border:none;cursor:pointer;width:100%}
+.card:active{transform:scale(.95);background:#FFD700}.card-icon{width:45px;height:45px;background:linear-gradient(135deg,#FFD700,#FF8C00);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.card h3{font-size:14px;color:#fff}.card p{font-size:11px;color:#888}
+.topo{display:flex;align-items:center;margin-bottom:20px}.voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}
+.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:2px solid #2A2A3E;position:relative}
+.jogo.ao-vivo{border:2px solid #FF0000;box-shadow:0 0 20px rgba(255,0,0,.4)}
+.jogo.ganhou{border:2px solid #00FF00;background:#122212;box-shadow:0 0 20px rgba(0,255,0,.3)}
+.jogo.perdido{border:2px solid #FF3B3B;background:#1F1212;opacity:.8}
+.liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:10px}
+.times{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-weight:bold;font-size:14px}
+.vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:11px}
+.palpite{background:#2A2A2E;border-radius:8px;padding:10px;text-align:center;color:#FFD700;font-size:13px;margin-bottom:6px}
+.palpite.green{background:rgba(0,255,0,.15);border:1px solid #00FF00;color:#00FF00;font-weight:bold}
+.palpite.red{background:rgba(255,0,0,.15);border:1px solid #FF3B3B;color:#FF5555;font-weight:bold}
+.res{background:#0A0A0F;border-radius:8px;padding:8px 10px;margin-top:8px;display:flex;justify-content:space-between;font-size:12px;border:1px solid #2A2A3E;display:none}
+.res.ativo{display:flex}.g{color:#00FF00;font-weight:bold}.r{color:#FF3B3B;font-weight:bold}
+.id-fixa{background:#FFD700;color:#000;text-align:center;padding:8px;border-radius:8px;font-weight:bold;font-size:12px;margin-top:15px}
+.odd{color:#FFD700;font-weight:bold}.boletim-titulo{color:#FFD700;font-size:15px;margin:20px 0 10px;font-weight:bold}
+.badge-hoje{background:#00FF00;color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:inline-block;margin-bottom:15px}
+.box-vip{background:#1A1A2E;border-radius:15px;padding:25px;text-align:center;margin-top:40px}
+.input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0A0F;color:#fff;text-align:center;margin-bottom:15px}
+.btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;cursor:pointer;margin-bottom:15px}
+.btn-secundario{background:transparent;border:1px solid #FFD700;color:#FFD700}
+.btn-elephant{width:100%;padding:15px;border-radius:15px;border:none;background:linear-gradient(135deg,#E91E63,#9C27B0);color:#000;font-weight:bold;cursor:pointer;margin-bottom:15px;font-size:16px}
+.btn-share{width:100%;padding:15px;border-radius:15px;border:1px solid #FFD700;background:transparent;color:#FFD700;font-weight:bold;cursor:pointer;margin-bottom:15px;font-size:15px}
+.aviso{background:#1A1A2E;border:1px solid #FFA500;border-radius:10px;padding:12px;font-size:11px;color:#FFA500;text-align:center;margin-top:20px}
+.badge-clique{position:absolute;top:-10px;right:-10px;background:#FF0000;color:#fff;font-size:9px;padding:5px 10px;border-radius:20px;font-weight:bold;animation:pulse 2s infinite;display:none}
+.jogo.ao-vivo.badge-clique{display:block}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);z-index:9999;display:none;align-items:center;justify-content:center}.modal.ativo{display:flex}.modal-conteudo{background:#1A1A2E;padding:25px;border-radius:15px;text-align:center;width:90%;max-width:350px}.contador{font-size:35px;color:#FFD700;margin:15px 0;font-weight:bold}.btn-pular{padding:12px 25px;background:#FFD700;color:#000;border:none;border-radius:8px;margin-top:15px;font-weight:bold;display:none}.btn-pular.ativo{display:inline-block}
+.info-box{background:#1E1E33;border-radius:20px;padding:20px;text-align:left;line-height:1.7}
 </style>
 </head>
 <body>
-<div id="tela-menu" class="tela ativa">
-  <div class="header">
-    <div class="logo-emoji">👑</div>
-    <h1>PALPITE OURO</h1>
-  </div>
-  <div class="menu">
-    <button class="card" onclick="abrirTela('tela-gratuitas')">
-      <div class="card-icon">🎁</div>
-      <h3>APOSTAS GRATUITAS</h3>
-      <p>1 boletim de hoje</p>
-    </button>
-    <button class="card" onclick="abrirTela('tela-vip')">
-      <div class="card-icon">👑</div>
-      <h3>VIP ODD BAIXA</h3>
-      <p>2 boletins</p>
-    </button>
-    <button class="card" onclick="abrirTela('tela-vip-alta')">
-      <div class="card-icon">📈</div>
-      <h3>VIP ODD ALTA</h3>
-      <p>2 boletins</p>
-    </button>
-    <button class="card" onclick="abrirTela('tela-redes')">
-      <div class="card-icon">🔗</div>
-      <h3>REDES SOCIAIS</h3>
-      <p>Fale connosco</p>
-    </button>
-    <button class="card" onclick="abrirTela('tela-info')">
-      <div class="card-icon">🔔</div>
-      <h3>INFO</h3>
-      <p>Regras + Partilhar</p>
-    </button>
-  </div>
-  <div class="aviso">⚠️ Use as apostas VIP imediatamente após comprar.</div>
-</div>
+<div id="tela-menu" class="tela ativa"><div class="header"><div class="logo-emoji">👑</div><h1>PALPITE OURO</h1></div>
+<div class="menu">
+<button class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>ID 5634880 - 6 jogos</p></button>
+<button class="card" onclick="abrirTela('tela-vip')"><div class="card-icon">👑</div><h3>VIP ODD BAIXA</h3><p>2 boletins</p></button>
+<button class="card" onclick="abrirTela('tela-vip-alta')"><div class="card-icon">📈</div><h3>VIP ODD ALTA</h3><p>2 boletins</p></button>
+<button class="card" onclick="abrirTela('tela-redes')"><div class="card-icon">🔗</div><h3>REDES SOCIAIS</h3><p>Fale connosco</p></button>
+<button class="card" onclick="abrirTela('tela-info')"><div class="card-icon">🔔</div><h3>INFO</h3><p>Regras + Partilhar</p></button>
+</div><div class="aviso">⚠️ Use as apostas VIP imediatamente após comprar.</div></div>
 
 <div id="tela-gratuitas" class="tela">
-  <div class="topo">
-    <button class="voltar" onclick="abrirTela('tela-menu')">←</button>
-    <h2>GRÁTIS HOJE</h2>
-  </div>
-  <span class="badge-hoje">🔥 FIXA DE HOJE 14/07 - ODD 279.73</span>
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>GRÁTIS HOJE</h2></div>
+<span class="badge-hoje">🔥 BOLETIM DE HOJE 15/07 - ODD ~12.16</span>
+<div class="boletim-titulo">BOLETIM 15/07 – 6 JOGOS – ID 5634880</div>
 
-  <!-- BOLETIM UNICO - 14/07/2026 - ID 5381934 - 4 JOGOS - ODD 279.73 - VENCEDOR 1-15 MIN -->
-  <div class="boletim-titulo">BOLETIM DO DIA – 4 JOGOS – ODD 279.73 <span class="status-ao-vivo" data-hora="18:00">AO VIVO</span></div>
+<div class="jogo" data-hora="10:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Amigáveis • 10:00</span><span class="odd">1.53</span></div><div class="times"><span>Fortuna Dusseldorf</span><span class="vs">VS</span><span>MFK Ruzomberok</span></div><div class="palpite">⚽ Resultado do Jogo - Fortuna Dusseldorf</div><div class="res"><span>Resultado: --</span><span></span></div></div>
 
-  <div class="jogo" data-hora="18:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
-    <span class="badge-clique">📺 ASSISTIR</span>
-    <div class="liga"><span>Áustria • Regionalliga</span><span>18:00</span><span class="odd">3.87</span></div>
-    <div class="times"><span>SC Weiz</span><span class="vs">VS</span><span>Ilzer SV</span></div>
-    <div class="palpite">⚽ Análise: Vencedor 1-15 Min - SC Weiz</div>
-  </div>
+<div class="jogo" data-hora="11:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>USA • 11:00</span><span class="odd">1.49</span></div><div class="times"><span>Charleston Battery</span><span class="vs">VS</span><span>Loudoun United</span></div><div class="palpite">⚽ Resultado do Jogo - Charleston Battery</div><div class="res"><span>Resultado: --</span><span></span></div></div>
 
-  <div class="jogo" data-hora="19:30" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
-    <span class="badge-clique">📺 ASSISTIR</span>
-    <div class="liga"><span>Inglaterra • Southern League</span><span>19:30</span><span class="odd">4.10</span></div>
-    <div class="times"><span>Plymouth Parkway FC</span><span class="vs">VS</span><span>Torquay United</span></div>
-    <div class="palpite">⚽ Análise: Vencedor 1-15 Min - Torquay United</div>
-  </div>
+<div class="jogo" data-hora="17:30" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Bélgica • 17:30</span><span class="odd">1.56</span></div><div class="times"><span>Patro Eisden</span><span class="vs">VS</span><span>Sint Truidense VV</span></div><div class="palpite">⚽ Resultado do Jogo - Sint Truidense VV</div><div class="res"><span>Resultado: --</span><span></span></div></div>
 
-  <div class="jogo" data-hora="19:45" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
-    <span class="badge-clique">📺 ASSISTIR</span>
-    <div class="liga"><span>Inglaterra • Isthmian League</span><span>19:45</span><span class="odd">4.30</span></div>
-    <div class="times"><span>Bedfont Sports FC</span><span class="vs">VS</span><span>St Albans City FC</span></div>
-    <div class="palpite">⚽ Análise: Vencedor 1-15 Min - St Albans City FC</div>
-  </div>
+<div class="jogo" data-hora="17:30" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>França • 17:30</span><span class="odd">1.52</span></div><div class="times"><span>Olympique Lyonnais</span><span class="vs">VS</span><span>Servette FC</span></div><div class="palpite">⚽ Resultado do Jogo - Olympique Lyonnais</div><div class="res"><span>Resultado: --</span><span></span></div></div>
 
-  <div class="jogo" data-hora="19:45" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
-    <span class="badge-clique">📺 ASSISTIR</span>
-    <div class="liga"><span>Inglaterra • Isthmian League</span><span>19:45</span><span class="odd">4.10</span></div>
-    <div class="times"><span>Burgess Hill Town FC</span><span class="vs">VS</span><span>Sevenoaks Town FC</span></div>
-    <div class="palpite">⚽ Análise: Vencedor 1-15 Min - Burgess Hill Town FC</div>
-  </div>
+<div class="jogo" data-hora="18:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Alemanha • 18:00</span><span class="odd">1.47</span></div><div class="times"><span>Bor. M.Gladbach II</span><span class="vs">VS</span><span>TuS Koblenz</span></div><div class="palpite">⚽ Resultado do Jogo - Borussia M.Gladbach II</div><div class="res"><span>Resultado: --</span><span></span></div></div>
 
-  <div class="id-fixa">ELEPHANTBET 🆔5381934 - ODD TOTAL 279.73 - 14/07/2026</div>
-  <div style="text-align:center;color:#888;font-size:11px;margin-top:20px">+18 | Isto é uma análise, não é garantia. Jogue com responsabilidade</div>
+<div class="jogo" data-hora="18:30" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Alemanha • 18:30</span><span class="odd">1.53</span></div><div class="times"><span>TSG Sprockhovel</span><span class="vs">VS</span><span>Ratingen 04/19</span></div><div class="palpite">⚽ Resultado do Jogo - Ratingen 04/19</div><div class="res"><span>Resultado: --</span><span></span></div></div>
+
+<div class="id-fixa">ELEPHANTBET 🆔5634880 - ODD TOTAL ~12.16 - 15.07.2026</div>
+<div style="text-align:center;color:#888;font-size:11px;margin-top:15px">+18 | Isto é uma análise, não é garantia. Jogue com responsabilidade</div>
 </div>
 
-<div id="tela-vip" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD BAIXA</h2></div><div class="box-vip"><div style="font-size:50px;margin-bottom:15px">👑</div><h2 style="color:#FFD700;margin-bottom:10px">CONTEÚDO EXCLUSIVO</h2><input id="codigoVip" type="text" placeholder="Digite seu código" class="input-codigo"><button onclick="verificarCodigo()" class="btn-desbloquear">DESBLOQUEAR</button></div></div>
-<div id="tela-jogos-vip-baixa" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD BAIXA <span class="tag-vip">VIP</span></h2></div><div class="sem-jogos">Nenhum boletim disponível no momento.<br>Aguarde atualização.</div></div>
-<div id="tela-vip-alta" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD ALTA</h2></div><div class="box-vip"><div style="font-size:50px;margin-bottom:15px">📈</div><h2 style="color:#FFD700;margin-bottom:10px">ODDS ALTAS</h2><input id="codigoVipAlta" type="text" placeholder="Digite seu código" class="input-codigo"><button onclick="verificarCodigoAlta()" class="btn-desbloquear">DESBLOQUEAR</button></div></div>
-<div id="tela-jogos-vip-alta" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD ALTA <span class="tag-vip">VIP</span></h2></div><div class="sem-jogos">Nenhum boletim disponível no momento.<br>Aguarde atualização.</div></div>
-<div id="tela-redes" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>REDES SOCIAIS</h2></div><div class="box-vip"><div style="font-size:50px;margin-bottom:15px">🔗</div><h2 style="color:#FFD700;margin-bottom:10px">SIGA-NOS E FALE CONNOSCO</h2><button onclick="abrirWhatsAppCanal()" class="btn-desbloquear">WHATSAPP CANAL</button><button onclick="abrirWhatsAppVip()" class="btn-desbloquear">👑 VIP WHATSAPP - FALAR COM ROSS</button><button onclick="abrirFacebook()" class="btn-desbloquear btn-secundario">FACEBOOK SUPORTE</button></div></div>
-<div id="tela-info" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>INFO</h2></div><div class="info-resumo"><div style="text-align:center;font-size:40px;margin-bottom:15px">👑</div><b style="color:#FFD700;font-size:18px;display:block;text-align:center;margin-bottom:15px">COMO FUNCIONA O VIP PALPITE OURO24</b><b style="color:#00FF00;display:block;text-align:center;margin-bottom:15px">Sem risco pra ti. Paga só se lucrar.</b><div style="background:#2A2A3E;padding:15px;border-radius:10px;margin:15px 0"><b style="color:#FFD700">PASSO A PASSO:</b><br><span style="font-size:12px;line-height:1.8">1. Tu pedes acesso VIP no meu PV<br>2. Eu te envio o CÓDIGO VIP do dia: válido 24h<br>3. Tu usas o código, tiras as fixas e fazes a aposta<br>4. Envia screenshot da fixa apostada aqui no PV<br>5. Agora só esperamos o resultado juntos<br><br><b style="color:#00FF00">SE BATER GREEN:</b> Tu me pagas 20% do lucro como recompensa.<br><b style="color:#FF5555">SE BATER RED:</b> Tu não me deves nada. Zero. Tentamos de novo no dia seguinte.</span></div>⚠️ <b>REGRA:</b> Só trabalho com gente séria.<br><br>🎯 <b>GRÁTIS:</b> Todo dia às 10h no canal<br>👑 <b>VIP:</b> Código novo todo dia<br><br>+18 | Nunca aposte +5% da banca | Jogue com responsabilidade</div><button onclick="cadastrarElephantbet()" class="btn-desbloquear" style="background:linear-gradient(135deg,#E91E63,#9C27B0)">💰 CADASTRAR NA ELEPHANTBET</button><button onclick="partilharApp()" class="btn-share">📲 PARTILHA NO WHATSAPP</button><button onclick="abrirWhatsAppVip()" class="btn-desbloquear" style="margin-top:10px">👑 PEDIR CÓDIGO VIP</button></div>
+<div id="tela-vip" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD BAIXA</h2></div><div class="box-vip"><div style="font-size:50px">👑</div><h2 style="color:#FFD700">CONTEÚDO EXCLUSIVO</h2><input id="codigoVip" type="text" placeholder="Digite seu código" class="input-codigo"><button onclick="verificarCodigo()" class="btn-desbloquear">DESBLOQUEAR</button></div></div>
+<div id="tela-jogos-vip-baixa" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD BAIXA</h2></div><div class="info-resumo" style="text-align:center">Nenhum boletim disponível.</div></div>
+<div id="tela-vip-alta" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD ALTA</h2></div><div class="box-vip"><div style="font-size:50px">📈</div><h2 style="color:#FFD700">ODDS ALTAS</h2><input id="codigoVipAlta" type="text" placeholder="Digite seu código" class="input-codigo"><button onclick="verificarCodigoAlta()" class="btn-desbloquear">DESBLOQUEAR</button></div></div>
+<div id="tela-jogos-vip-alta" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD ALTA</h2></div><div class="info-resumo" style="text-align:center">Nenhum boletim disponível.</div></div>
+<div id="tela-redes" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>REDES SOCIAIS</h2></div><div class="box-vip"><h2 style="color:#FFD700">SIGA-NOS</h2><button onclick="abrirWhatsAppCanal()" class="btn-desbloquear">WHATSAPP CANAL</button><button onclick="abrirWhatsAppVip()" class="btn-desbloquear">👑 VIP WHATSAPP - FALAR COM ROSS</button></div></div>
 
-<div id="modalAds" class="modal"><div class="modal-conteudo"><h3 style="color:#FFD700;margin-bottom:15px">📺 Patrocinado</h3><div style="font-size:50px;margin:20px 0">🎬</div><div class="contador" id="contador">5</div><p style="color:#888;font-size:12px">Aguarde 5 segundos...</p><button class="btn-pular" id="btnPular" onclick="pularAds()">Abrir Jogo Agora</button></div></div>
+<div id="tela-info" class="tela">
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>INFO</h2></div>
+<div style="text-align:center;margin-bottom:20px"><div style="font-size:60px">👑</div><h2 style="color:#FFD700;font-size:20px;margin:15px 0">COMO FUNCIONA O VIP PALPITE OURO24</h2><div style="color:#00FF00;font-weight:bold;font-size:15px">Sem risco pra ti. Paga só se lucrar.</div></div>
+<div class="info-box">
+<div style="color:#FFD700;font-weight:bold;font-size:16px;margin-bottom:10px">PASSO A PASSO:</div>
+1. Tu pedes acesso VIP no meu PV<br>
+2. Eu te envio o CÓDIGO VIP do dia: válido 24h<br>
+3. Tu usas o código, tiras as fixas e fazes a aposta<br>
+4. Envia screenshot da fixa apostada aqui no PV<br>
+5. Agora só esperamos o resultado juntos<br><br>
+<div style="color:#00FF00;font-weight:bold">SE BATER GREEN:</div> Tu me pagas 20% do lucro como recompensa.<br><br>
+<div style="color:#FF5555;font-weight:bold">SE BATER RED:</div> Tu não me deves nada. Zero. Tentamos de novo no dia seguinte.<br>
+</div>
+<div style="margin:20px 0;line-height:1.8">
+⚠️ <b>REGRA:</b> Só trabalho com gente séria.<br><br>
+🎯 <b>GRÁTIS:</b> Todo dia às 10h no canal<br>
+👑 <b>VIP:</b> Código novo todo dia<br><br>
++18 | Nunca aposte +5% da banca | Jogue com responsabilidade
+</div>
+<button onclick="cadastrarElephantbet()" class="btn-elephant">💰 CADASTRAR NA ELEPHANTBET</button>
+<button onclick="partilharApp()" class="btn-share">📲 PARTILHA NO WHATSAPP</button>
+<button onclick="abrirWhatsAppVip()" class="btn-desbloquear" style="background:linear-gradient(135deg,#FFD700,#FFA500);font-size:16px">👑 PEDIR CÓDIGO VIP</button>
+</div>
 
-<script>var linkJogoAtual='',intervaloAds,intervaloAoVivo;function abrirTela(idTela){document.querySelectorAll('.tela').forEach(t=>t.classList.remove('ativa'));document.getElementById(idTela).classList.add('ativa');window.scrollTo(0,0)}function verificarCodigo(){var c=document.getElementById('codigoVip').value;c==='PAGO000'?abrirTela('tela-jogos-vip-baixa'):alert('Código inválido! ❌')}function verificarCodigoAlta(){var c=document.getElementById('codigoVipAlta').value;c==='PAGO000'?abrirTela('tela-jogos-vip-alta'):alert('Código inválido! ❌')}function abrirWhatsAppCanal(){window.open('https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d','_system')}function abrirWhatsAppVip(){window.open('https://wa.me/message/2EPEENB2KKE3K1','_system')}function abrirFacebook(){window.open('https://www.facebook.com/share/1KYt8erXZp/','_system')}function cadastrarElephantbet(){window.open('https://www.elephantbet.co.ao/affiliates/?btag=2754760','_system')}function partilharApp(){var t=`👑 APP PALPITE OURO - SEM RISCO 👑\n\n✅ Palpites grátis todo dia às 10h\n✅ VIP: Paga 20% SÓ SE GANHAR\n✅ Se perder, não pagas nada\n\nCadastra na Elephantbet: https://www.elephantbet.co.ao/affiliates/?btag=2754760\n\nBaixa o app: https://4br.me/PalpitesOuro24\n\nEntra no canal WhatsApp:\nhttps://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d\n\n+18 | Jogue com responsabilidade`;if(navigator.share&&navigator.canShare&&navigator.canShare({text:t})){navigator.share({title:'Palpite Ouro VIP',text:t})}else{window.open('https://wa.me/?text='+encodeURIComponent(t),'_system')}}function abrirJogoAoVivo(linkAds,linkJogo){var m=document.getElementById('modalAds'),c=document.getElementById('contador'),b=document.getElementById('btnPular'),t=5;linkJogoAtual=linkJogo;m.classList.add('ativo');c.textContent=t;b.classList.remove('ativo');window.open(linkAds,'_blank');clearInterval(intervaloAds);intervaloAds=setInterval(function(){t--;c.textContent=t;if(t<=0){clearInterval(intervaloAds);b.classList.add('ativo');fecharAdsEAbrirJogo()}},1000)}function pularAds(){clearInterval(intervaloAds);fecharAdsEAbrirJogo()}function fecharAdsEAbrirJogo(){var m=document.getElementById('modalAds');m.classList.remove('ativo');window.open(linkJogoAtual,'_blank')}function atualizarAoVivo(){try{var a=new Date(new Date().toLocaleString("en-US",{timeZone:"Africa/Luanda"})),h=a.getHours()*60+a.getMinutes();document.querySelectorAll('.jogo').forEach(function(j){var hj=j.getAttribute('data-hora');if(!hj)return;var s=hj.split(':'),mj=parseInt(s[0])*60+parseInt(s[1]);var p=j.querySelectorAll('.palpite');if(h>=mj&&h<mj+120){j.classList.add('ao-vivo');p.forEach(function(x){if(!x.classList.contains('green')){x.classList.add('green');x.textContent=x.textContent.replace('⚽','🟢')}});if(!j.dataset.onclickSet){j.onclick=function(e){e.stopPropagation();var la=j.getAttribute('data-ads'),lj=j.getAttribute('data-jogo');if(la&&lj){abrirJogoAoVivo(la,lj)}};j.dataset.onclickSet='true'}}else{j.classList.remove('ao-vivo');p.forEach(function(x){x.classList.remove('green');x.textContent=x.textContent.replace('🟢','⚽')});j.onclick=null;delete j.dataset.onclickSet}})}catch(e){}}function atualizarDatas(){const d=new Date().toLocaleDateString('pt-PT',{day:'2-digit',month:'2-digit'});document.querySelectorAll('.dataHoje, #dataHojeVip, #dataHojeVipAlta').forEach(e=>{if(e)e.textContent=d})}function iniciarLoop(){clearInterval(intervaloAoVivo);atualizarAoVivo();intervaloAoVivo=setInterval(atualizarAoVivo,10000)}
-document.addEventListener('DOMContentLoaded',function(){atualizarDatas();iniciarLoop()});
-document.addEventListener('visibilitychange',function(){if(document.hidden){clearInterval(intervaloAoVivo)}else{iniciarLoop()}});
-document.getElementById('modalAds').addEventListener('click',function(e){if(e.target===this)pularAds()});
+<div id="modalAds" class="modal"><div class="modal-conteudo"><h3 style="color:#FFD700">📺 Patrocinado</h3><div class="contador" id="contador">5</div><button class="btn-pular" id="btnPular" onclick="pularAds()">Abrir Jogo Agora</button></div></div>
+
+<script>
+var linkJogoAtual='',intervaloAds,intervaloAoVivo;
+function abrirTela(id){document.querySelectorAll('.tela').forEach(t=>t.classList.remove('ativa'));document.getElementById(id).classList.add('ativa');window.scrollTo(0,0)}
+function verificarCodigo(){var c=document.getElementById('codigoVip').value;c==='PAGO000'?abrirTela('tela-jogos-vip-baixa'):alert('Código inválido!')}
+function verificarCodigoAlta(){var c=document.getElementById('codigoVipAlta').value;c==='PAGO000'?abrirTela('tela-jogos-vip-alta'):alert('Código inválido!')}
+function abrirWhatsAppCanal(){window.open('https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d','_system')}
+function abrirWhatsAppVip(){window.open('https://wa.me/message/2EPEENB2KKE3K1','_system')}
+function cadastrarElephantbet(){window.open('https://www.elephantbet.co.ao/affiliates/?btag=2754760','_system')}
+function partilharApp(){var t=`👑 APP PALPITE OURO - SEM RISCO 👑\n\n✅ Palpites grátis todo dia às 10h\n✅ VIP: Paga 20% SÓ SE GANHAR\n✅ Se perder, não pagas nada\n\nBaixa o app: https://4br.me/PalpitesOuro24\n\nCanal: https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d`;if(navigator.share)navigator.share({title:'Palpite Ouro',text:t});else window.open('https://wa.me/?text='+encodeURIComponent(t),'_system')}
+function abrirJogoAoVivo(a,j){var m=document.getElementById('modalAds'),c=document.getElementById('contador'),b=document.getElementById('btnPular'),t=5;linkJogoAtual=j;m.classList.add('ativo');c.textContent=t;b.classList.remove('ativo');window.open(a,'_blank');clearInterval(intervaloAds);intervaloAds=setInterval(function(){t--;c.textContent=t;if(t<=0){clearInterval(intervaloAds);b.classList.add('ativo');fecharAdsEAbrirJogo()}},1000)}
+function pularAds(){clearInterval(intervaloAds);fecharAdsEAbrirJogo()}
+function fecharAdsEAbrirJogo(){document.getElementById('modalAds').classList.remove('ativo');window.open(linkJogoAtual,'_blank')}
+function atualizarAoVivo(){try{var agora=new Date(new Date().toLocaleString("en-US",{timeZone:"Africa/Luanda"})),mins=agora.getHours()*60+agora.getMinutes();document.querySelectorAll('.jogo[data-hora]').forEach(function(j){if(j.classList.contains('ganhou')||j.classList.contains('perdido'))return;var hj=j.getAttribute('data-hora').split(':'),mj=parseInt(hj[0])*60+parseInt(hj[1]);if(mins>=mj&&mins<mj+120){j.classList.add('ao-vivo');var p=j.querySelector('.palpite');if(p&&!p.classList.contains('green'))p.classList.add('green');if(!j.dataset.onclickSet){j.onclick=function(){abrirJogoAoVivo(j.getAttribute('data-ads'),j.getAttribute('data-jogo'))};j.dataset.onclickSet='true'}}else{j.classList.remove('ao-vivo');var p=j.querySelector('.palpite');if(p){p.classList.remove('green');}}})}catch(e){}}
+function iniciarLoop(){clearInterval(intervaloAoVivo);atualizarAoVivo();intervaloAoVivo=setInterval(atualizarAoVivo,15000)}
+document.addEventListener('DOMContentLoaded',iniciarLoop);
 </script>
 </body>
-</html>
+                                                                                                                                                                                                              </html>
