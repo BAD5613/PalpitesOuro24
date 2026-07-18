@@ -12,31 +12,28 @@
 .card-icon{width:45px;height:45px;background:linear-gradient(135deg,#FFD700,#FF8C00);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px}
 .card h3{font-size:14px;color:#fff}.card p{font-size:11px;color:#888}
 .topo{display:flex;align-items:center;margin-bottom:20px}.voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}
-.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:15px;border:2px solid #2A2A3E;position:relative}
+.jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:12px;border:2px solid #2A2A3E;position:relative}
 .jogo.ao-vivo{border:2px solid #FF0000;box-shadow:0 0 20px rgba(255,0,0,.4)}
 .jogo.ganhou{border:2px solid #00FF00;background:#122212}.jogo.perdido{border:2px solid #FF3B3B;background:#1F1212}
-.liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:10px}
-.times{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-weight:bold;font-size:14px}
+.liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:8px}
+.times{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;font-weight:bold;font-size:13px}
 .vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:11px}
-.palpite{background:#2A2A2E;border-radius:8px;padding:10px;text-align:left;color:#FFD700;font-size:12px;margin-bottom:6px}
-.id-fixa{background:#FFD700;color:#000;text-align:center;padding:8px;border-radius:8px;font-weight:bold;font-size:12px;margin-top:10px;margin-bottom:25px}
-.odd{color:#FFD700;font-weight:bold}.boletim-titulo{color:#FFD700;font-size:15px;margin:20px 0 10px;font-weight:bold}
-.badge-hoje{background:#00FF00;color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:inline-block;margin-bottom:15px}
-.badge-alta{background:#FF8C00;color:#000;font-size:10px;padding:3px 8px;border-radius:5px;font-weight:bold;display:inline-block;margin-bottom:15px}
+.palpite{background:#2A2A2E;border-radius:8px;padding:8px 10px;text-align:left;color:#FFD700;font-size:12px}
+.id-fixa{background:#FFD700;color:#000;text-align:center;padding:10px;border-radius:8px;font-weight:bold;font-size:12px;margin-top:15px}
+.odd{color:#FFD700;font-weight:bold}.boletim-titulo{color:#FFD700;font-size:14px;margin:20px 0 10px;font-weight:bold}
+.badge-hoje{background:#00FF00;color:#000;font-size:10px;padding:4px 10px;border-radius:5px;font-weight:bold;display:inline-block;margin-bottom:15px}
+.badge-clique{position:absolute;top:-10px;right:-10px;background:#FF0000;color:#fff;font-size:9px;padding:5px 10px;border-radius:20px;font-weight:bold;animation:pulse 2s infinite;display:none}
+.jogo.ao-vivo.badge-clique{display:block}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 .box-vip{background:#1A1A2E;border-radius:15px;padding:25px;text-align:center;margin-top:40px}
 .input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0A0F;color:#fff;text-align:center;margin-bottom:15px}
 .btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;cursor:pointer;margin-bottom:15px}
 .info-box{background:#1E1E33;border-radius:20px;padding:20px;text-align:left;line-height:1.7}
-.mercado-lista{background:#0A0A0F;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;line-height:1.8}
-.mercado-lista div{border-bottom:1px solid #1A1A2E;padding:3px 0}
-.badge-clique{position:absolute;top:-10px;right:-10px;background:#FF0000;color:#fff;font-size:9px;padding:5px 10px;border-radius:20px;font-weight:bold;animation:pulse 2s infinite;display:none}
-.jogo.ao-vivo.badge-clique{display:block}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 </style>
 </head>
 <body>
 <div id="tela-menu" class="tela ativa"><div class="header"><div class="logo-emoji">👑</div><h1>PALPITE OURO</h1></div>
 <div class="menu">
-<button class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>2 Boletins hoje</p></button>
+<button class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>ID 6423734 - ODD 99.62 - 18/07</p></button>
 <button class="card" onclick="abrirTela('tela-vip')"><div class="card-icon">👑</div><h3>VIP ODD BAIXA</h3><p>2 boletins</p></button>
 <button class="card" onclick="abrirTela('tela-vip-alta')"><div class="card-icon">📈</div><h3>VIP ODD ALTA</h3><p>2 boletins</p></button>
 <button class="card" onclick="abrirTela('tela-redes')"><div class="card-icon">🔗</div><h3>REDES SOCIAIS</h3><p>Fale connosco</p></button>
@@ -44,75 +41,42 @@
 </div></div>
 
 <div id="tela-gratuitas" class="tela">
-<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>GRÁTIS HOJE - 2 BOLETINS</h2></div>
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>GRÁTIS HOJE</h2></div>
+<span class="badge-hoje">🔥 BOLETIM NOVO 18/07 - ID 6423734 - ODD 99.629</span>
+<div class="boletim-titulo">BOLETIM 18/07 – ID 6423734 – ODD 99.629 – 11 JOGOS</div>
 
-<span class="badge-hoje">🔥 BOLETIM 1 - ID 6189585 - ODD 25.549</span>
-<div class="boletim-titulo">BOLETIM 1 – ID 6189585 – ODD 25.549 – 2 JOGOS</div>
+<div class="jogo" data-hora="11:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>China U20 • 11:00</span><span class="odd">1.56</span></div><div class="times"><span>Shanghai Port U20</span><span class="vs">VS</span><span>Shandong Taishan U20</span></div><div class="palpite">⚽ Resultado do Jogo - Shanghai Port FC U20</div></div>
 
-<div class="jogo" data-hora="19:30" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
-<span class="badge-clique">📺 AO VIVO</span>
-<div class="liga"><span>Roménia Superliga • 19:30</span><span class="odd">5.82</span></div>
-<div class="times"><span>FCSB</span><span class="vs">VS</span><span>FC Arges</span></div>
-<div class="palpite">⚽ 4 Mercados Combinados</div>
-<div class="mercado-lista"><div>• Dupla Chance 12</div><div>• Ambas marcarão Sim</div><div>• Total golos +3.5</div><div>• Total Golos 1ª Parte +1.5</div></div>
-</div>
+<div class="jogo" data-hora="12:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Amigáveis • 12:00</span><span class="odd">1.58</span></div><div class="times"><span>Zorya Luhansk</span><span class="vs">VS</span><span>Grimsby Town</span></div><div class="palpite">⚽ Resultado do Jogo - Zorya Luhansk</div></div>
 
-<div class="jogo" data-hora="21:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
-<span class="badge-clique">📺 AO VIVO</span>
-<div class="liga"><span>EUA USL League Two • 21:00</span><span class="odd">4.39</span></div>
-<div class="times"><span>Steel City FC</span><span class="vs">VS</span><span>Northern Indiana FC</span></div>
-<div class="palpite">⚽ 5 Mercados Combinados</div>
-<div class="mercado-lista"><div>• 1ª Parte +1.5</div><div>• Ambas marcarão Sim</div><div>• Dupla Chance 12</div><div>• Total +3.5</div><div>• Steel City +1.5</div></div>
-</div>
+<div class="jogo" data-hora="12:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Inglaterra • 12:00</span><span class="odd">1.50</span></div><div class="times"><span>Chatham Town FC</span><span class="vs">VS</span><span>Margate FC</span></div><div class="palpite">⚽ Resultado do Jogo - Chatham Town FC</div></div>
 
-<div class="id-fixa">ELEPHANTBET 🆔6189585 - ODD 25.549 - 17.07.2026</div>
+<div class="jogo" data-hora="13:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Dinamarca • 13:00</span><span class="odd">1.50</span></div><div class="times"><span>AC Horsens</span><span class="vs">VS</span><span>Vendsyssel FF</span></div><div class="palpite">⚽ Resultado do Jogo - AC Horsens</div></div>
 
-<hr style="margin:30px 0;border:1px solid #2A2A3E">
+<div class="jogo" data-hora="15:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Inglaterra • 15:00</span><span class="odd">1.57</span></div><div class="times"><span>Halesowen Town</span><span class="vs">VS</span><span>Kidderminster Harriers</span></div><div class="palpite">⚽ Resultado do Jogo - Kidderminster Harriers FC</div></div>
 
-<span class="badge-alta">💣 BOLETIM 2 - ID 6243934 - ODD 183.088 - FICHA DOS MILHÕES</span>
-<div class="boletim-titulo">BOLETIM 2 – ID 6243934 – ODD 183.088 – 4 JOGOS</div>
+<div class="jogo" data-hora="15:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Alemanha Amigáveis • 15:00</span><span class="odd">1.52</span></div><div class="times"><span>1. FC Nurnberg</span><span class="vs">VS</span><span>Waldhof Mannheim</span></div><div class="palpite">⚽ Resultado do Jogo - 1. FC Nurnberg</div></div>
 
-<div class="jogo" data-hora="19:30" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
-<span class="badge-clique">📺 AO VIVO</span>
-<div class="liga"><span>Roménia Superliga • 19:30</span><span class="odd">4.10</span></div>
-<div class="times"><span>FCSB</span><span class="vs">VS</span><span>FC Arges</span></div>
-<div class="palpite">⚽ Resultado do Jogo - Empate</div>
-</div>
+<div class="jogo" data-hora="15:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Inglaterra Amigáveis • 15:00</span><span class="odd">1.47</span></div><div class="times"><span>AFC Fylde</span><span class="vs">VS</span><span>Huddersfield Town</span></div><div class="palpite">⚽ Resultado do Jogo - Huddersfield Town</div></div>
 
-<div class="jogo" data-hora="21:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
-<span class="badge-clique">📺 AO VIVO</span>
-<div class="liga"><span>EUA USL League Two • 21:00</span><span class="odd">4.49</span></div>
-<div class="times"><span>Steel City FC</span><span class="vs">VS</span><span>Northern Indiana FC</span></div>
-<div class="palpite">⚽ 5 Mercados Combinados</div>
-<div class="mercado-lista"><div>• Dupla Chance 12</div><div>• Ambas marcarão Sim</div><div>• Total +3.5</div><div>• Steel City +1.5</div><div>• 1ª Parte +1.5</div></div>
-</div>
+<div class="jogo" data-hora="15:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Finlândia • 15:00</span><span class="odd">1.53</span></div><div class="times"><span>Helsingin Palloseura</span><span class="vs">VS</span><span>MyPa</span></div><div class="palpite">⚽ Resultado do Jogo - Helsingin Palloseura</div></div>
 
-<div class="jogo" data-hora="18:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
-<span class="badge-clique">📺 AO VIVO</span>
-<div class="liga"><span>Mundo Amigáveis • 18:00</span><span class="odd">2.96</span></div>
-<div class="times"><span>Club Brugge</span><span class="vs">VS</span><span>Heerenveen</span></div>
-<div class="palpite">⚽ 5 Mercados Combinados</div>
-<div class="mercado-lista"><div>• Total +3.5</div><div>• Ambas marcarão Sim</div><div>• Dupla Chance 12</div><div>• Club Brugge +1.5</div><div>• 1ª Parte +1.5</div></div>
-</div>
+<div class="jogo" data-hora="15:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Islândia • 15:00</span><span class="odd">1.49</span></div><div class="times"><span>Grotta</span><span class="vs">VS</span><span>Aegir Thorlakshofn</span></div><div class="palpite">⚽ Resultado do Jogo - Grotta</div></div>
 
-<div class="jogo" data-hora="18:30" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760">
-<span class="badge-clique">📺 AO VIVO</span>
-<div class="liga"><span>Mundo Amigáveis • 18:30</span><span class="odd">3.36</span></div>
-<div class="times"><span>FC Bulle</span><span class="vs">VS</span><span>FC Portalban</span></div>
-<div class="palpite">⚽ 5 Mercados Combinados</div>
-<div class="mercado-lista"><div>• Dupla Chance 12</div><div>• Ambas marcarão Sim</div><div>• Total +3.5</div><div>• FC Bulle +1.5</div><div>• 1ª Parte +1.5</div></div>
-</div>
+<div class="jogo" data-hora="16:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Finlândia • 16:00</span><span class="odd">1.56</span></div><div class="times"><span>FC Ilves 2</span><span class="vs">VS</span><span>FC Honka</span></div><div class="palpite">⚽ Resultado do Jogo - FC Honka</div></div>
 
-<div class="id-fixa">ELEPHANTBET 🆔6243934 - ODD 183.088 - 17.07.2026 15:27</div>
-<div style="text-align:center;color:#888;font-size:11px;margin-top:15px">+18 | Isto é uma análise, não é garantia. Jogue com responsabilidade</div>
+<div class="jogo" data-hora="17:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>Islândia • 17:00</span><span class="odd">1.44</span></div><div class="times"><span>Magni Grenivik</span><span class="vs">VS</span><span>Fjolnir</span></div><div class="palpite">⚽ Resultado do Jogo - Fjolnir</div></div>
+
+<div class="id-fixa">ELEPHANTBET 🆔6423734 - ODD 99.629 - 18.07.2026 10:01</div>
+<div style="text-align:center;color:#888;font-size:11px;margin-top:12px">+18 | Isto é uma análise, não é garantia. Jogue com responsabilidade</div>
 </div>
 
 <div id="tela-vip" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD BAIXA</h2></div><div class="box-vip"><h2 style="color:#FFD700">CONTEÚDO EXCLUSIVO</h2><input id="codigoVip" type="text" placeholder="Digite seu código" class="input-codigo"><button onclick="verificarCodigo()" class="btn-desbloquear">DESBLOQUEAR</button></div></div>
 <div id="tela-jogos-vip-baixa" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD BAIXA</h2></div><div style="text-align:center;background:#1A1A2E;padding:20px;border-radius:15px">Nenhum boletim disponível.</div></div>
 <div id="tela-vip-alta" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD ALTA</h2></div><div class="box-vip"><h2 style="color:#FFD700">ODDS ALTAS</h2><input id="codigoVipAlta" type="text" placeholder="Digite seu código" class="input-codigo"><button onclick="verificarCodigoAlta()" class="btn-desbloquear">DESBLOQUEAR</button></div></div>
 <div id="tela-jogos-vip-alta" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD ALTA</h2></div><div style="text-align:center;background:#1A1A2E;padding:20px;border-radius:15px">Nenhum boletim disponível.</div></div>
-<div id="tela-redes" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>REDES SOCIAIS</h2></div><div class="box-vip"><h2 style="color:#FFD700">SIGA-NOS</h2><button onclick="abrirWhatsAppCanal()" class="btn-desbloquear">WHATSAPP CANAL</button><button onclick="abrirWhatsAppVip()" class="btn-desbloquear">👑 VIP WHATSAPP</button></div></div>
-<div id="tela-info" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>INFO</h2></div><div style="text-align:center"><div style="font-size:60px">👑</div><h2 style="color:#FFD700">COMO FUNCIONA O VIP</h2><div style="color:#00FF00;font-weight:bold">Sem risco. Paga só se lucrar.</div></div><div class="info-box" style="margin-top:20px">1. Pedes acesso VIP<br>2. Recebes CÓDIGO 24h<br>3. Usas código e apostas<br>4. Envia screenshot<br>5. Esperamos resultado<br><br><div style="color:#00FF00">SE GREEN:</div> Pagas 20% lucro<br><div style="color:#FF5555">SE RED:</div> Não pagas nada<br></div></div>
+<div id="tela-redes" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>REDES SOCIAIS</h2></div><div class="box-vip"><h2 style="color:#FFD700">SIGA-NOS</h2><button onclick="abrirWhatsAppCanal()" class="btn-desbloquear">WHATSAPP CANAL</button><button onclick="abrirWhatsAppVip()" class="btn-desbloquear">👑 VIP WHATSAPP - FALAR COM ROSS</button></div></div>
+<div id="tela-info" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>INFO</h2></div><div style="text-align:center"><div style="font-size:60px">👑</div><h2 style="color:#FFD700">VIP PALPITE OURO24</h2><div style="color:#00FF00">Sem risco. Paga só se lucrar.</div></div><div class="info-box" style="margin-top:20px">1. Pedes CÓDIGO VIP<br>2. Recebes válido 24h<br>3. Apostas<br>4. Envia print<br>5. Esperamos juntos<br><br><div style="color:#00FF00">GREEN: 20% lucro</div><div style="color:#FF5555">RED: 0 Kz</div></div></div>
 <script>
 function abrirTela(id){document.querySelectorAll('.tela').forEach(t=>t.classList.remove('ativa'));document.getElementById(id).classList.add('ativa');window.scrollTo(0,0)}
 function verificarCodigo(){var c=document.getElementById('codigoVip').value;c==='PAGO000'?abrirTela('tela-jogos-vip-baixa'):alert('Código inválido!')}
@@ -123,4 +87,4 @@ function atualizarAoVivo(){try{var agora=new Date(new Date().toLocaleString("en-
 setInterval(atualizarAoVivo,15000);atualizarAoVivo();
 </script>
 </body>
-                                                      </html>
+  </html>
