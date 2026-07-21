@@ -13,29 +13,27 @@
 .card h3{font-size:14px;color:#fff}.card p{font-size:11px;color:#888}
 .topo{display:flex;align-items:center;margin-bottom:20px}.voltar{background:#FFD700;color:#000;border:none;padding:8px 12px;border-radius:8px;font-weight:bold;margin-right:15px;cursor:pointer}
 .jogo{background:#1A1A2E;border-radius:15px;padding:15px;margin-bottom:12px;border:2px solid #2A2A3E;position:relative}
-.jogo.ganhou{border:2px solid #00FF00;background:#122212;box-shadow:0 0 20px rgba(0,255,0,.4)}
+.jogo.ao-vivo{border:2px solid #FF0000;box-shadow:0 0 20px rgba(255,0,0,.4)}
+.badge-clique{position:absolute;top:-10px;right:-10px;background:#FF0000;color:#fff;font-size:9px;padding:5px 10px;border-radius:20px;font-weight:bold;animation:pulse 2s infinite;display:none}
+.jogo.ao-vivo.badge-clique{display:block}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 .liga{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:8px}
 .times{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;font-weight:bold;font-size:13px}
-.vs{background:#00FF00;color:#000;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:bold}
+.vs{background:#FFD700;color:#000;padding:3px 8px;border-radius:5px;font-size:11px}
 .palpite{background:#2A2A2E;border-radius:8px;padding:8px 10px;text-align:left;color:#FFD700;font-size:12px}
-.status{font-size:11px;margin-top:8px;padding:6px 10px;border-radius:6px;font-weight:bold}
-.status.ganhou{background:#00FF00;color:#000}
 .id-fixa{background:#FFD700;color:#000;text-align:center;padding:10px;border-radius:8px;font-weight:bold;font-size:12px;margin-top:15px}
-.odd{color:#00FF00;font-weight:bold}.boletim-titulo{color:#FFD700;font-size:14px;margin:20px 0 10px;font-weight:bold}
-.badge-hoje{background:#00FF00;color:#000;font-size:12px;padding:6px 12px;border-radius:5px;font-weight:bold;display:inline-block;margin-bottom:15px;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.odd{color:#FFD700;font-weight:bold}.boletim-titulo{color:#FFD700;font-size:14px;margin:20px 0 10px;font-weight:bold}
+.badge-hoje{background:#00FF00;color:#000;font-size:10px;padding:5px 12px;border-radius:5px;font-weight:bold;display:inline-block;margin-bottom:15px}
 .box-vip{background:#1A1A2E;border-radius:15px;padding:25px;text-align:center;margin-top:20px;border:1px solid #2A2A3E}
 .input-codigo{width:100%;padding:15px;border-radius:10px;border:1px solid #2A2A3E;background:#0A0A0F;color:#fff;text-align:center;margin-bottom:15px}
 .btn-desbloquear{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;cursor:pointer;margin-bottom:12px}
 .btn-whats{width:100%;padding:15px;border-radius:10px;border:none;background:#25D366;color:#000;font-weight:bold;cursor:pointer;margin-bottom:15px}
 .texto-vip{color:#ccc;font-size:13px;line-height:1.6;margin:15px 0}.texto-vip b{color:#FFD700}
-.green-total{background:linear-gradient(135deg,#00FF00,#00CC00);color:#000;text-align:center;padding:15px;border-radius:12px;font-weight:bold;font-size:14px;margin-top:15px;animation:pulse 2s infinite}
 </style>
 </head>
 <body>
 <div id="tela-menu" class="tela ativa"><div class="header"><div class="logo-emoji">👑</div><h1>PALPITE OURO</h1></div>
 <div class="menu">
-<button class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>✅ ID 7041051 - 3/3 GREEN - ODD 3.26</p></button>
+<button class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>TERÇA 21/07 - ID 7247287 - ODD 9.51</p></button>
 <button class="card" onclick="abrirTela('tela-vip')"><div class="card-icon">👑</div><h3>VIP ODD BAIXA</h3><p>Pago - Acesso imediato</p></button>
 <button class="card" onclick="abrirTela('tela-vip-alta')"><div class="card-icon">📈</div><h3>VIP ODD ALTA</h3><p>Pago - Acesso imediato</p></button>
 <button class="card" onclick="abrirTela('tela-redes')"><div class="card-icon">🔗</div><h3>REDES SOCIAIS</h3><p>Fale connosco</p></button>
@@ -43,20 +41,22 @@
 </div></div>
 
 <div id="tela-gratuitas" class="tela">
-<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>GRÁTIS - 3/3 GREEN ✅✅</h2></div>
-<span class="badge-hoje">✅✅✅ BOLETIM 20/07 - ID 7041051 - ODD 3.263 - 100% GREEN</span>
-<div class="boletim-titulo">BOLETIM 20/07 – ID 7041051 – ODD 3.263 – 3 JOGOS - TODOS GANHOU</div>
+<div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>GRÁTIS TERÇA - 21/07</h2></div>
+<span class="badge-hoje">🔥 TERÇA-FEIRA 21/07 - ID 7247287 - ODD 9.514 - 5 JOGOS</span>
+<div class="boletim-titulo">BOLETIM TERÇA 21/07 – ID 7247287 – ODD 9.514 – 5 JOGOS</div>
 
-<div class="jogo ganhou"><div class="liga"><span>Islândia 1. Deild • 20.07.2026 20:15 - FINALIZADO</span><span class="odd">1.49 ✅ GANHOU</span></div><div class="times"><span>HK Kopavogur</span><span class="vs">5:1</span><span>FC IF Vestri</span></div><div class="palpite">⚽ Resultado do Jogo - HK Kopavogur - GANHOU</div><div class="status ganhou">✅ GANHOU - 5:1 (4:0 HT) - Ganhou</div></div>
+<div class="jogo" data-hora="17:00" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>21.07.2026 17:00</span><span class="odd">1.65</span></div><div class="times"><span>Sabah FK</span><span class="vs">VS</span><span>KuPS Kuopio</span></div><div class="palpite">⚽ Resultado do Jogo - Sabah FK</div></div>
 
-<div class="jogo ganhou"><div class="liga"><span>Liga Feminina • 20.07.2026 14:00 - FINALIZADO</span><span class="odd">1.49 ✅ GANHOU</span></div><div class="times"><span>FC Kyzylzhar (Wom)</span><span class="vs">4:0</span><span>Elimai FC (Wom)</span></div><div class="palpite">⚽ Resultado do Jogo - FC Kyzylzhar (Wom) - GANHOU</div><div class="status ganhou">✅ GANHOU - 4:0 (3:0 HT) - Este jogo já terminou</div></div>
+<div class="jogo" data-hora="19:45" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>21.07.2026 19:45</span><span class="odd">1.50</span></div><div class="times"><span>Sutton United FC</span><span class="vs">VS</span><span>Walton & Hersham FC</span></div><div class="palpite">⚽ Resultado do Jogo - Sutton United FC</div></div>
 
-<div class="jogo ganhou"><div class="liga"><span>Amigáveis de Clubes • 20.07.2026 20:15 - FINALIZADO</span><span class="odd">1.47 ✅ GANHOU</span></div><div class="times"><span>Sporting CP</span><span class="vs">5:0</span><span>Strasbourg Alsace</span></div><div class="palpite">⚽ Resultado do Jogo - Sporting CP - GANHOU</div><div class="status ganhou">✅ GANHOU - 5:0 (2:0 HT) - Ganhou</div></div>
+<div class="jogo" data-hora="19:45" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>21.07.2026 19:45</span><span class="odd">1.54</span></div><div class="times"><span>Kelty Hearts FC</span><span class="vs">VS</span><span>Brora Rangers FC</span></div><div class="palpite">⚽ Resultado do Jogo - Kelty Hearts FC</div></div>
 
-<div class="green-total">🎉 BOLETIM 100% GREEN - ODD 3.263 - 3/3 - 20.07.2026 🎉</div>
-<div class="id-fixa">ELEPHANTBET 🆔7041051 - ODD 3.263 - 20.07.2026 11:17 - 3/3 GREEN ✅✅✅</div>
-<div style="text-align:center;color:#00FF00;font-weight:bold;margin-top:12px">🔥 FORRAMOS! TODOS OS 3 JOGOS ENTRARAM 🔥</div>
-<div style="text-align:center;color:#888;font-size:11px;margin-top:8px">+18 | Isto é uma análise, não é garantia. Jogue com responsabilidade</div>
+<div class="jogo" data-hora="19:45" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>21.07.2026 19:45</span><span class="odd">1.59</span></div><div class="times"><span>Clyde FC</span><span class="vs">VS</span><span>Annan Athletic FC</span></div><div class="palpite">⚽ Resultado do Jogo - Clyde FC</div></div>
+
+<div class="jogo" data-hora="19:45" data-ads="https://omg10.com/4/11177307" data-jogo="https://www.elephantbet.co.ao/affiliates/?btag=2754760"><span class="badge-clique">📺 AO VIVO</span><div class="liga"><span>21.07.2026 19:45</span><span class="odd">1.57</span></div><div class="times"><span>Arbroath FC</span><span class="vs">VS</span><span>Montrose FC</span></div><div class="palpite">⚽ Resultado do Jogo - Arbroath FC</div></div>
+
+<div class="id-fixa">ELEPHANTBET 🆔7247287 - ODD 9.514 - 21.07.2026 09:06 - TERÇA-FEIRA</div>
+<div style="text-align:center;color:#888;font-size:11px;margin-top:10px">+18 | Isto é uma análise, não é garantia. Jogue com responsabilidade</div>
 </div>
 
 <div id="tela-vip" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD BAIXA</h2></div>
@@ -75,8 +75,8 @@
 <button onclick="verificarCodigoAlta()" class="btn-desbloquear">DESBLOQUEAR VIP ALTA AGORA</button>
 </div></div>
 
-<div id="tela-jogos-vip-baixa" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD BAIXA</h2></div><div style="text-align:center;background:#1A1A2E;padding:20px;border-radius:15px">Nenhum boletim VIP ainda. Fala comigo para receber.</div></div>
-<div id="tela-jogos-vip-alta" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD ALTA</h2></div><div style="text-align:center;background:#1A1A2E;padding:20px;border-radius:15px">Nenhum boletim VIP ainda. Fala comigo para receber.</div></div>
+<div id="tela-jogos-vip-baixa" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD BAIXA</h2></div><div style="text-align:center;background:#1A1A2E;padding:20px;border-radius:15px">Nenhum boletim VIP. Fala comigo para adquirir VIP pago.</div></div>
+<div id="tela-jogos-vip-alta" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>VIP ODD ALTA</h2></div><div style="text-align:center;background:#1A1A2E;padding:20px;border-radius:15px">Nenhum boletim VIP. Fala comigo para adquirir VIP pago.</div></div>
 
 <div id="tela-redes" class="tela"><div class="topo"><button class="voltar" onclick="abrirTela('tela-menu')">←</button><h2>REDES SOCIAIS</h2></div><div class="box-vip"><h2 style="color:#FFD700">SIGA-NOS</h2><button onclick="abrirWhatsAppCanal()" class="btn-desbloquear">WHATSAPP CANAL</button><button onclick="abrirWhatsAppVip()" class="btn-whats">👑 VIP WHATSAPP - FALAR COM ROSS</button></div></div>
 
@@ -92,6 +92,8 @@ function verificarCodigo(){var c=document.getElementById('codigoVip').value;c===
 function verificarCodigoAlta(){var c=document.getElementById('codigoVipAlta').value;c==='PAGO000'?abrirTela('tela-jogos-vip-alta'):alert('Código inválido! Fala comigo para adquirir o VIP pago.')}
 function abrirWhatsAppCanal(){window.open('https://whatsapp.com/channel/0029VbCSEhSJf05fcCLFXi2d','_system')}
 function abrirWhatsAppVip(){window.open('https://wa.me/message/2EPEENB2KKE3K1','_system')}
+function atualizarAoVivo(){try{var agora=new Date(new Date().toLocaleString("en-US",{timeZone:"Africa/Luanda"})),mins=agora.getHours()*60+agora.getMinutes();document.querySelectorAll('.jogo[data-hora]').forEach(function(j){var hj=j.getAttribute('data-hora').split(':'),mj=parseInt(hj[0])*60+parseInt(hj[1]);if(mins>=mj&&mins<mj+180){j.classList.add('ao-vivo');if(!j.dataset.onclickSet){j.onclick=function(){window.open(j.getAttribute('data-ads'),'_blank');setTimeout(function(){window.open(j.getAttribute('data-jogo'),'_blank')},2000)};j.dataset.onclickSet='true'}}else{j.classList.remove('ao-vivo');}})}catch(e){}}
+setInterval(atualizarAoVivo,15000);atualizarAoVivo();
 </script>
 </body>
-</html>
+  </html>
