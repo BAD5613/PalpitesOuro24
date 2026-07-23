@@ -6,7 +6,10 @@
 <title>Palpite Ouro</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}body{background:#0A0A0F;font-family:system-ui,Arial;color:#fff;padding:20px}
-.tela{display:none}.tela.ativa{display:block}.header{text-align:center;margin-bottom:30px}.logo-emoji{font-size:70px;display:block}h1{color:#FFD700;font-size:24px}h2{color:#FFD700;font-size:20px}
+.tela{display:none}.tela.ativa{display:block}
+#tela-termos{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px}
+.box-termos{background:#1A1A2E;border-radius:15px;padding:25px;max-width:400px;width:100%;border:1px solid #FFD700}
+.header{text-align:center;margin-bottom:30px}.logo-emoji{font-size:70px;display:block}h1{color:#FFD700;font-size:24px}h2{color:#FFD700;font-size:20px}
 .menu{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}
 .card{background:#1A1A2E;border-radius:15px;padding:20px;text-align:center;border:none;cursor:pointer;width:100%}
 .card-icon{width:45px;height:45px;background:linear-gradient(135deg,#FFD700,#FF8C00);border-radius:12px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px}
@@ -29,9 +32,30 @@
 .btn-whats{width:100%;padding:15px;border-radius:10px;border:none;background:#25D366;color:#000;font-weight:bold;cursor:pointer;margin-bottom:15px}
 .texto-vip{color:#ccc;font-size:13px;line-height:1.6;margin:15px 0}.texto-vip b{color:#FFD700}
 .detalhe{color:#aaa;font-size:10px;margin-top:6px;line-height:1.3}
+.btn-ouro{width:100%;padding:15px;border-radius:10px;border:none;background:linear-gradient(135deg,#FFD700,#FF8C00);color:#000;font-weight:bold;cursor:pointer}
 </style>
 </head>
 <body>
+
+<div id="tela-termos">
+<div class="box-termos">
+<h2 style="color:#FFD700;text-align:center;margin-bottom:15px">👑 Termos de Uso - 18+</h2>
+<p style="font-size:12px;color:#ccc;line-height:1.5;margin-bottom:12px">
+Bem-vindo ao <b>Palpite Ouro24</b>. Este app é apenas <b style="color:#FFD700">conteúdo educativo e informativo</b> sobre futebol.<br><br>
+- Não somos casa de apostas / We are not a betting house<br>
+- Não garantimos ganhos / No winnings guaranteed<br>
+- Conteúdo para maiores de 18 anos / 18+ only<br>
+- Jogue com responsabilidade / Gamble responsibly<br><br>
+Este app é para fins educacionais e de análise esportiva.
+</p>
+<p style="font-size:10px;color:#888;margin-bottom:12px">
+Ao continuar você concorda com nossos <a href="https://sites.google.com/view/palpiteouro24-privacidade" target="_blank" style="color:#FFD700;text-decoration:underline">Termos e Política de Privacidade / Privacy Policy</a>.
+</p>
+<label style="display:flex;align-items:center;font-size:12px;margin-bottom:15px"><input type="checkbox" id="checkTermos" style="margin-right:8px"> Tenho 18+ anos e aceito os Termos / I am 18+ and accept Terms</label>
+<button id="btnAceitar" class="btn-ouro" style="opacity:.5" disabled>ACEITAR E CONTINUAR - 18+</button>
+</div>
+</div>
+
 <div id="tela-menu" class="tela ativa"><div class="header"><div class="logo-emoji">👑</div><h1>PALPITE OURO</h1></div>
 <div class="menu">
 <button class="card" onclick="abrirTela('tela-gratuitas')"><div class="card-icon">🎁</div><h3>APOSTAS GRATUITAS</h3><p>QUINTA 23/07 - ID 7735858 - ODD 20.85</p></button>
@@ -89,6 +113,9 @@ function abrirWhatsAppCanal(){window.open('https://whatsapp.com/channel/0029VbCS
 function abrirWhatsAppVip(){window.open('https://wa.me/message/2EPEENB2KKE3K1','_system')}
 function atualizarAoVivo(){try{var agora=new Date(new Date().toLocaleString("en-US",{timeZone:"Africa/Luanda"})),mins=agora.getHours()*60+agora.getMinutes();document.querySelectorAll('.jogo[data-hora]').forEach(function(j){var hj=j.getAttribute('data-hora').split(':'),mj=parseInt(hj[0])*60+parseInt(hj[1]);if(mins>=mj&&mins<mj+180){j.classList.add('ao-vivo');if(!j.dataset.onclickSet){j.onclick=function(){window.open(j.getAttribute('data-ads'),'_blank');setTimeout(function(){window.open(j.getAttribute('data-jogo'),'_blank')},2000)};j.dataset.onclickSet='true'}}else{j.classList.remove('ao-vivo');}})}catch(e){}}
 setInterval(atualizarAoVivo,15000);atualizarAoVivo();
+document.getElementById('checkTermos').addEventListener('change',function(){let b=document.getElementById('btnAceitar');b.disabled=!this.checked;b.style.opacity=this.checked?'1':'.5'});
+document.getElementById('btnAceitar').addEventListener('click',function(){document.getElementById('tela-termos').style.display='none';localStorage.setItem('aceitouTermos','sim')});
+if(localStorage.getItem('aceitouTermos')==='sim'){document.getElementById('tela-termos').style.display='none'}
 </script>
 </body>
-</html>
+  </html>
